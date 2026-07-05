@@ -223,7 +223,39 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
 .foot-links a:hover{color:var(--accent);border-color:var(--accent)}
 .foot-note{margin-top:26px;font-size:12.5px;color:var(--ink-soft)}
 
+/* ---------- print/affiliate ---------- */
+.print-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.print-card{
+  display:flex;flex-direction:column;background:var(--card);
+  border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+  text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s;
+}
+.print-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.print-card .pc-ico{font-size:22px;line-height:1;margin-bottom:12px}
+.print-card b{font-family:var(--serif);font-weight:600;font-size:17px;display:block;margin-bottom:4px}
+.print-card span{font-size:14px;color:var(--ink-soft);flex:1}
+.print-card .pc-go{font-size:13px;font-weight:600;color:var(--accent);margin-top:14px}
+.disclosure{margin-top:16px;font-size:12.5px;color:var(--ink-soft)}
+
+/* ---------- support / donate ---------- */
+.support{
+  margin-top:56px;background:var(--paper-deep);border:1px solid var(--line);
+  border-radius:var(--radius);padding:32px;text-align:center;
+}
+.support h2{font-family:var(--serif);font-weight:600;font-size:24px;margin-bottom:8px}
+.support p{max-width:520px;margin:0 auto 20px;color:var(--ink-soft)}
+.btn-donate{
+  display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:#fff;
+  font-family:var(--sans);font-weight:700;font-size:16px;text-decoration:none;
+  padding:14px 26px;border-radius:11px;transition:background .15s,transform .1s;
+}
+.btn-donate:hover{background:var(--accent-deep);transform:translateY(-1px)}
+.support .support-note{margin-top:14px;font-size:12.5px;color:var(--ink-soft)}
+.foot-links a.foot-donate{color:var(--accent);text-decoration:none;font-weight:700}
+.foot-links a.foot-donate:hover{text-decoration:underline}
+
 @media (max-width:820px){
+  .print-cards{grid-template-columns:1fr}
   .tool{grid-template-columns:1fr}
   .controls{border-right:none;border-bottom:1px solid var(--line)}
   .promise{grid-template-columns:1fr}
@@ -245,6 +277,7 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
       <a href="#why">Why this exists</a>
       <a href="#checklist">Print checklist</a>
       <a href="#faq">FAQ</a>
+      <a href="#support" style="color:var(--accent)">♥ Tip</a>
     </nav>
   </div>
 </header>
@@ -371,6 +404,36 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
   </ul>
 </section>
 
+<section class="edu wrap" id="print" style="padding-top:56px">
+  <p class="kicker">Now put it in the world</p>
+  <h2>Got your code? Here is where to print or mount it.</h2>
+  <p style="max-width:640px">You have the file. These are the print and display services I would point a brand to. Test-scan your printed piece before you order a big run.</p>
+  <div class="print-cards">
+    <!-- AFFILIATE LINKS: replace each href with your tracking link once approved.
+         Vistaprint + MOO: join via CJ Affiliate (cj.com). Stickers: Sticker Mule / StickerYou.
+         Stands & displays: Amazon Associates tag on a search or product URL. -->
+    <a class="print-card" href="https://www.vistaprint.com" target="_blank" rel="noopener sponsored">
+      <span class="pc-ico">🖨️</span>
+      <b>Cards, signs &amp; banners</b>
+      <span>Business cards, yard signs, posters, and flyers. The all-purpose print shop.</span>
+      <span class="pc-go">Vistaprint →</span>
+    </a>
+    <a class="print-card" href="https://www.stickermule.com" target="_blank" rel="noopener sponsored">
+      <span class="pc-ico">🏷️</span>
+      <b>Stickers &amp; decals</b>
+      <span>Die-cut stickers, labels, and window decals that hold a scan up close.</span>
+      <span class="pc-go">Sticker Mule →</span>
+    </a>
+    <a class="print-card" href="https://www.amazon.com/s?k=acrylic+qr+code+sign+holder+table+tent" target="_blank" rel="noopener sponsored">
+      <span class="pc-ico">🪧</span>
+      <b>Stands &amp; displays</b>
+      <span>Table tents, acrylic sign holders, and counter stands to show the code off.</span>
+      <span class="pc-go">Amazon →</span>
+    </a>
+  </div>
+  <p class="disclosure">Some of these are affiliate links. If you buy through them, this tool earns a small commission at no extra cost to you. It never changes what I recommend.</p>
+</section>
+
 <section class="edu wrap" id="faq" style="padding-top:56px">
   <p class="kicker">Questions</p>
   <h2>The questions I get.</h2>
@@ -402,6 +465,18 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
   </div>
 </section>
 
+<section class="wrap" style="padding-top:56px">
+  <div class="support" id="support">
+    <h2>This tool is free and stays free.</h2>
+    <p>No account, no upsell to a plan, no code that dies on you later. If it saved you time or a reprint, a small tip keeps it running and ad-free.</p>
+    <!-- DONATE: confirm this opens to your PayPal, adjust the handle if needed. -->
+    <a class="btn-donate" href="https://www.paypal.com/paypalme/aboundlessworld" target="_blank" rel="noopener">
+      <span>♥</span> Tip the developer
+    </a>
+    <p class="support-note">Goes straight to Bud Hennekes via PayPal. Thank you, genuinely.</p>
+  </div>
+</section>
+
 <footer>
   <div class="wrap foot-grid">
     <div class="foot-left">
@@ -409,6 +484,7 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
       <p>Codes generated in your browser. They never expire. We never see your data. Built to make a point, free to keep it honest.</p>
     </div>
     <div class="foot-links">
+      <a class="foot-donate" href="https://www.paypal.com/paypalme/aboundlessworld" target="_blank" rel="noopener">♥ Tip the developer</a>
       <span style="font-weight:600;color:var(--ink-soft)">Built by Bud Hennekes</span>
     </div>
   </div>
