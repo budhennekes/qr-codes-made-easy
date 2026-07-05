@@ -237,6 +237,32 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
 .print-card .pc-go{font-size:13px;font-weight:600;color:var(--accent);margin-top:14px}
 .disclosure{margin-top:16px;font-size:12.5px;color:var(--ink-soft)}
 
+/* ---------- product / upsell ---------- */
+.product{
+  display:grid;grid-template-columns:170px 1fr;gap:34px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px;
+}
+.product-cover{width:170px;height:222px;filter:drop-shadow(0 10px 22px rgba(27,25,19,.18))}
+.product-badge{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);background:var(--warn-bg);border:1px solid var(--warn-border);
+  padding:3px 10px;border-radius:20px;margin-bottom:12px;
+}
+.product-body h2{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.12;margin-bottom:6px}
+.product-body .sub{color:var(--ink-soft);margin-bottom:16px;max-width:520px}
+.product-body ul{list-style:none;margin:0 0 20px;display:grid;gap:7px;max-width:520px}
+.product-body ul li{position:relative;padding-left:22px;font-size:15px}
+.product-body ul li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.product-cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.product-price{font-family:var(--serif);font-weight:600;font-size:18px}
+.product-price small{font-family:var(--sans);font-weight:500;color:var(--ink-soft);font-size:13px}
+.btn-product{
+  display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);
+  font-weight:700;font-size:15px;text-decoration:none;padding:12px 22px;border-radius:10px;
+  transition:background .15s,transform .1s;
+}
+.btn-product:hover{background:#000;transform:translateY(-1px)}
+
 /* ---------- support / donate ---------- */
 .support{
   margin-top:56px;background:var(--paper-deep);border:1px solid var(--line);
@@ -256,6 +282,10 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
 
 @media (max-width:820px){
   .print-cards{grid-template-columns:1fr}
+  .product{grid-template-columns:1fr;justify-items:center;text-align:center;gap:24px}
+  .product-body .sub,.product-body ul{margin-left:auto;margin-right:auto}
+  .product-body ul li{text-align:left}
+  .product-cta-row{justify-content:center}
   .tool{grid-template-columns:1fr}
   .controls{border-right:none;border-bottom:1px solid var(--line)}
   .promise{grid-template-columns:1fr}
@@ -276,6 +306,7 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
     <nav>
       <a href="#why">Why this exists</a>
       <a href="#checklist">Print checklist</a>
+      <a href="#guide">Guide</a>
       <a href="#faq">FAQ</a>
       <a href="#support" style="color:var(--accent)">♥ Tip</a>
     </nav>
@@ -432,6 +463,47 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
     </a>
   </div>
   <p class="disclosure">Some of these are affiliate links. If you buy through them, this tool earns a small commission at no extra cost to you. It never changes what I recommend.</p>
+</section>
+
+<!-- ===== PLACEHOLDER: digital product upsell. Swap the "Get on the list" href
+     for your Gumroad/ConvertKit link when the guide is ready, and remove the
+     "In the works" badge to make it a live product. ===== -->
+<section class="edu wrap" id="guide" style="padding-top:56px">
+  <p class="kicker">Go deeper</p>
+  <div class="product">
+    <svg class="product-cover" viewBox="0 0 170 222" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Brand Field Guide to QR Codes">
+      <rect width="170" height="222" rx="6" fill="#1b1913"/>
+      <rect x="0" y="0" width="7" height="222" rx="3" fill="#d84a1b"/>
+      <text x="24" y="42" fill="#d84a1b" font-family="Public Sans,sans-serif" font-size="9" font-weight="700" letter-spacing="2">FIELD GUIDE</text>
+      <text x="24" y="86" fill="#faf6ef" font-family="Georgia,serif" font-size="19" font-weight="700">QR codes</text>
+      <text x="24" y="108" fill="#faf6ef" font-family="Georgia,serif" font-size="19" font-weight="700">that get</text>
+      <text x="24" y="130" fill="#faf6ef" font-family="Georgia,serif" font-size="19" font-weight="700">scanned</text>
+      <g fill="#faf6ef" opacity="0.92" transform="translate(24,158)">
+        <rect x="0" y="0" width="34" height="34" fill="none" stroke="#faf6ef" stroke-width="3"/>
+        <rect x="7" y="7" width="8" height="8"/><rect x="19" y="7" width="8" height="8"/>
+        <rect x="7" y="19" width="8" height="8"/><rect x="19" y="19" width="8" height="8"/>
+      </g>
+      <text x="66" y="182" fill="#8a8272" font-family="Public Sans,sans-serif" font-size="8.5" font-weight="600">A brand's</text>
+      <text x="66" y="194" fill="#8a8272" font-family="Public Sans,sans-serif" font-size="8.5" font-weight="600">practical</text>
+      <text x="66" y="206" fill="#8a8272" font-family="Public Sans,sans-serif" font-size="8.5" font-weight="600">handbook</text>
+    </svg>
+    <div class="product-body">
+      <span class="product-badge">In the works</span>
+      <h2>The Brand Field Guide to QR Codes</h2>
+      <p class="sub">The tool makes the code. This makes sure people actually scan it. A short, no-fluff guide written for marketers, not engineers.</p>
+      <ul>
+        <li>Where to place a code so it gets scanned, and where it gets ignored</li>
+        <li>Sizing and contrast rules that survive real-world printing</li>
+        <li>How to track scans without renting a dynamic code (UTMs, done right)</li>
+        <li>15 campaign ideas, from table tents to packaging to trade shows</li>
+        <li>The mistakes that quietly kill scan rates</li>
+      </ul>
+      <div class="product-cta-row">
+        <span class="product-price">$14 <small>· one-time, yours forever</small></span>
+        <a class="btn-product" href="mailto:bud@aboundlessworld.com?subject=QR%20Field%20Guide%20waitlist&body=Put%20me%20on%20the%20list%20for%20the%20guide." >Get on the list →</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="edu wrap" id="faq" style="padding-top:56px">
