@@ -1,14 +1,14 @@
-# QR Forever — brand QR codes that never expire
+# QR Codes Made Easy — QR codes that never expire
 
 Make a QR code in your brand colors, with your logo, and print it knowing nobody can ever turn it off.
 
-**[Try it live](https://budhennekes.github.io/qr-forever/)**
+**[Try it live](https://qrcodesmadeeasy.com/)**
 
 ## Why this exists
 
 Most popular QR generators create "dynamic" codes that point to their redirect server instead of your website. That is how they track scans, and it is also the hook: when the free trial ends or the subscription lapses, every code you printed goes dead. The brochures, the menus, the trade show booth, all of it.
 
-QR Forever only makes static codes. Your link is encoded directly into the pattern, generated entirely in your browser. There is no server in the middle, no account to lapse, and no company between your customer and your website.
+QR Codes Made Easy only makes static codes. Your link is encoded directly into the pattern, generated entirely in your browser. There is no server in the middle, no account to lapse, and no company between your customer and your website.
 
 ## What it does
 
@@ -20,7 +20,7 @@ QR Forever only makes static codes. Your link is encoded directly into the patte
 
 ## Getting started
 
-Open [the app](https://budhennekes.github.io/qr-forever/), paste your link, pick a style, download. Before you print, test-scan the file with two phones. The full print checklist is on the page.
+Open [the app](https://qrcodesmadeeasy.com/), paste your link, pick a style, download. Before you print, test-scan the file with two phones. The full print checklist is on the page.
 
 ## Under the hood
 
