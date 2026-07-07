@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You scanned it — QR Codes Made Easy</title>
+<meta name="description" content="You just scanned a QR code that lives entirely in your browser and never expires. Now make one that's yours.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://qrcodemadeeasy.com/scanned/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#faf6ef;--ink:#1b1913;--soft:#5c564a;--emer:#0c9463;--emerd:#0a7850;--line:#e0d7c5;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:"Public Sans",-apple-system,sans-serif;background:var(--cream);color:var(--ink);
+    min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:28px;
+    line-height:1.6;overflow:hidden;position:relative;
+  }
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;
+    background-image:radial-gradient(rgba(27,25,19,.035) 1px,transparent 1px);background-size:5px 5px}
+  .card{max-width:440px;width:100%;text-align:center;position:relative;z-index:2}
+
+  /* animated check */
+  .check{width:78px;height:78px;margin:0 auto 24px;border-radius:50%;background:var(--emer);
+    display:flex;align-items:center;justify-content:center;
+    animation:pop .5s cubic-bezier(.2,1.3,.4,1) both}
+  .check svg{width:38px;height:38px}
+  .check path{stroke:#fff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;fill:none;
+    stroke-dasharray:30;stroke-dashoffset:30;animation:draw .4s .35s ease forwards}
+  @keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+  @keyframes draw{to{stroke-dashoffset:0}}
+
+  h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(34px,9vw,46px);line-height:1.05;
+    letter-spacing:-.02em;margin-bottom:6px;animation:rise .5s .15s both}
+  .and{font-family:"Fraunces",serif;font-style:italic;font-weight:500;color:var(--emerd);
+    font-size:clamp(20px,5.5vw,26px);margin-bottom:20px;animation:rise .5s .25s both}
+  p.body{font-size:16px;color:var(--soft);max-width:360px;margin:0 auto 26px;animation:rise .5s .35s both}
+  p.body b{color:var(--ink);font-weight:600}
+  .btn{display:inline-block;background:var(--ink);color:var(--cream);text-decoration:none;
+    font-weight:700;font-size:16px;padding:14px 26px;border-radius:12px;animation:rise .5s .45s both;
+    transition:background .15s,transform .1s}
+  .btn:active{transform:translateY(1px)}
+  .kicker{margin-top:22px;font-size:12.5px;color:#9a9282;animation:rise .5s .55s both}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  /* gentle one-shot celebration dots */
+  .dot{position:fixed;bottom:-12px;width:9px;height:9px;border-radius:50%;opacity:0;z-index:1;
+    animation:float 2.6s ease-out forwards}
+  @keyframes float{0%{opacity:0;transform:translateY(0) scale(.6)}
+    12%{opacity:1}100%{opacity:0;transform:translateY(-78vh) scale(1)}}
+
+  @media (prefers-reduced-motion:reduce){
+    .check,h1,.and,p.body,.btn,.kicker{animation:none}
+    .check path{stroke-dashoffset:0}
+    .dot{display:none}
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="check"><svg viewBox="0 0 40 40"><path d="M11 21l6 6 12-14"/></svg></div>
+    <h1>You scanned it.</h1>
+    <div class="and">And it worked.</div>
+    <p class="body">This code lives entirely in your browser. <b>No app, no account, no subscription to lapse.</b> It will still scan long after today's QR startups have moved on to something shinier.</p>
+    <a class="btn" href="https://qrcodemadeeasy.com/">Now make one that's yours →</a>
+    <p class="kicker">No subscription was harmed in the making of this code.</p>
+  </div>
+
+  <script>
+    // a few brand-colored dots drift up once, then it's calm
+    (function(){
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var colors = ["#0c9463","#1b1913","#0a7850","#d8b25a"];
+      for (var i=0;i<14;i++){
+        var d = document.createElement("div");
+        d.className = "dot";
+        d.style.left = (6 + i*6.6) + "vw";
+        d.style.background = colors[i % colors.length];
+        d.style.animationDelay = (i*0.09) + "s";
+        d.style.width = d.style.height = (6 + (i%3)*3) + "px";
+        document.body.appendChild(d);
+      }
+    })();
+  </script>
+</body>
+</html>
