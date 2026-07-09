@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Make a QR Code for Telegram (Username or Phone)</title>
+<meta name="description" content="Make a free QR code that opens your Telegram chat, channel, or group. Use your @username or a phone number. Static, never expires, built in your browser.">
+<link rel="canonical" href="https://qrcodemadeeasy.com/guides/qr-code-for-telegram/">
+<meta name="author" content="Bud Hennekes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Make a QR Code for Telegram (Username or Phone)">
+<meta property="og:description" content="Make a free QR code that opens your Telegram chat, channel, or group. Use your @username or a phone number. Static, never expires, built in your browser.">
+<meta property="og:url" content="https://qrcodemadeeasy.com/guides/qr-code-for-telegram/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf6ef; --paper-deep:#f3ecdf; --ink:#1b1913; --ink-soft:#5c564a;
+  --line:#e0d7c5; --accent:#0c9463; --accent-deep:#0a7850; --ok:#2e6e4e;
+  --warn-bg:#fdf0e3; --warn-border:#e8b07a; --card:#ffffff; --radius:14px;
+  --serif:"Fraunces",Georgia,serif; --sans:"Public Sans",-apple-system,"Helvetica Neue",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:radial-gradient(rgba(27,25,19,.035) 1px,transparent 1px);background-size:5px 5px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+header{padding:26px 0 0}
+.masthead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:14px}
+.wordmark{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.wordmark .dot{color:var(--accent)}
+.masthead nav{font-size:13px;font-weight:600}
+.masthead nav a{color:var(--ink-soft);text-decoration:none;margin-left:18px}
+.masthead nav a:hover{color:var(--accent)}
+article{padding:34px 0 10px}
+.crumbs{font-size:13px;color:var(--ink-soft);margin-bottom:22px}
+.crumbs a{color:var(--ink-soft);text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;font-size:clamp(30px,4.6vw,44px);line-height:1.1;margin-bottom:14px}
+.byline{font-size:14px;color:var(--ink-soft);margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.byline b{color:var(--ink);font-weight:600}
+article h2{font-family:var(--serif);font-weight:600;font-size:26px;letter-spacing:-.01em;margin:38px 0 12px;line-height:1.2}
+article h3{font-size:18px;font-weight:700;margin:24px 0 8px}
+article p{margin:0 0 16px}
+article p a,article li a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+article ul,article ol{margin:0 0 18px;padding-left:22px}
+article li{margin:0 0 8px}
+strong{font-weight:700}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:var(--paper-deep);border:1px solid var(--line);border-radius:5px;padding:1px 5px;overflow-wrap:anywhere}
+.tbl-wrap{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--paper-deep);font-weight:700;font-size:13px}
+tr:last-child td{border-bottom:none}
+.answer{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:20px 22px;margin:0 0 26px;font-size:18px}
+.answer p{margin:0 0 10px}
+.answer p:last-child{margin:0}
+.answer .big{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);line-height:1.4}
+.toc{background:var(--paper-deep);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin:0 0 30px;font-size:14px}
+.toc b{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:8px}
+.toc a{color:var(--ink);text-decoration:none;display:inline}
+.toc a:hover{color:var(--accent)}
+.toc ol{margin:0;padding-left:18px}
+.toc li{margin:0 0 4px}
+.note{background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:var(--radius);padding:16px 20px;margin:0 0 24px;font-size:15px}
+.note b{color:var(--accent-deep)}
+.faq{margin-top:10px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer;font-size:17px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";color:var(--accent);font-weight:700;margin-right:10px}
+.faq details[open] summary::before{content:"\2013"}
+.faq details p{margin:12px 0 0;color:var(--ink-soft)}
+.cta{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:26px 26px;margin:36px 0 10px;text-align:center}
+.cta h2{font-family:var(--serif);color:var(--paper);margin:0 0 8px;font-size:24px}
+.cta p{color:#cfc7b8;margin:0 0 16px;font-size:15px}
+.cta a.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:999px;font-size:15px}
+.cta a.btn:hover{background:var(--accent-deep)}
+footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
+.foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-left{max-width:420px}
+.foot-left p{font-size:13px;color:var(--ink-soft);margin-top:8px}
+.foot-links{display:flex;flex-direction:column;gap:8px;font-size:13px;text-align:right}
+.foot-links a{color:var(--accent);text-decoration:none;font-weight:600}
+.foot-note{font-size:12px;color:var(--ink-soft);margin-top:20px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="masthead">
+    <a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+    <nav>
+      <a href="../../">The tool</a>
+      <a href="../">Guides</a>
+      <a href="../../#faq">FAQ</a>
+      <a href="../../#support" style="color:var(--accent)">&#9829; Tip</a>
+    </nav>
+  </div>
+</header>
+<article class="wrap">
+  <div class="crumbs"><a href="../../">Home</a> / <a href="../">Guides</a> / QR code for Telegram</div>
+  <div class="eyebrow">Telegram &amp; chat</div>
+  <h1>How to Make a QR Code for Telegram</h1>
+  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated July 2026.</div>
+  <div class="answer"><p class="big">Make a static QR code that opens your Telegram chat using your public @username (or a phone number with country code). It uses Telegram's own t.me link, works for a person, bot, channel, or group, and never expires because the code is static. Free, no account.</p></div>
+  <div class="toc"><b>What's here</b><ol><li><a href="#make-it">Make it (the Telegram tab)</a></li><li><a href="#username-or-phone">Username or phone number?</a></li><li><a href="#one-thing">One thing Telegram cannot do</a></li><li><a href="#where">Where to put it</a></li><li><a href="#never-expires">Why it never expires</a></li></ol></div>
+
+  <h2 id="make-it">Make it (the Telegram tab)</h2>
+<p>A Telegram QR code is just a link wearing a pattern. When someone scans it, their phone opens a <code>t.me</code> address, and Telegram takes it from there. Two shapes cover almost everything:</p>
+<ul>
+<li><strong>Public @username:</strong> <code>https://t.me/yourusername</code>. This opens your profile, channel, group, or bot.</li>
+<li><strong>Phone number:</strong> <code>https://t.me/+15551234567</code>. This opens a chat with the number, country code included.</li>
+</ul>
+<p>You don't have to type any of that yourself. In <a href="../../">the tool</a>, open the <strong>Telegram</strong> tab, drop in your @username or phone number, pick your colors, then download the PNG or SVG. If you'd rather drop it on a page, hit <strong>Copy code for your website</strong> and paste the snippet it hands you. That's the whole job.</p>
+
+  <h2 id="username-or-phone">Username or phone number?</h2>
+<p>If you have the choice, use the <strong>public @username</strong>. Three reasons, and they all matter more than they sound.</p>
+<ul>
+<li><strong>It's stable.</strong> A username doesn't change when you switch SIMs or move countries. The code you printed keeps pointing at the same place.</li>
+<li><strong>It hides your number.</strong> A username link never shows your phone number to whoever scans. On a public flyer, that's the difference between a follow and a wave of spam texts.</li>
+<li><strong>It works for a channel or group.</strong> A phone number only opens a one-to-one chat. A username can open your channel or group too, which is usually the point.</li>
+</ul>
+<p>A phone number is a perfectly fine fallback if you prefer it or don't have a username set. Just remember to include the country code (the <code>+</code> and the digits), or the link opens nothing.</p>
+
+  <div class="note"><b>Heads up:</b> your @username has to be public for the link to open your chat. If your account has no username set, open Telegram, go to Settings, and add one first. Or skip it and use a phone number instead.</div>
+
+  <h2 id="one-thing">One thing Telegram cannot do</h2>
+<p>Here's the honest limit, so you don't waste an afternoon fighting it. A Telegram link opens the chat. It does <strong>not</strong> pre-type a message. There's no way to bake "Hi, I saw your flyer" into a normal <code>t.me</code> link the way you can with some other apps.</p>
+<p>That's a Telegram rule, not a shortcoming in the tool. Telegram simply doesn't read a message out of the URL for a standard chat, so any generator that claims otherwise is either bending the truth or relying on a bot workaround that most people won't set up.</p>
+<p>If a pre-filled message genuinely matters (say you want every scan to arrive with "Table 4, one iced coffee" already typed), that's a job for WhatsApp, which does support it. I wrote the <a href="../qr-code-for-whatsapp/">WhatsApp version of this guide</a> for exactly that case. Pick the app by what you need the scan to do.</p>
+
+  <h2 id="where">Where to put it</h2>
+<p>A Telegram code goes anywhere a person might want to reach you or your channel without typing a username by hand:</p>
+<ul>
+<li><strong>Storefront window or counter,</strong> so walk-ins can join your channel for drops and hours.</li>
+<li><strong>Product packaging or a thank-you card,</strong> pointing to a support chat or a community group.</li>
+<li><strong>Flyers, posters, and event signage,</strong> where "scan to message us" beats a username nobody remembers.</li>
+<li><strong>Slides and decks,</strong> so a room full of people can reach you before you've finished the sentence.</li>
+<li><strong>Your own website,</strong> using the embed snippet from the Copy button.</li>
+</ul>
+<p>Wherever it lands, print it big enough to scan from the distance people actually stand. I put the exact sizes in the <a href="../how-big-should-a-qr-code-be-for-print/">QR print size guide</a>. The tool always keeps a quiet margin around the code, so don't crop it flush to the edge.</p>
+
+  <h2 id="never-expires">Why it never expires</h2>
+<p>The code you make here is <strong>static</strong>. The <code>t.me</code> link is encoded directly into the black and white pattern. There is no short link, no dashboard, no redirect server sitting in the middle waiting to be switched off. Nothing to lapse, nothing to renew.</p>
+<p>That's the difference between a code that works in two years and one that quietly dies the day a subscription runs out. A lot of QR generators hand you a "dynamic" code that routes every scan through their servers, and that code goes dark the moment you stop paying them. Mine can't do that to you, because I'm not in the loop at all. I could shut this whole site down tomorrow and your printed Telegram code would still open your chat. If you want the full breakdown of that trap, I explain it in <a href="../do-qr-codes-expire/">do QR codes expire</a>.</p>
+
+  <h2 id="faq">FAQ</h2>
+  <div class="faq"><details><summary>How do I make a Telegram QR code?</summary><p>Open the Telegram tab in the tool, enter your @username or phone number, and download the code. It's free, no account, and it's made in your browser.</p></details><details><summary>Should I use my username or phone number?</summary><p>A public @username is the cleaner choice. It's stable, it hides your number, and it works for channels and groups, not just one-to-one chats. A phone number works too, as long as you include the country code.</p></details><details><summary>Can I pre-fill a message in a Telegram QR code?</summary><p>No. Telegram links cannot pre-type text for a normal chat, so the code opens the chat but leaves the message box empty. If you need a pre-filled message, use a WhatsApp code instead.</p></details><details><summary>Does it work for a channel or group?</summary><p>Yes. Use the public @username of the channel or group, and the code opens straight to it. This is one reason a username beats a phone number, which only opens a personal chat.</p></details><details><summary>Does a Telegram QR code expire?</summary><p>Not this one. It encodes the t.me link directly into the pattern, so there's no redirect server in the middle that anyone can switch off. It keeps working as long as your Telegram account and username stay live.</p></details><details><summary>Can I print it?</summary><p>Yes. Download a high-resolution PNG (up to 4000px) or a true vector SVG and print it at a readable size with the margin left intact. The tool includes the quiet border for you.</p></details></div>
+  <div class="cta">
+    <h2>Make a Telegram code</h2>
+    <p>QR Codes Made Easy builds a static chat code right in your browser. Free, no account, and it never expires.</p>
+    <a class="btn" href="../../">Build your QR code</a>
+  </div>
+</article>
+<footer>
+<div class="wrap foot-grid">
+<div class="foot-left">
+<a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+<p>Codes generated in your browser. They never expire. We never see your data. Built to make a point, free to keep it honest.</p>
+</div>
+<div class="foot-links">
+<a href="../">All guides</a>
+<a href="https://www.paypal.com/paypalme/aboundlessworld" target="_blank" rel="noopener">&#9829; Tip the developer</a>
+<span style="font-weight:600;color:var(--ink-soft)">Built by Bud Hennekes</span>
+</div>
+</div>
+<div class="wrap foot-note">No cookies, no ad trackers, no accounts. Just a QR code that works.</div>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Make a QR Code for Telegram (Username or Phone)", "description": "Make a free QR code that opens your Telegram chat, channel, or group. Use your @username or a phone number. Static, never expires, built in your browser.", "datePublished": "2026-07-09", "dateModified": "2026-07-09", "author": {"@type": "Person", "name": "Bud Hennekes", "url": "https://qrcodemadeeasy.com/"}, "publisher": {"@type": "Organization", "name": "QR Codes Made Easy", "url": "https://qrcodemadeeasy.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://qrcodemadeeasy.com/guides/qr-code-for-telegram/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrcodemadeeasy.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://qrcodemadeeasy.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "QR code for Telegram", "item": "https://qrcodemadeeasy.com/guides/qr-code-for-telegram/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I make a Telegram QR code?", "acceptedAnswer": {"@type": "Answer", "text": "Open the Telegram tab in the tool, enter your @username or phone number, and download the code. It's free, no account, and it's made in your browser."}}, {"@type": "Question", "name": "Should I use my username or phone number?", "acceptedAnswer": {"@type": "Answer", "text": "A public @username is the cleaner choice. It's stable, it hides your number, and it works for channels and groups, not just one-to-one chats. A phone number works too, as long as you include the country code."}}, {"@type": "Question", "name": "Can I pre-fill a message in a Telegram QR code?", "acceptedAnswer": {"@type": "Answer", "text": "No. Telegram links cannot pre-type text for a normal chat, so the code opens the chat but leaves the message box empty. If you need a pre-filled message, use a WhatsApp code instead."}}, {"@type": "Question", "name": "Does it work for a channel or group?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use the public @username of the channel or group, and the code opens straight to it. This is one reason a username beats a phone number, which only opens a personal chat."}}, {"@type": "Question", "name": "Does a Telegram QR code expire?", "acceptedAnswer": {"@type": "Answer", "text": "Not this one. It encodes the t.me link directly into the pattern, so there's no redirect server in the middle that anyone can switch off. It keeps working as long as your Telegram account and username stay live."}}, {"@type": "Question", "name": "Can I print it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Download a high-resolution PNG (up to 4000px) or a true vector SVG and print it at a readable size with the margin left intact. The tool includes the quiet border for you."}}]}</script>
+<!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
+</body>
+</html>

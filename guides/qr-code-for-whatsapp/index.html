@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Make a QR Code for WhatsApp (Free, No App Needed)</title>
+<meta name="description" content="Make a free QR code that opens a WhatsApp chat with your business, with an optional pre-filled message. Static, never expires, built in your browser.">
+<link rel="canonical" href="https://qrcodemadeeasy.com/guides/qr-code-for-whatsapp/">
+<meta name="author" content="Bud Hennekes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Make a QR Code for WhatsApp (Free, No App Needed)">
+<meta property="og:description" content="Make a free QR code that opens a WhatsApp chat with your business, with an optional pre-filled message. Static, never expires, built in your browser.">
+<meta property="og:url" content="https://qrcodemadeeasy.com/guides/qr-code-for-whatsapp/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf6ef; --paper-deep:#f3ecdf; --ink:#1b1913; --ink-soft:#5c564a;
+  --line:#e0d7c5; --accent:#0c9463; --accent-deep:#0a7850; --ok:#2e6e4e;
+  --warn-bg:#fdf0e3; --warn-border:#e8b07a; --card:#ffffff; --radius:14px;
+  --serif:"Fraunces",Georgia,serif; --sans:"Public Sans",-apple-system,"Helvetica Neue",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:radial-gradient(rgba(27,25,19,.035) 1px,transparent 1px);background-size:5px 5px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+header{padding:26px 0 0}
+.masthead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:14px}
+.wordmark{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.wordmark .dot{color:var(--accent)}
+.masthead nav{font-size:13px;font-weight:600}
+.masthead nav a{color:var(--ink-soft);text-decoration:none;margin-left:18px}
+.masthead nav a:hover{color:var(--accent)}
+article{padding:34px 0 10px}
+.crumbs{font-size:13px;color:var(--ink-soft);margin-bottom:22px}
+.crumbs a{color:var(--ink-soft);text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;font-size:clamp(30px,4.6vw,44px);line-height:1.1;margin-bottom:14px}
+.byline{font-size:14px;color:var(--ink-soft);margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.byline b{color:var(--ink);font-weight:600}
+article h2{font-family:var(--serif);font-weight:600;font-size:26px;letter-spacing:-.01em;margin:38px 0 12px;line-height:1.2}
+article h3{font-size:18px;font-weight:700;margin:24px 0 8px}
+article p{margin:0 0 16px}
+article p a,article li a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+article ul,article ol{margin:0 0 18px;padding-left:22px}
+article li{margin:0 0 8px}
+strong{font-weight:700}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:var(--paper-deep);border:1px solid var(--line);border-radius:5px;padding:1px 5px;overflow-wrap:anywhere}
+.tbl-wrap{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--paper-deep);font-weight:700;font-size:13px}
+tr:last-child td{border-bottom:none}
+.answer{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:20px 22px;margin:0 0 26px;font-size:18px}
+.answer p{margin:0 0 10px}
+.answer p:last-child{margin:0}
+.answer .big{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);line-height:1.4}
+.toc{background:var(--paper-deep);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin:0 0 30px;font-size:14px}
+.toc b{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:8px}
+.toc a{color:var(--ink);text-decoration:none;display:inline}
+.toc a:hover{color:var(--accent)}
+.toc ol{margin:0;padding-left:18px}
+.toc li{margin:0 0 4px}
+.note{background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:var(--radius);padding:16px 20px;margin:0 0 24px;font-size:15px}
+.note b{color:var(--accent-deep)}
+.faq{margin-top:10px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer;font-size:17px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";color:var(--accent);font-weight:700;margin-right:10px}
+.faq details[open] summary::before{content:"\2013"}
+.faq details p{margin:12px 0 0;color:var(--ink-soft)}
+.cta{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:26px 26px;margin:36px 0 10px;text-align:center}
+.cta h2{font-family:var(--serif);color:var(--paper);margin:0 0 8px;font-size:24px}
+.cta p{color:#cfc7b8;margin:0 0 16px;font-size:15px}
+.cta a.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:999px;font-size:15px}
+.cta a.btn:hover{background:var(--accent-deep)}
+footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
+.foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-left{max-width:420px}
+.foot-left p{font-size:13px;color:var(--ink-soft);margin-top:8px}
+.foot-links{display:flex;flex-direction:column;gap:8px;font-size:13px;text-align:right}
+.foot-links a{color:var(--accent);text-decoration:none;font-weight:600}
+.foot-note{font-size:12px;color:var(--ink-soft);margin-top:20px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="masthead">
+    <a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+    <nav>
+      <a href="../../">The tool</a>
+      <a href="../">Guides</a>
+      <a href="../../#faq">FAQ</a>
+      <a href="../../#support" style="color:var(--accent)">&#9829; Tip</a>
+    </nav>
+  </div>
+</header>
+<article class="wrap">
+  <div class="crumbs"><a href="../../">Home</a> / <a href="../">Guides</a> / QR code for WhatsApp</div>
+  <div class="eyebrow">WhatsApp &amp; chat</div>
+  <h1>How to Make a QR Code for WhatsApp</h1>
+  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated July 2026.</div>
+  <div class="answer"><p class="big">Make a static QR code that opens a WhatsApp chat straight to your number, with an optional message already typed in. It uses WhatsApp's own wa.me link, works with any WhatsApp number (no Business app required), and because the code is static it never expires. Free, no account.</p></div>
+  <div class="toc"><b>What's here</b><ol><li><a href="#make-it">Make it (WhatsApp tab, 2 minutes)</a></li><li><a href="#number-format">The number format that trips people up</a></li><li><a href="#prefilled">Add a pre-filled message</a></li><li><a href="#where">Where to put it</a></li><li><a href="#never-expires">Why it never expires</a></li></ol></div>
+
+  <h2 id="make-it">Make it (WhatsApp tab, 2 minutes)</h2>
+<p>A WhatsApp QR code is not a special format. It is just a link. Specifically it is <code>https://wa.me/&lt;countrycode&gt;&lt;number&gt;</code>, and when someone scans it, their phone opens a WhatsApp chat pointed straight at that number. That is the whole trick.</p>
+<p>Here is how to build one in the tool:</p>
+<ol>
+<li><strong>Open the WhatsApp tab.</strong> Go to <a href="../../">QR Codes Made Easy</a> and pick the WhatsApp input tab.</li>
+<li><strong>Choose your country</strong> from the dropdown.</li>
+<li><strong>Type your phone number</strong> (the local part, in a second I will tell you exactly how).</li>
+<li><strong>Add an optional message</strong> so the chat opens with your text already waiting.</li>
+<li><strong>Style it, then download or embed.</strong> Save a PNG up to 4000px or a true vector SVG, or hit "Copy code for your website" to grab a self-contained embed snippet.</li>
+</ol>
+<p>That is the entire process. No sign-up, nothing uploaded off your device, and the finished code carries the wa.me link baked right into the pattern. Using a different messenger? The same trick works for other chat apps, and I have a matching <a href="../qr-code-for-telegram/">Telegram version</a>.</p>
+
+<h2 id="number-format">The number format that trips people up</h2>
+<p>This is where most WhatsApp codes go wrong, so read this part twice.</p>
+<p>The number has to be in full international format, digits only. No plus sign. No leading zero. No spaces, no dashes, no brackets.</p>
+<p>Take a UK mobile written the normal way as 07123 456789. On a WhatsApp link it becomes <code>447123456789</code>. The 44 is the country code, the leading 0 gets dropped, and every space disappears.</p>
+<p>The good news is you do not type the country code yourself. You pick your country from the dropdown and the tool adds the code for you, so you only enter the local number without the leading zero. Get it right once and you never think about it again.</p>
+
+<h2 id="prefilled">Add a pre-filled message</h2>
+<p>You can pre-load the first message so the customer does not have to think of what to say. They scan, WhatsApp opens with your text already sitting in the box, and all they do is press send.</p>
+<p>Type something like "Hi, I would like to book a table" or "Hi, I saw your flyer and want to order." It shows up in their chat ready to go. This is quietly the best part of a WhatsApp code, because the hardest moment for a customer is the blank message box. Fill it in for them and more people actually hit send.</p>
+<p>Good fits: table bookings, takeaway orders, quote requests, and support questions. Keep the message short and specific to whatever you want them to do next.</p>
+
+<h2 id="where">Where to put it</h2>
+<p>A WhatsApp code earns its keep anywhere a person has a phone in hand and a question they would rather text than say out loud.</p>
+<ul>
+<li><strong>Table tents and menus</strong>, for bookings or orders while they are sitting there.</li>
+<li><strong>Windows and doors</strong>, so people can message you even when you are closed.</li>
+<li><strong>Flyers, posters, and business cards.</strong></li>
+<li><strong>Packaging and delivery inserts</strong>, for support without a phone tree.</li>
+<li><strong>Your website.</strong> The "Copy code for your website" button gives you a self-contained embed snippet you paste straight in. I wrote a fuller <a href="../qr-code-on-your-website/">walkthrough on putting a QR code on your website</a> if you want the details.</li>
+</ul>
+<p>You do not need the WhatsApp Business app for any of this. It works with a normal personal WhatsApp account or WhatsApp Business, whichever one you already have on your phone.</p>
+
+<h2 id="never-expires">Why it never expires</h2>
+<p>Here is the part that annoys me on your behalf. Plenty of vendors will sell you a "WhatsApp QR code" that routes through their server. You scan it, it hits their redirect, and then it forwards you on to WhatsApp. That works right up until the subscription lapses, and then the code printed on your menu points at nothing.</p>
+<p>This tool does not do that. It encodes the wa.me link directly into the black and white pattern. There is no server in the middle, nothing to renew, and no company that has to stay in business for your code to keep working. Scan it in three years and it still opens the same chat. That is what static means, and it is the reason your code <a href="../do-qr-codes-expire/">never expires</a>.</p>
+<div class="note"><b>Test-scan before you print.</b> The code opens a chat to <strong>your</strong> number, so double-check the digits and scan it with your own phone before anything goes to the printer. If the number is wrong you would have to reprint, because a static code cannot be edited after the fact. One test scan now saves a reprint later. And print it large enough to actually read; I put the numbers in the <a href="../how-big-should-a-qr-code-be-for-print/">print size guide</a>.</div>
+
+  <h2 id="faq">FAQ</h2>
+  <div class="faq"><details><summary>How do I make a WhatsApp QR code for free?</summary><p>Open the WhatsApp tab, pick your country, enter your number, optionally add a message, then download the code. It is free, with no account and nothing uploaded off your device.</p></details><details><summary>What number format does a WhatsApp QR code use?</summary><p>Full international number, digits only, with no plus sign, no leading zero, and no spaces. The country picker adds the country code for you, so you just enter the local number.</p></details><details><summary>Can I add a pre-filled message?</summary><p>Yes. Type it in and it loads into the chat when the code is scanned, so the customer just presses send.</p></details><details><summary>Do I need the WhatsApp Business app?</summary><p>No. It works with any WhatsApp number, whether that is a personal account or WhatsApp Business.</p></details><details><summary>Does a WhatsApp QR code expire?</summary><p>Not this one. It encodes WhatsApp's own wa.me link directly into the pattern, so there is no server in the middle that can lapse and switch it off.</p></details><details><summary>Will it work in print?</summary><p>Yes. Download a high-resolution PNG or the SVG and print it at a readable size with the quiet-zone margin intact.</p></details></div>
+  <div class="cta">
+    <h2>Make a WhatsApp code</h2>
+    <p>A static chat code that opens straight to your number, carries your first message, and never expires. Free, in your browser, no account.</p>
+    <a class="btn" href="../../">Build your QR code</a>
+  </div>
+</article>
+<footer>
+<div class="wrap foot-grid">
+<div class="foot-left">
+<a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+<p>Codes generated in your browser. They never expire. We never see your data. Built to make a point, free to keep it honest.</p>
+</div>
+<div class="foot-links">
+<a href="../">All guides</a>
+<a href="https://www.paypal.com/paypalme/aboundlessworld" target="_blank" rel="noopener">&#9829; Tip the developer</a>
+<span style="font-weight:600;color:var(--ink-soft)">Built by Bud Hennekes</span>
+</div>
+</div>
+<div class="wrap foot-note">No cookies, no ad trackers, no accounts. Just a QR code that works.</div>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Make a QR Code for WhatsApp (Free, No App Needed)", "description": "Make a free QR code that opens a WhatsApp chat with your business, with an optional pre-filled message. Static, never expires, built in your browser.", "datePublished": "2026-07-09", "dateModified": "2026-07-09", "author": {"@type": "Person", "name": "Bud Hennekes", "url": "https://qrcodemadeeasy.com/"}, "publisher": {"@type": "Organization", "name": "QR Codes Made Easy", "url": "https://qrcodemadeeasy.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://qrcodemadeeasy.com/guides/qr-code-for-whatsapp/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrcodemadeeasy.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://qrcodemadeeasy.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "QR code for WhatsApp", "item": "https://qrcodemadeeasy.com/guides/qr-code-for-whatsapp/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I make a WhatsApp QR code for free?", "acceptedAnswer": {"@type": "Answer", "text": "Open the WhatsApp tab, pick your country, enter your number, optionally add a message, then download the code. It is free, with no account and nothing uploaded off your device."}}, {"@type": "Question", "name": "What number format does a WhatsApp QR code use?", "acceptedAnswer": {"@type": "Answer", "text": "Full international number, digits only, with no plus sign, no leading zero, and no spaces. The country picker adds the country code for you, so you just enter the local number."}}, {"@type": "Question", "name": "Can I add a pre-filled message?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Type it in and it loads into the chat when the code is scanned, so the customer just presses send."}}, {"@type": "Question", "name": "Do I need the WhatsApp Business app?", "acceptedAnswer": {"@type": "Answer", "text": "No. It works with any WhatsApp number, whether that is a personal account or WhatsApp Business."}}, {"@type": "Question", "name": "Does a WhatsApp QR code expire?", "acceptedAnswer": {"@type": "Answer", "text": "Not this one. It encodes WhatsApp's own wa.me link directly into the pattern, so there is no server in the middle that can lapse and switch it off."}}, {"@type": "Question", "name": "Will it work in print?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Download a high-resolution PNG or the SVG and print it at a readable size with the quiet-zone margin intact."}}]}</script>
+<!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
+</body>
+</html>

@@ -62,7 +62,14 @@ header{padding:26px 0 0}
 .masthead nav a:hover{color:var(--accent)}
 
 /* ---------- hero ---------- */
-.hero{padding:54px 0 34px;text-align:left;max-width:720px}
+.hero{position:relative;padding:54px 0 34px;text-align:left;max-width:720px}
+.hero::before{
+  content:"";position:absolute;z-index:0;top:-46px;left:0;right:0;height:320px;pointer-events:none;
+  background:radial-gradient(62% 92% at 74% 32%, rgba(12,148,99,.17), rgba(12,148,99,0) 70%);
+}
+.hero-deco{position:absolute;z-index:1;top:4px;right:0;width:128px;height:128px;color:var(--accent);opacity:.14;pointer-events:none}
+.hero-deco svg{width:100%;height:100%;display:block}
+.hero h1,.hero p,.hero .badges{position:relative;z-index:2}
 .hero h1{
   font-family:var(--serif);font-weight:600;letter-spacing:-.02em;
   font-size:clamp(34px,5.2vw,54px);line-height:1.08;
@@ -79,6 +86,8 @@ header{padding:26px 0 0}
   border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 12px;color:var(--ink-soft);
 }
 .badge b{color:var(--ok);font-weight:700}
+.badge.badge-solid{background:var(--accent);border-color:var(--accent);color:#fff}
+@media (max-width:600px){.hero-deco{display:none}}
 
 /* ---------- tool ---------- */
 .tool{
@@ -101,17 +110,17 @@ header{padding:26px 0 0}
 .control-group{margin-bottom:26px}
 .control-group:last-child{margin-bottom:0}
 
-input[type="url"], input[type="tel"], input.wa-message, #wa-country{
+input[type="url"], input[type="tel"], input.wa-message, #tg-input, .cc-select{
   width:100%;font-family:var(--sans);font-size:16px;padding:13px 14px;
   border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);
   transition:border-color .15s;
 }
-input[type="url"]:focus, input[type="tel"]:focus, input.wa-message:focus, #wa-country:focus{outline:none;border-color:var(--ink)}
-#wa-country{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%235c564a' stroke-width='1.7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:34px}
+input[type="url"]:focus, input[type="tel"]:focus, input.wa-message:focus, #tg-input:focus, .cc-select:focus{outline:none;border-color:var(--ink)}
+.cc-select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%235c564a' stroke-width='1.7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:34px}
 
 /* content type tabs */
-.type-tabs{display:flex;gap:5px;background:var(--paper-deep);border:1px solid var(--line);border-radius:11px;padding:4px;margin-bottom:12px}
-.type-tab{flex:1;border:none;background:none;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink-soft);padding:10px 10px;border-radius:8px;cursor:pointer;min-height:44px;transition:background .15s,color .15s}
+.type-tabs{display:flex;flex-wrap:wrap;gap:5px;background:var(--paper-deep);border:1px solid var(--line);border-radius:11px;padding:4px;margin-bottom:12px}
+.type-tab{flex:1 1 auto;min-width:72px;border:none;background:none;font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ink-soft);padding:10px 8px;border-radius:8px;cursor:pointer;min-height:44px;transition:background .15s,color .15s;white-space:nowrap}
 .type-tab.active{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(27,25,19,.08)}
 .wa-row{display:flex;flex-direction:column;gap:8px}
 .wa-message{margin-top:8px}
@@ -208,6 +217,21 @@ select:focus{outline:none;border-color:var(--ink)}
 .transparent-row input{accent-color:var(--ink);width:15px;height:15px;cursor:pointer}
 .transparent-row label{cursor:pointer}
 
+/* embed on your site */
+.embed-box{width:100%;margin-top:10px}
+.embed-box textarea{
+  width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;line-height:1.45;
+  border:1.5px solid var(--line);border-radius:10px;padding:10px;background:var(--paper);color:var(--ink);resize:vertical;
+}
+.embed-box textarea:focus{outline:none;border-color:var(--ink)}
+.embed-actions{display:flex;align-items:center;gap:10px;margin-top:8px}
+.embed-copy{
+  border:1.5px solid var(--ink);background:var(--card);color:var(--ink);font-family:var(--sans);font-weight:700;
+  font-size:13px;padding:9px 15px;border-radius:9px;cursor:pointer;min-height:40px;flex:none;
+}
+.embed-copy:hover{background:var(--paper)}
+.embed-hint{font-size:12px;color:var(--ink-soft);line-height:1.4}
+
 /* ---------- promise strip ---------- */
 .promise{
   margin:20px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;
@@ -273,6 +297,10 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
 .print-card span{font-size:14px;color:var(--ink-soft);flex:1}
 .print-card .pc-go{font-size:13px;font-weight:600;color:var(--accent);margin-top:14px}
 .disclosure{margin-top:16px;font-size:12.5px;color:var(--ink-soft)}
+.guide-subhead{font-family:var(--serif);font-weight:600;font-size:19px;margin:26px 0 14px;color:var(--ink);letter-spacing:-.01em}
+.guide-more{margin-top:18px;font-size:14.5px;color:var(--ink-soft)}
+.guide-more a{color:var(--accent-deep);font-weight:600;text-decoration:none}
+.guide-more a:hover{text-decoration:underline}
 
 /* ---------- product / upsell ---------- */
 .product{
@@ -351,6 +379,7 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
   .support{padding:26px 20px}
   .color-field{flex-basis:100%}
   .swap-btn{flex-basis:100%;width:100%}
+  .type-tab{flex:1 1 calc(50% - 3px)}
 }
 </style>
 </head>
@@ -371,12 +400,24 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
 </header>
 
 <section class="hero wrap">
+  <div class="hero-deco" aria-hidden="true">
+    <svg viewBox="0 0 100 100" fill="none"><g fill="currentColor">
+      <rect x="4" y="4" width="26" height="26" rx="3"/><rect x="10" y="10" width="14" height="14" rx="2" fill="var(--paper)"/><rect x="14" y="14" width="6" height="6" rx="1"/>
+      <rect x="70" y="4" width="26" height="26" rx="3"/><rect x="76" y="10" width="14" height="14" rx="2" fill="var(--paper)"/><rect x="80" y="14" width="6" height="6" rx="1"/>
+      <rect x="4" y="70" width="26" height="26" rx="3"/><rect x="10" y="76" width="14" height="14" rx="2" fill="var(--paper)"/><rect x="14" y="80" width="6" height="6" rx="1"/>
+      <rect x="40" y="8" width="6" height="6"/><rect x="52" y="8" width="6" height="6"/><rect x="40" y="20" width="6" height="6"/><rect x="60" y="20" width="6" height="6"/>
+      <rect x="8" y="40" width="6" height="6"/><rect x="20" y="40" width="6" height="6"/><rect x="40" y="40" width="6" height="6"/><rect x="52" y="40" width="6" height="6"/><rect x="64" y="40" width="6" height="6"/><rect x="82" y="40" width="6" height="6"/>
+      <rect x="40" y="52" width="6" height="6"/><rect x="72" y="52" width="6" height="6"/><rect x="90" y="52" width="6" height="6"/>
+      <rect x="52" y="64" width="6" height="6"/><rect x="64" y="64" width="6" height="6"/><rect x="82" y="64" width="6" height="6"/>
+      <rect x="40" y="76" width="6" height="6"/><rect x="70" y="76" width="6" height="6"/><rect x="52" y="82" width="6" height="6"/><rect x="88" y="82" width="6" height="6"/><rect x="64" y="88" width="6" height="6"/>
+    </g></svg>
+  </div>
   <h1>A QR code that <em>never expires</em> and matches your <span class="sr-only">brand</span><span class="rotator" id="rotator" aria-hidden="true"><span class="rotator-word" id="rotator-word">brand</span></span>.</h1>
-  <p>Free. No account, no subscription, no tracking. Your code is generated right here in your browser and the destination is baked in permanently. Print it with confidence.</p>
+  <p>Free, no account, no tracking. The link is baked into the pattern, so you print it once and it works for good.</p>
   <div class="badges">
     <span class="badge"><b>●</b>&nbsp; Runs in your browser</span>
     <span class="badge"><b>●</b>&nbsp; Nothing uploaded, ever</span>
-    <span class="badge"><b>●</b>&nbsp; No expiration, by design</span>
+    <span class="badge badge-solid">✓&nbsp; No expiration, by design</span>
   </div>
 </section>
 
@@ -388,18 +429,32 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
         <span class="field-label"><span class="step-num">1</span>What should it open?</span>
         <div class="type-tabs" id="type-tabs">
           <button class="type-tab active" data-type="link" type="button">Website link</button>
-          <button class="type-tab" data-type="whatsapp" type="button">WhatsApp chat</button>
+          <button class="type-tab" data-type="whatsapp" type="button">WhatsApp</button>
+          <button class="type-tab" data-type="telegram" type="button">Telegram</button>
+          <button class="type-tab" data-type="imessage" type="button">iMessage</button>
         </div>
         <div id="pane-link">
           <input type="url" id="url-input" placeholder="https://yourbrand.com" value="" autocomplete="off" spellcheck="false">
         </div>
         <div id="pane-whatsapp" hidden>
           <div class="wa-row">
-            <select id="wa-country" aria-label="Country"></select>
+            <select id="wa-country" class="cc-select" aria-label="Country"></select>
             <input type="tel" id="wa-number" placeholder="Phone number" inputmode="numeric" autocomplete="off" spellcheck="false">
           </div>
           <input type="text" id="wa-message" class="wa-message" placeholder="Pre-filled message (optional)" autocomplete="off" maxlength="300">
-          <p class="hint">Scanning opens a WhatsApp chat with your number. I build the <b>wa.me</b> link for you.</p>
+          <p class="hint">Scanning opens a WhatsApp chat with your number. I build the <b>wa.me</b> link for you. <a href="guides/qr-code-for-whatsapp/" style="color:var(--accent-deep);font-weight:600">WhatsApp guide →</a></p>
+        </div>
+        <div id="pane-telegram" hidden>
+          <input type="text" id="tg-input" placeholder="@username or phone number" autocomplete="off" spellcheck="false">
+          <p class="hint">Scanning opens your Telegram chat. Use your public <b>@username</b>, or a phone number with country code. Telegram can't pre-fill a message, so this one is just the handle. <a href="guides/qr-code-for-telegram/" style="color:var(--accent-deep);font-weight:600">Telegram guide →</a></p>
+        </div>
+        <div id="pane-imessage" hidden>
+          <div class="wa-row">
+            <select id="im-country" class="cc-select" aria-label="Country"></select>
+            <input type="tel" id="im-number" placeholder="Phone number" inputmode="numeric" autocomplete="off" spellcheck="false">
+          </div>
+          <input type="text" id="im-message" class="wa-message" placeholder="Pre-filled message (optional)" autocomplete="off" maxlength="300">
+          <p class="hint">Opens a text to your number: blue <b>iMessage</b> between Apple devices, a normal SMS everywhere else. <a href="guides/qr-code-for-imessage/" style="color:var(--accent-deep);font-weight:600">iMessage guide →</a></p>
         </div>
       </div>
 
@@ -485,6 +540,14 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
           <label for="transparent-bg">Transparent background</label>
         </div>
         <p class="dl-note" id="dl-note" aria-live="polite"></p>
+        <button class="btn btn-secondary" id="embed-btn" type="button" style="margin-top:14px">&lt;/&gt;&nbsp; Copy code for your website</button>
+        <div class="embed-box" id="embed-box" hidden>
+          <textarea id="embed-code" readonly rows="4" aria-label="Website embed code" spellcheck="false"></textarea>
+          <div class="embed-actions">
+            <button class="embed-copy" id="embed-copy" type="button">Copy</button>
+            <span class="embed-hint" id="embed-hint">Paste into any website. The code is built into the snippet, nothing to host.</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -660,7 +723,49 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
 <section class="edu wrap" id="learn" style="padding-top:56px">
   <p class="kicker">Learn</p>
   <h2>Guides for codes that actually scan.</h2>
-  <p style="max-width:640px">Short, plain-English how-tos on the things that trip people up when a code has to work in print.</p>
+  <p style="max-width:640px">Short, plain-English how-tos: making a code for a specific job, and the fundamentals that keep it scanning once it's printed.</p>
+
+  <h3 class="guide-subhead">Make a code for…</h3>
+  <div class="print-cards">
+    <a class="print-card" href="guides/qr-code-for-a-restaurant-menu/">
+      <span class="pc-ico">🍽️</span>
+      <b>A restaurant menu</b>
+      <span>Point it at a page you control, update prices anytime, and never reprint the table tent.</span>
+      <span class="pc-go">Read the guide →</span>
+    </a>
+    <a class="print-card" href="guides/qr-code-for-whatsapp/">
+      <span class="pc-ico">💬</span>
+      <b>A WhatsApp chat</b>
+      <span>Opens a chat straight to your number, with an optional message already typed in.</span>
+      <span class="pc-go">Read the guide →</span>
+    </a>
+    <a class="print-card" href="guides/qr-code-on-your-website/">
+      <span class="pc-ico">🖥️</span>
+      <b>Your website</b>
+      <span>Copy a self-contained snippet and paste it in. Nothing to host, nothing that expires.</span>
+      <span class="pc-go">Read the guide →</span>
+    </a>
+    <a class="print-card" href="guides/qr-code-for-a-business-card/">
+      <span class="pc-ico">💼</span>
+      <b>A business card</b>
+      <span>What to link, the right size for a close-up scan, and how to survive a job change.</span>
+      <span class="pc-go">Read the guide →</span>
+    </a>
+    <a class="print-card" href="guides/qr-code-for-telegram/">
+      <span class="pc-ico">✈️</span>
+      <b>Telegram</b>
+      <span>Open your chat, channel, or group from a public @username or a phone number.</span>
+      <span class="pc-go">Read the guide →</span>
+    </a>
+    <a class="print-card" href="guides/qr-code-for-imessage/">
+      <span class="pc-ico">📱</span>
+      <b>iMessage or a text</b>
+      <span>Opens a text to your number. Blue iMessage on Apple, a normal SMS everywhere else.</span>
+      <span class="pc-go">Read the guide →</span>
+    </a>
+  </div>
+
+  <h3 class="guide-subhead">The fundamentals</h3>
   <div class="print-cards">
     <a class="print-card" href="guides/how-big-should-a-qr-code-be-for-print/">
       <span class="pc-ico">📐</span>
@@ -674,13 +779,14 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
       <span>The real reasons a code fails, top to bottom, with the exact fix for each one.</span>
       <span class="pc-go">Read the guide →</span>
     </a>
-    <a class="print-card" href="guides/">
-      <span class="pc-ico">📚</span>
-      <b>All guides</b>
-      <span>Print sizing, logos, static versus dynamic, and tracking without a subscription.</span>
-      <span class="pc-go">Browse guides →</span>
+    <a class="print-card" href="guides/do-qr-codes-expire/">
+      <span class="pc-ico">♾️</span>
+      <b>Do QR codes expire?</b>
+      <span>Static codes never do. Dynamic ones die the day the subscription behind them lapses.</span>
+      <span class="pc-go">Read the guide →</span>
     </a>
   </div>
+  <p class="guide-more"><a href="guides/qr-code-logo-size/">Adding a logo</a> &nbsp;·&nbsp; <a href="guides/track-qr-code-scans-without-subscription/">Track scans for free</a> &nbsp;·&nbsp; <a href="guides/">Browse all 11 guides →</a></p>
 </section>
 
 <section class="wrap" style="padding-top:56px">
@@ -718,11 +824,15 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
   var DEMO_TEXT = "https://qrcodemadeeasy.com/scanned/";
 
   var state = {
-    type: "link",        // "link" | "whatsapp"
+    type: "link",        // "link" | "whatsapp" | "telegram" | "imessage"
     url: "",
     waCode: "1",         // country dial code (US default)
     waNumber: "",
     waMessage: "",
+    tg: "",              // telegram @username or phone
+    imCode: "1",         // imessage country dial code
+    imNumber: "",
+    imMessage: "",
     preset: "classic",
     fg: "#1b1913",
     bg: "#ffffff",
@@ -745,6 +855,25 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
       var u = "https://wa.me/" + digits;
       if (state.waMessage.trim()) u += "?text=" + encodeURIComponent(state.waMessage.trim());
       return u;
+    }
+    if (state.type === "telegram"){
+      var v = (state.tg || "").trim().replace(/^@/, "");
+      if (!v) return "";
+      if (/^\+?[\d\s\-()]+$/.test(v)){                 // looks like a phone number
+        var d = v.replace(/\D/g, "");
+        return d.length < 6 ? "" : "https://t.me/+" + d;
+      }
+      var handle = v.replace(/[^A-Za-z0-9_]/g, "");    // username: letters, digits, underscore
+      return handle.length < 3 ? "" : "https://t.me/" + handle;
+    }
+    if (state.type === "imessage"){
+      var imDigits = (state.imCode + state.imNumber).replace(/\D/g, "");
+      if (imDigits.length < 6) return "";
+      // sms: opens Messages (iMessage on Apple-to-Apple, SMS otherwise). "?&body=" is the
+      // combo that pre-fills the text on both iOS and Android parsers.
+      var s = "sms:+" + imDigits;
+      if (state.imMessage.trim()) s += "?&body=" + encodeURIComponent(state.imMessage.trim());
+      return s;
     }
     return state.url;
   }
@@ -787,6 +916,9 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
   function refresh(){
     qr.update(buildOptions(PREVIEW_SIZE, false));
     checkContrast();
+    // any change makes a shown embed snippet stale, so collapse it until they ask again
+    var eb = document.getElementById("embed-box");
+    if (eb && !eb.hidden) eb.hidden = true;
   }
 
   /* ---------- contrast guard ---------- */
@@ -850,8 +982,7 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
     ["ZA","South Africa","27","🇿🇦"],["KE","Kenya","254","🇰🇪"],["GH","Ghana","233","🇬🇭"],
     ["MA","Morocco","212","🇲🇦"],["NZ","New Zealand","64","🇳🇿"]
   ];
-  (function(){
-    var sel = document.getElementById("wa-country");
+  function fillCountries(sel){
     COUNTRIES.forEach(function(c){
       var o = document.createElement("option");
       o.value = c[0]; o.setAttribute("data-dial", c[2]);
@@ -859,15 +990,17 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
       if (c[0] === "US") o.selected = true;
       sel.appendChild(o);
     });
-  })();
+  }
+  fillCountries(document.getElementById("wa-country"));
+  fillCountries(document.getElementById("im-country"));
 
+  var PANES = ["link","whatsapp","telegram","imessage"];
   document.querySelectorAll(".type-tab").forEach(function(tab){
     tab.addEventListener("click", function(){
       document.querySelectorAll(".type-tab").forEach(function(t){ t.classList.remove("active"); });
       tab.classList.add("active");
       state.type = tab.dataset.type;
-      document.getElementById("pane-link").hidden = (state.type !== "link");
-      document.getElementById("pane-whatsapp").hidden = (state.type !== "whatsapp");
+      PANES.forEach(function(t){ document.getElementById("pane-" + t).hidden = (state.type !== t); });
       refresh();
     });
   });
@@ -877,6 +1010,14 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
   });
   document.getElementById("wa-number").addEventListener("input", function(e){ state.waNumber = e.target.value; refresh(); });
   document.getElementById("wa-message").addEventListener("input", function(e){ state.waMessage = e.target.value; refresh(); });
+
+  document.getElementById("tg-input").addEventListener("input", function(e){ state.tg = e.target.value; refresh(); });
+  document.getElementById("im-country").addEventListener("change", function(e){
+    state.imCode = e.target.selectedOptions[0].getAttribute("data-dial");
+    refresh();
+  });
+  document.getElementById("im-number").addEventListener("input", function(e){ state.imNumber = e.target.value; refresh(); });
+  document.getElementById("im-message").addEventListener("input", function(e){ state.imMessage = e.target.value; refresh(); });
 
   document.querySelectorAll(".preset").forEach(function(btn){
     btn.addEventListener("click", function(){
@@ -970,6 +1111,8 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
   /* ---------- downloads ---------- */
   function fileName(){
     if (state.type === "whatsapp") return "qr-whatsapp";
+    if (state.type === "telegram") return "qr-telegram";
+    if (state.type === "imessage") return "qr-text";
     var host = "qr-code";
     try { if (state.url) host = new URL(state.url).hostname.replace(/^www\./,"").replace(/\./g,"-"); } catch(e){}
     return "qr-" + host;
@@ -997,6 +1140,76 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
     var dl = new QRCodeStyling(opts);
     dl.download({ name: fileName(), extension: "svg" });
     showSaved();
+  });
+
+  /* ---------- embed on your website ---------- */
+  // A self-contained snippet: the QR is an SVG baked into a data URI, so there is
+  // no image file to host anywhere. It stays true to the "nothing on a server" promise.
+  function altText(){
+    if (state.type === "whatsapp") return "QR code to start a WhatsApp chat";
+    if (state.type === "telegram") return "QR code to open a Telegram chat";
+    if (state.type === "imessage") return "QR code to send a text message";
+    var host = "our website";
+    try { if (state.url) host = new URL(state.url).hostname.replace(/^www\./,""); } catch(e){}
+    return "QR code linking to " + host;
+  }
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  function buildEmbed(cb){
+    var data = currentData();
+    if (!data){ cb(null); return; }
+    var opts = buildOptions(320, true);
+    opts.type = "svg";
+    var g = new QRCodeStyling(opts);
+    g.getRawData("svg").then(function(blob){
+      if (!blob){ cb(null); return; }
+      var reader = new FileReader();
+      reader.onload = function(){
+        var uri = reader.result; // data:image/svg+xml;base64,....
+        var img = '<img src="' + uri + '" alt="' + esc(altText()) +
+                  '" width="180" height="180" style="width:180px;height:auto;max-width:100%">';
+        cb('<a href="' + esc(data) + '" style="display:inline-block;line-height:0">' + img + '</a>');
+      };
+      reader.readAsDataURL(blob);
+    }).catch(function(){ cb(null); });
+  }
+
+  var embedBox  = document.getElementById("embed-box");
+  var embedCode = document.getElementById("embed-code");
+  var embedHint = document.getElementById("embed-hint");
+  var DEFAULT_EMBED_HINT = embedHint.textContent;
+
+  function flashHint(msg){
+    embedHint.textContent = msg;
+    clearTimeout(flashHint._t);
+    flashHint._t = setTimeout(function(){ embedHint.textContent = DEFAULT_EMBED_HINT; }, 2600);
+  }
+  function copyText(text){
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ flashHint("Copied to your clipboard."); }, selectFallback);
+    } else { selectFallback(); }
+  }
+  function selectFallback(){
+    embedCode.focus(); embedCode.select();
+    try { document.execCommand("copy"); flashHint("Copied to your clipboard."); }
+    catch(e){ flashHint("Press " + (/Mac/.test(navigator.platform) ? "Cmd" : "Ctrl") + "+C to copy."); }
+  }
+
+  document.getElementById("embed-btn").addEventListener("click", function(){
+    buildEmbed(function(html){
+      embedBox.hidden = false;
+      if (!html){
+        embedCode.value = "";
+        embedHint.textContent = "Add your link or number first, then copy your embed code.";
+        return;
+      }
+      embedCode.value = html;
+      embedHint.textContent = DEFAULT_EMBED_HINT;
+      copyText(html);
+    });
+  });
+  document.getElementById("embed-copy").addEventListener("click", function(){
+    if (embedCode.value) copyText(embedCode.value);
   });
 
   checkContrast();

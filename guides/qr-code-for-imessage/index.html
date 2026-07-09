@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Make a QR Code for iMessage and Text Messages</title>
+<meta name="description" content="Make a free QR code that opens a text to your number, with an optional pre-typed message. Blue iMessage on Apple devices, SMS everywhere else. Static, never expires.">
+<link rel="canonical" href="https://qrcodemadeeasy.com/guides/qr-code-for-imessage/">
+<meta name="author" content="Bud Hennekes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Make a QR Code for iMessage and Text Messages">
+<meta property="og:description" content="Make a free QR code that opens a text to your number, with an optional pre-typed message. Blue iMessage on Apple devices, SMS everywhere else. Static, never expires.">
+<meta property="og:url" content="https://qrcodemadeeasy.com/guides/qr-code-for-imessage/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf6ef; --paper-deep:#f3ecdf; --ink:#1b1913; --ink-soft:#5c564a;
+  --line:#e0d7c5; --accent:#0c9463; --accent-deep:#0a7850; --ok:#2e6e4e;
+  --warn-bg:#fdf0e3; --warn-border:#e8b07a; --card:#ffffff; --radius:14px;
+  --serif:"Fraunces",Georgia,serif; --sans:"Public Sans",-apple-system,"Helvetica Neue",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:radial-gradient(rgba(27,25,19,.035) 1px,transparent 1px);background-size:5px 5px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+header{padding:26px 0 0}
+.masthead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:14px}
+.wordmark{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.wordmark .dot{color:var(--accent)}
+.masthead nav{font-size:13px;font-weight:600}
+.masthead nav a{color:var(--ink-soft);text-decoration:none;margin-left:18px}
+.masthead nav a:hover{color:var(--accent)}
+article{padding:34px 0 10px}
+.crumbs{font-size:13px;color:var(--ink-soft);margin-bottom:22px}
+.crumbs a{color:var(--ink-soft);text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;font-size:clamp(30px,4.6vw,44px);line-height:1.1;margin-bottom:14px}
+.byline{font-size:14px;color:var(--ink-soft);margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.byline b{color:var(--ink);font-weight:600}
+article h2{font-family:var(--serif);font-weight:600;font-size:26px;letter-spacing:-.01em;margin:38px 0 12px;line-height:1.2}
+article h3{font-size:18px;font-weight:700;margin:24px 0 8px}
+article p{margin:0 0 16px}
+article p a,article li a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+article ul,article ol{margin:0 0 18px;padding-left:22px}
+article li{margin:0 0 8px}
+strong{font-weight:700}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:var(--paper-deep);border:1px solid var(--line);border-radius:5px;padding:1px 5px;overflow-wrap:anywhere}
+.tbl-wrap{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--paper-deep);font-weight:700;font-size:13px}
+tr:last-child td{border-bottom:none}
+.answer{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:20px 22px;margin:0 0 26px;font-size:18px}
+.answer p{margin:0 0 10px}
+.answer p:last-child{margin:0}
+.answer .big{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);line-height:1.4}
+.toc{background:var(--paper-deep);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin:0 0 30px;font-size:14px}
+.toc b{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:8px}
+.toc a{color:var(--ink);text-decoration:none;display:inline}
+.toc a:hover{color:var(--accent)}
+.toc ol{margin:0;padding-left:18px}
+.toc li{margin:0 0 4px}
+.note{background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:var(--radius);padding:16px 20px;margin:0 0 24px;font-size:15px}
+.note b{color:var(--accent-deep)}
+.faq{margin-top:10px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer;font-size:17px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";color:var(--accent);font-weight:700;margin-right:10px}
+.faq details[open] summary::before{content:"\2013"}
+.faq details p{margin:12px 0 0;color:var(--ink-soft)}
+.cta{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:26px 26px;margin:36px 0 10px;text-align:center}
+.cta h2{font-family:var(--serif);color:var(--paper);margin:0 0 8px;font-size:24px}
+.cta p{color:#cfc7b8;margin:0 0 16px;font-size:15px}
+.cta a.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:999px;font-size:15px}
+.cta a.btn:hover{background:var(--accent-deep)}
+footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
+.foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-left{max-width:420px}
+.foot-left p{font-size:13px;color:var(--ink-soft);margin-top:8px}
+.foot-links{display:flex;flex-direction:column;gap:8px;font-size:13px;text-align:right}
+.foot-links a{color:var(--accent);text-decoration:none;font-weight:600}
+.foot-note{font-size:12px;color:var(--ink-soft);margin-top:20px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="masthead">
+    <a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+    <nav>
+      <a href="../../">The tool</a>
+      <a href="../">Guides</a>
+      <a href="../../#faq">FAQ</a>
+      <a href="../../#support" style="color:var(--accent)">&#9829; Tip</a>
+    </nav>
+  </div>
+</header>
+<article class="wrap">
+  <div class="crumbs"><a href="../../">Home</a> / <a href="../">Guides</a> / QR code for iMessage</div>
+  <div class="eyebrow">iMessage &amp; texting</div>
+  <h1>How to Make a QR Code for iMessage and Texts</h1>
+  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated July 2026.</div>
+  <div class="answer"><p class="big">Make a static QR code that opens a new text message to your number, with an optional message already typed. On Apple devices it opens as a blue iMessage; on everything else it is a normal SMS. There is no iMessage-only code (Apple does not offer one), so this uses the standard text-message link, and it never expires. Free, no account.</p></div>
+  <div class="toc"><b>What's here</b><ol><li><a href="#make-it">Make it (the iMessage tab)</a></li><li><a href="#imessage-vs-text">iMessage vs a plain text, the honest version</a></li><li><a href="#pretyped">Add a pre-typed message</a></li><li><a href="#where">Where to put it</a></li><li><a href="#never-expires">Why it never expires</a></li></ol></div>
+
+  <h2 id="make-it">Make it (the iMessage tab)</h2>
+<p>A text-message QR code encodes an <code>sms:</code> link to your number. When someone scans it, their phone opens the Messages app with your number already filled in, so all they have to do is type (or send, if you pre-loaded the text). Nothing to log into, nothing to install.</p>
+<p>Here is the whole thing, start to finish:</p>
+<ol>
+<li>Open <a href="../../">the tool</a> and click the <strong>iMessage</strong> tab.</li>
+<li>Pick your country so the number is formatted right.</li>
+<li>Enter your phone number.</li>
+<li>Add an optional message you want pre-typed (skip this if you just want a blank text to open).</li>
+<li>Style it if you like, then download the PNG or SVG, or hit <strong>Copy code for your website</strong> to grab an embed snippet.</li>
+</ol>
+<p>That is it. The code you get is static, which means the link is baked into the black and white pattern itself. It is made right in your browser, nothing gets uploaded, and there is no account.</p>
+
+<h2 id="imessage-vs-text">iMessage vs a plain text (the honest version)</h2>
+<p>Here is the part most QR tools skip. There is no Apple link that forces iMessage specifically. Apple does not publish an "open iMessage" URL, so nobody can encode one, me included.</p>
+<p>What actually happens is simpler. The standard <code>sms:</code> link opens the Messages app. From there, Apple decides the color on its own: when an Apple device texts another Apple device, the message turns blue and rides over iMessage. When an Apple device texts an Android phone, it turns green and goes as a normal SMS. The QR code does not choose blue or green. The two phones do.</p>
+<p>So the practical version: this one code works for everybody. On an iPhone texting your iPhone, it is a blue iMessage. On an Android phone, or an iPhone texting an Android, it is a regular text. It is just not iMessage-exclusive, because that option does not exist. If your audience is mixed, label the sign "text us" rather than "iMessage us" and you will never confuse anyone.</p>
+<p>If you would rather route people into a chat app that <em>does</em> have its own link, I built the same thing for <a href="../qr-code-for-whatsapp/">WhatsApp</a> and for <a href="../qr-code-for-telegram/">Telegram</a>. Those open a specific app by design. Plain texting does not, and that is fine, because everyone already has a texting app.</p>
+
+<h2 id="pretyped">Add a pre-typed message</h2>
+<p>You can pre-load the message body so the person just presses send. Type something like <code>Hi, I would like to book</code> in the message field and it rides along inside the code. When they scan, the text is already sitting in the box waiting.</p>
+<p>This is the difference between "text us" and "text us, and here is the exact thing to say." It works well for:</p>
+<ul>
+<li><strong>Bookings.</strong> Pre-fill "I'd like to book a table for" and let them finish the sentence.</li>
+<li><strong>Orders.</strong> Pre-fill "Order for pickup:" so you get a clean, sortable inbox.</li>
+<li><strong>Questions.</strong> Pre-fill "Question about" so you know why they are texting before you open it.</li>
+</ul>
+<p>Keep the pre-typed text short and let them add the specifics. A long pre-fill feels like a form.</p>
+
+<div class="note"><b>One honest caveat.</b> Whether the pre-typed message shows up depends on the person's phone and messaging app. Most fill it in without a problem. A few may open a blank message to your number instead. The number always fills in, so the worst case is they see an empty text to the right person and type it themselves. Nothing breaks either way.</div>
+
+<h2 id="where">Where to put it</h2>
+<p>A text code earns its keep anywhere a phone call would feel like too much and an app download would feel like way too much. People will text who would never call.</p>
+<ul>
+<li><strong>A sign or window decal.</strong> "Text to book" outside a salon or a barber.</li>
+<li><strong>A menu or table tent.</strong> "Text for today's specials."</li>
+<li><strong>A flyer or yard sign.</strong> "Text us with questions" beats printing a number people have to type by hand.</li>
+<li><strong>Your website.</strong> Use the <strong>Copy code for your website</strong> button to drop a self-contained snippet onto a contact page.</li>
+</ul>
+<p>The rule of thumb: the more casual the ask, the better texting does. "Text us with questions" gets answered. "Call for an appointment" gets ignored.</p>
+
+<h2 id="never-expires">Why it never expires</h2>
+<p>This code encodes the <code>sms:</code> link directly, the same way a static website code encodes a URL. There is no vendor server sitting in the middle, so there is nothing that can lapse, get switched off, or start charging you a subscription to keep working.</p>
+<p>That is the whole reason I only make static codes. A dynamic code routes every scan through a company's redirect, and the day that account stops paying, the printed code goes dead. A static text code has no middleman to die. Print it on a sign, leave it up for three years, and it still opens a text to your number. I get into the full static-versus-dynamic story in <a href="../do-qr-codes-expire/">do QR codes expire</a> if you want the details.</p>
+<p>Before every download, the tool also runs a plain-English contrast check (so a pale code on a pale background does not fail to scan) and always includes the quiet-zone margin around the pattern, which scanners need to lock on. You do not have to think about either one. Make the code, put it where people are, and it works.</p>
+
+  <h2 id="faq">FAQ</h2>
+  <div class="faq"><details><summary>How do I make a QR code for iMessage?</summary><p>Open the iMessage tab in the tool, enter your number and an optional message, then download the code. It opens a text to you. Free, no account, and it never expires.</p></details><details><summary>Is there an iMessage-only QR code?</summary><p>No. Apple does not offer an iMessage-only link, so no tool can make one. The standard text link opens the Messages app, which shows up as a blue iMessage when both phones are Apple devices, and as a green SMS otherwise.</p></details><details><summary>Will it work on Android?</summary><p>Yes. On Android the code opens the SMS app with your number already filled in, so it works for everyone. It just arrives as a normal text instead of a blue iMessage.</p></details><details><summary>Can I pre-fill the text?</summary><p>Usually yes. You can pre-type a message so the person just presses send. A few phones may open a blank message to your number instead, but the number always fills in, so the code still works.</p></details><details><summary>Does a text-message QR code expire?</summary><p>No. It encodes the sms link directly, so there is nothing in the middle that can lapse. Unlike a dynamic code that routes through a vendor's server, a static text code has no subscription to keep alive.</p></details><details><summary>What should I write on the sign?</summary><p>"Text us" is the safest wording for a mixed audience, since the code arrives as a blue iMessage on Apple devices and a green SMS everywhere else. Skip "iMessage us," which only fits part of your audience.</p></details></div>
+  <div class="cta">
+    <h2>Make a text code</h2>
+    <p>QR Codes Made Easy makes a static code that opens a text to your number, right in your browser. Free, no account, and it never expires.</p>
+    <a class="btn" href="../../">Build your QR code</a>
+  </div>
+</article>
+<footer>
+<div class="wrap foot-grid">
+<div class="foot-left">
+<a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+<p>Codes generated in your browser. They never expire. We never see your data. Built to make a point, free to keep it honest.</p>
+</div>
+<div class="foot-links">
+<a href="../">All guides</a>
+<a href="https://www.paypal.com/paypalme/aboundlessworld" target="_blank" rel="noopener">&#9829; Tip the developer</a>
+<span style="font-weight:600;color:var(--ink-soft)">Built by Bud Hennekes</span>
+</div>
+</div>
+<div class="wrap foot-note">No cookies, no ad trackers, no accounts. Just a QR code that works.</div>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Make a QR Code for iMessage and Text Messages", "description": "Make a free QR code that opens a text to your number, with an optional pre-typed message. Blue iMessage on Apple devices, SMS everywhere else. Static, never expires.", "datePublished": "2026-07-09", "dateModified": "2026-07-09", "author": {"@type": "Person", "name": "Bud Hennekes", "url": "https://qrcodemadeeasy.com/"}, "publisher": {"@type": "Organization", "name": "QR Codes Made Easy", "url": "https://qrcodemadeeasy.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://qrcodemadeeasy.com/guides/qr-code-for-imessage/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrcodemadeeasy.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://qrcodemadeeasy.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "QR code for iMessage", "item": "https://qrcodemadeeasy.com/guides/qr-code-for-imessage/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I make a QR code for iMessage?", "acceptedAnswer": {"@type": "Answer", "text": "Open the iMessage tab in the tool, enter your number and an optional message, then download the code. It opens a text to you. Free, no account, and it never expires."}}, {"@type": "Question", "name": "Is there an iMessage-only QR code?", "acceptedAnswer": {"@type": "Answer", "text": "No. Apple does not offer an iMessage-only link, so no tool can make one. The standard text link opens the Messages app, which shows up as a blue iMessage when both phones are Apple devices, and as a green SMS otherwise."}}, {"@type": "Question", "name": "Will it work on Android?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. On Android the code opens the SMS app with your number already filled in, so it works for everyone. It just arrives as a normal text instead of a blue iMessage."}}, {"@type": "Question", "name": "Can I pre-fill the text?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes. You can pre-type a message so the person just presses send. A few phones may open a blank message to your number instead, but the number always fills in, so the code still works."}}, {"@type": "Question", "name": "Does a text-message QR code expire?", "acceptedAnswer": {"@type": "Answer", "text": "No. It encodes the sms link directly, so there is nothing in the middle that can lapse. Unlike a dynamic code that routes through a vendor's server, a static text code has no subscription to keep alive."}}, {"@type": "Question", "name": "What should I write on the sign?", "acceptedAnswer": {"@type": "Answer", "text": "Text us is the safest wording for a mixed audience, since the code arrives as a blue iMessage on Apple devices and a green SMS everywhere else. Skip iMessage us, which only fits part of your audience."}}]}</script>
+<!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
+</body>
+</html>

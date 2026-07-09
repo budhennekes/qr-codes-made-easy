@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Put a QR Code on Your Website (Free, Nothing to Host)</title>
+<meta name="description" content="Add a QR code to your website in about two minutes, free, with nothing to host. Copy a self-contained snippet or drop in an SVG, and the code never expires.">
+<link rel="canonical" href="https://qrcodemadeeasy.com/guides/qr-code-on-your-website/">
+<meta name="author" content="Bud Hennekes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Put a QR Code on Your Website (Free, Nothing to Host)">
+<meta property="og:description" content="Add a QR code to your website in about two minutes, free, with nothing to host. Copy a self-contained snippet or drop in an SVG, and the code never expires.">
+<meta property="og:url" content="https://qrcodemadeeasy.com/guides/qr-code-on-your-website/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf6ef; --paper-deep:#f3ecdf; --ink:#1b1913; --ink-soft:#5c564a;
+  --line:#e0d7c5; --accent:#0c9463; --accent-deep:#0a7850; --ok:#2e6e4e;
+  --warn-bg:#fdf0e3; --warn-border:#e8b07a; --card:#ffffff; --radius:14px;
+  --serif:"Fraunces",Georgia,serif; --sans:"Public Sans",-apple-system,"Helvetica Neue",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:radial-gradient(rgba(27,25,19,.035) 1px,transparent 1px);background-size:5px 5px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+header{padding:26px 0 0}
+.masthead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:14px}
+.wordmark{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.wordmark .dot{color:var(--accent)}
+.masthead nav{font-size:13px;font-weight:600}
+.masthead nav a{color:var(--ink-soft);text-decoration:none;margin-left:18px}
+.masthead nav a:hover{color:var(--accent)}
+article{padding:34px 0 10px}
+.crumbs{font-size:13px;color:var(--ink-soft);margin-bottom:22px}
+.crumbs a{color:var(--ink-soft);text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;font-size:clamp(30px,4.6vw,44px);line-height:1.1;margin-bottom:14px}
+.byline{font-size:14px;color:var(--ink-soft);margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.byline b{color:var(--ink);font-weight:600}
+article h2{font-family:var(--serif);font-weight:600;font-size:26px;letter-spacing:-.01em;margin:38px 0 12px;line-height:1.2}
+article h3{font-size:18px;font-weight:700;margin:24px 0 8px}
+article p{margin:0 0 16px}
+article p a,article li a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+article ul,article ol{margin:0 0 18px;padding-left:22px}
+article li{margin:0 0 8px}
+strong{font-weight:700}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:var(--paper-deep);border:1px solid var(--line);border-radius:5px;padding:1px 5px;overflow-wrap:anywhere}
+.tbl-wrap{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--paper-deep);font-weight:700;font-size:13px}
+tr:last-child td{border-bottom:none}
+.answer{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:20px 22px;margin:0 0 26px;font-size:18px}
+.answer p{margin:0 0 10px}
+.answer p:last-child{margin:0}
+.answer .big{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);line-height:1.4}
+.toc{background:var(--paper-deep);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin:0 0 30px;font-size:14px}
+.toc b{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:8px}
+.toc a{color:var(--ink);text-decoration:none;display:inline}
+.toc a:hover{color:var(--accent)}
+.toc ol{margin:0;padding-left:18px}
+.toc li{margin:0 0 4px}
+.note{background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:var(--radius);padding:16px 20px;margin:0 0 24px;font-size:15px}
+.note b{color:var(--accent-deep)}
+.faq{margin-top:10px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer;font-size:17px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";color:var(--accent);font-weight:700;margin-right:10px}
+.faq details[open] summary::before{content:"\2013"}
+.faq details p{margin:12px 0 0;color:var(--ink-soft)}
+.cta{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:26px 26px;margin:36px 0 10px;text-align:center}
+.cta h2{font-family:var(--serif);color:var(--paper);margin:0 0 8px;font-size:24px}
+.cta p{color:#cfc7b8;margin:0 0 16px;font-size:15px}
+.cta a.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:999px;font-size:15px}
+.cta a.btn:hover{background:var(--accent-deep)}
+footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
+.foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-left{max-width:420px}
+.foot-left p{font-size:13px;color:var(--ink-soft);margin-top:8px}
+.foot-links{display:flex;flex-direction:column;gap:8px;font-size:13px;text-align:right}
+.foot-links a{color:var(--accent);text-decoration:none;font-weight:600}
+.foot-note{font-size:12px;color:var(--ink-soft);margin-top:20px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="masthead">
+    <a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+    <nav>
+      <a href="../../">The tool</a>
+      <a href="../">Guides</a>
+      <a href="../../#faq">FAQ</a>
+      <a href="../../#support" style="color:var(--accent)">&#9829; Tip</a>
+    </nav>
+  </div>
+</header>
+<article class="wrap">
+  <div class="crumbs"><a href="../../">Home</a> / <a href="../">Guides</a> / Put a QR code on your website</div>
+  <div class="eyebrow">Embed &amp; website</div>
+  <h1>How to Put a QR Code on Your Website</h1>
+  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated July 2026.</div>
+  <div class="answer"><p class="big">You can add a QR code to any website free in about two minutes. Build a static code, then either paste the self-contained embed snippet (the image is baked in, so there is nothing to host) or download the SVG and drop it in. Because the code is static, it never expires, no matter what happens to the tool that made it.</p></div>
+  <div class="toc"><b>What's here</b><ol><li><a href="#snippet">The fastest way: copy the embed snippet</a></li><li><a href="#snippet-vs-file">Snippet vs image file</a></li><li><a href="#builders">Add it in Squarespace, Wix, Webflow, or WordPress</a></li><li><a href="#phones">Make it work on phones (tap-or-scan)</a></li><li><a href="#permanent">Why a static code will not break your page later</a></li></ol></div>
+
+  <h2 id="snippet">The fastest way: copy the embed snippet</h2>
+<p>Here is the whole trick, and it takes about two minutes. Open the tool, pick the Website link tab, and paste in the address you want people to land on. The code draws itself as you type. When it looks right, click the button that says <strong>Copy code for your website</strong>. That copies a small block of HTML to your clipboard. Paste it into any HTML block, embed block, or custom code area on your site, and you are done.</p>
+<p>What you just pasted is a link-wrapped image with the QR pattern baked in as data. There is no separate image file sitting on a server somewhere. The picture lives inside the snippet itself. That matters more than it sounds like it should, because it means there is nothing to upload, nothing to name, nothing to keep track of, and nothing that can turn into a broken-image icon six months from now when a folder gets reorganized.</p>
+<p>If you have never made one before, start on <a href="../../">the tool</a> and build the code first. The snippet button shows up once your code is ready.</p>
+
+<h2 id="snippet-vs-file">Snippet vs image file</h2>
+<p>There are two honest ways to get a QR code onto a page. Pick based on how your site handles code.</p>
+<p><strong>Method A: paste the snippet (recommended).</strong> This is the one above. Nothing to host, because the image is inside the code as data. Best for any platform that lets you drop in raw HTML.</p>
+<p><strong>Method B: download the image and upload it.</strong> Build the code, then download it. You get a choice of formats. Use the <strong>SVG</strong> for the web, because it stays crisp at any size and never turns to mush when someone views your page on a high-resolution screen. Use PNG only if your platform refuses to accept SVG uploads (some older page builders do). Then place the file with a normal image block or an <code>&lt;img&gt;</code> tag.</p>
+<p>Short version: paste the snippet if you can, upload the SVG if you would rather have a file to manage. Both point at the exact same destination.</p>
+
+<h2 id="builders">Add it in Squarespace, Wix, Webflow, or WordPress</h2>
+<p>Every builder calls its blocks something slightly different, so here is the plain-English version for the four I get asked about most.</p>
+<ul>
+<li><strong>Squarespace.</strong> For the snippet, add a Code block and paste it in. For a file, add an Image block and upload the SVG or PNG.</li>
+<li><strong>Wix.</strong> For the snippet, use Embed, then Embed HTML (sometimes shown as a custom code widget), and paste. For a file, add an image the normal way.</li>
+<li><strong>Webflow.</strong> For the snippet, drop in an Embed element and paste. For a file, use an Image element.</li>
+<li><strong>WordPress.</strong> For the snippet, add a Custom HTML block and paste. For a file, use an Image block.</li>
+</ul>
+<p>That is the whole list. If your builder has anything called "embed," "custom code," or "HTML," the snippet goes there. If it does not, upload the image instead. Do not overthink it.</p>
+
+<h2 id="phones">Make it work on phones (tap-or-scan)</h2>
+<p>Here is the part people forget, and it quietly kills a lot of QR codes on websites. Someone visiting your page on their phone cannot scan the code, because the code is on the same screen they are holding. They would need a second phone. Nobody has a second phone out.</p>
+<p>So the code needs to be tappable as well as scannable. Good news: the snippet already handles this. It is wrapped in a link, so a tap on a phone goes exactly where a scan would send a desktop visitor. Same destination, both ways.</p>
+<p>If you went with Method B and dropped in a plain image, wrap that image in a link to the same URL yourself, or your phone visitors will just poke at a picture and nothing will happen. In most builders that is as simple as selecting the image and adding a link.</p>
+<p>On size: 150 to 200 pixels wide on screen is plenty for a desktop visitor to scan comfortably. Do not shrink it below about 120 pixels, or phones trying to read it from another screen will struggle. Website size and print size are different problems; if you are also printing the code, I put the real numbers in the <a href="../how-big-should-a-qr-code-be-for-print/">QR print size guide</a>. And if a code refuses to scan no matter what, the <a href="../why-wont-my-qr-code-scan/">why won't my QR code scan guide</a> walks through the usual culprits.</p>
+
+<h2 id="permanent">Why a static code will not break your page later</h2>
+<p>This is the reason I built the tool the way I did. The code is static, which means the destination is written straight into the black and white pattern. Nothing sits in the middle. There is no redirect server, no account, no dashboard that has to stay online for your code to keep working.</p>
+<p>So even if this tool vanished tomorrow, the snippet you pasted keeps pointing exactly where you set it. The same is true of the SVG or PNG you downloaded. It is yours now, and it does not phone home. That is the opposite of a dynamic QR code, the kind that routes every scan through a vendor's server and goes dead the day the subscription lapses. If you want the full breakdown of why that happens, I wrote it up in <a href="../do-qr-codes-expire/">static vs dynamic, and why static never expires</a>.</p>
+<div class="note">The embed snippet is a data URI, which is perfect for websites but not for email. Some email clients strip out data images, so if you are dropping a QR code into an <b>email newsletter</b> instead of a web page, download a PNG or SVG and host that file the normal way.</div>
+
+  <h2 id="faq">FAQ</h2>
+  <div class="faq"><details><summary>How do I add a QR code to my website for free?</summary><p>Build a static code in the tool, click Copy code for your website, and paste the snippet into an HTML block. It is free, with no account.</p></details><details><summary>Do I need to host the image somewhere?</summary><p>Not with the snippet. The code is baked into it as data, so there is nothing to upload. If you would rather have a file, download the SVG or PNG and upload it to your media library.</p></details><details><summary>Will the QR code work on a phone?</summary><p>Visitors on a phone cannot scan their own screen, so the code needs to be tappable. The snippet is already a link, so a tap goes where a scan would. If you use a plain image, wrap it in a link to the same destination.</p></details><details><summary>Should I use PNG or SVG on a website?</summary><p>Use SVG. It stays sharp at any size and any screen resolution. Use PNG only if your platform will not accept SVG uploads.</p></details><details><summary>Can I add a QR code in Squarespace, Wix, Webflow, or WordPress?</summary><p>Yes. Paste the snippet into a code, embed, or custom-HTML block, or upload the image into an image block. All four builders support at least one of those.</p></details><details><summary>Will the code break if your tool goes away?</summary><p>No. It is static, so the destination lives inside the code itself. It keeps working with nothing in the middle, even if this tool disappears.</p></details></div>
+  <div class="cta">
+    <h2>Make a code for your site</h2>
+    <p>Build a static QR code free, right in your browser. No account, nothing to host, and the code never expires.</p>
+    <a class="btn" href="../../">Build your QR code</a>
+  </div>
+</article>
+<footer>
+<div class="wrap foot-grid">
+<div class="foot-left">
+<a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+<p>Codes generated in your browser. They never expire. We never see your data. Built to make a point, free to keep it honest.</p>
+</div>
+<div class="foot-links">
+<a href="../">All guides</a>
+<a href="https://www.paypal.com/paypalme/aboundlessworld" target="_blank" rel="noopener">&#9829; Tip the developer</a>
+<span style="font-weight:600;color:var(--ink-soft)">Built by Bud Hennekes</span>
+</div>
+</div>
+<div class="wrap foot-note">No cookies, no ad trackers, no accounts. Just a QR code that works.</div>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Put a QR Code on Your Website", "description": "Add a QR code to your website in about two minutes, free, with nothing to host. Copy a self-contained snippet or drop in an SVG, and the code never expires.", "datePublished": "2026-07-09", "dateModified": "2026-07-09", "author": {"@type": "Person", "name": "Bud Hennekes", "url": "https://qrcodemadeeasy.com/"}, "publisher": {"@type": "Organization", "name": "QR Codes Made Easy", "url": "https://qrcodemadeeasy.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://qrcodemadeeasy.com/guides/qr-code-on-your-website/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrcodemadeeasy.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://qrcodemadeeasy.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Put a QR code on your website", "item": "https://qrcodemadeeasy.com/guides/qr-code-on-your-website/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I add a QR code to my website for free?", "acceptedAnswer": {"@type": "Answer", "text": "Build a static code in the tool, click Copy code for your website, and paste the snippet into an HTML block. It is free, with no account."}}, {"@type": "Question", "name": "Do I need to host the image somewhere?", "acceptedAnswer": {"@type": "Answer", "text": "Not with the snippet. The code is baked into it as data, so there is nothing to upload. If you would rather have a file, download the SVG or PNG and upload it to your media library."}}, {"@type": "Question", "name": "Will the QR code work on a phone?", "acceptedAnswer": {"@type": "Answer", "text": "Visitors on a phone cannot scan their own screen, so the code needs to be tappable. The snippet is already a link, so a tap goes where a scan would. If you use a plain image, wrap it in a link to the same destination."}}, {"@type": "Question", "name": "Should I use PNG or SVG on a website?", "acceptedAnswer": {"@type": "Answer", "text": "Use SVG. It stays sharp at any size and any screen resolution. Use PNG only if your platform will not accept SVG uploads."}}, {"@type": "Question", "name": "Can I add a QR code in Squarespace, Wix, Webflow, or WordPress?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Paste the snippet into a code, embed, or custom-HTML block, or upload the image into an image block. All four builders support at least one of those."}}, {"@type": "Question", "name": "Will the code break if your tool goes away?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is static, so the destination lives inside the code itself. It keeps working with nothing in the middle, even if this tool disappears."}}]}</script>
+<!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
+</body>
+</html>

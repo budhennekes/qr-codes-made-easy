@@ -1,2 +1,8 @@
 tasks/
 .DS_Store
+
+# local-only, never publish
+.seo/
+.agents/
+skills-lock.json
+index [2-9].html
