@@ -87,6 +87,12 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
 .foot-links{display:flex;flex-direction:column;gap:8px;font-size:13px;text-align:right}
 .foot-links a{color:var(--accent);text-decoration:none;font-weight:600}
 .foot-note{font-size:12px;color:var(--ink-soft);margin-top:20px}
+.nextstep{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:18px 22px;margin:26px 0}
+.nextstep b{display:block;font-family:var(--serif);font-weight:600;font-size:17px;margin-bottom:6px;color:var(--ink)}
+.nextstep p{margin:0 0 10px;font-size:15px;color:var(--ink-soft)}
+.nextstep .links a{display:inline-block;font-weight:600;color:var(--accent-deep);text-decoration:none;font-size:15px}
+.nextstep .links a:hover{text-decoration:underline}
+.nextstep .aff-mini{font-size:12px;color:var(--ink-soft);margin:8px 0 0;font-style:italic}
 </style>
 </head>
 <body>
@@ -157,6 +163,16 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
 <li><strong>Print it big enough, with margin.</strong> A permanent link does not help if the code cannot be read. Give it a quiet border and enough size for the scan distance. I put the numbers in the <a href="../how-big-should-a-qr-code-be-for-print/">QR print size guide</a>.</li>
 </ol>
 <p>One more myth to kill: <strong>error correction is not the same as permanence.</strong> QR codes carry spare data (levels L, M, Q and H recover from roughly 7%, 15%, 25% and 30% physical damage) so a scuffed or logo-covered code still reads. That protects the pattern from scratches. It does nothing to keep a dead redirect alive. A dynamic code at the highest error correction level still goes blank the day the subscription lapses. Only a static code is permanent by design.</p>
+  <div class="nextstep">
+    <b>Send it to a domain you actually own</b>
+    <p>A static code is permanent, but the page it points at still has to exist. A cheap domain you control (a few dollars a year) beats a free link on someone else's platform that you might lose. I register mine at Namecheap.</p>
+    <p class="links">
+      <!-- AFFILIATE: swap for your Namecheap tracking link once approved -->
+      <a href="https://www.namecheap.com" target="_blank" rel="noopener sponsored">Grab a domain at Namecheap &rarr;</a>
+    </p>
+    <p class="aff-mini">Affiliate link. It never changes what I recommend.</p>
+  </div>
+
   <h2 id="faq">FAQ</h2>
   <div class="faq"><details><summary>Do QR codes expire?</summary><p>Static QR codes do not expire. The link is printed into the pattern and works as long as the destination page is live. Dynamic QR codes can expire, because they route through a vendor's server that stops forwarding scans when your account or subscription lapses.</p></details><details><summary>Do QR codes expire if you don't use them?</summary><p>No. A QR code is not used up by sitting unscanned. A static code you printed years ago still works today. A dynamic code that goes unused can still stop working, but only because the account behind it lapsed, not because nobody scanned it.</p></details><details><summary>How long do QR codes last?</summary><p>A static QR code lasts indefinitely. There is no built-in timer. Its life is tied only to whether the destination URL stays online and whether the printed code stays readable. A dynamic code lasts exactly as long as you keep paying the vendor behind it.</p></details><details><summary>Do free QR codes expire?</summary><p>It depends on the type, not the price. A free static code never expires. A free dynamic code from a trial usually does, once the trial ends, at which point you are asked to subscribe to turn it back on. Free and permanent are only the same thing when the code is static.</p></details><details><summary>Why did my QR code stop working?</summary><p>The most common reason is a lapsed dynamic-code subscription, which kills the redirect. Other causes: the destination page was taken down or moved, the printed code is too small or damaged past its error correction limit, or there is not enough quiet margin around it for a scanner to lock on.</p></details><details><summary>Do printed QR codes expire?</summary><p>The printing has nothing to do with it. A printed static code works for as long as the ink is readable and the page is live. A printed dynamic code can go dead while sitting on the same poster, because the part that expired was the online redirect, not the paper.</p></details></div>
   <div class="cta">
