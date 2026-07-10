@@ -383,13 +383,24 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
   .swap-btn{flex-basis:100%;width:100%}
   .type-tab{flex:1 1 calc(50% - 3px)}
 }
+
+/* ---------- whimsy ---------- */
+.qr-frame.is-demo{animation:demopulse 2.8s ease-in-out infinite}
+@keyframes demopulse{0%,100%{box-shadow:0 2px 10px rgba(20,32,28,.08)}50%{box-shadow:0 2px 10px rgba(20,32,28,.08),0 0 0 7px rgba(10,168,138,.11)}}
+.wink{margin-top:10px;font-size:13px;color:var(--accent-deep);background:var(--paper-deep);border:1px solid var(--line);border-radius:10px;padding:9px 12px;line-height:1.45}
+.wordmark .dot{cursor:pointer;display:inline-block}
+.wordmark .dot.pop{animation:dotpop .5s ease}
+@keyframes dotpop{0%{transform:scale(1) rotate(0)}45%{transform:scale(1.55) rotate(180deg)}100%{transform:scale(1) rotate(360deg)}}
+.qr-tile{position:fixed;top:-32px;z-index:9999;pointer-events:none;border-radius:5px}
+@keyframes qrfall{0%{transform:translateY(-40px) rotate(0);opacity:0}8%{opacity:1}100%{transform:translateY(106vh) rotate(300deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){.qr-frame.is-demo{animation:none}.wordmark .dot.pop{animation:none}}
 </style>
 </head>
 <body>
 
 <header class="wrap">
   <div class="masthead">
-    <div class="wordmark">QR Codes Made Easy<span class="dot">.</span></div>
+    <div class="wordmark">QR Codes Made Easy<span class="dot" id="brand-dot" title="go on, poke it">.</span></div>
     <nav>
       <a href="#uses">Use cases</a>
       <a href="#why">Why this exists</a>
@@ -425,6 +436,7 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
         </div>
         <div id="pane-link">
           <input type="url" id="url-input" placeholder="https://yourbrand.com" value="" autocomplete="off" spellcheck="false">
+          <p class="wink" id="link-wink" hidden></p>
         </div>
         <div id="pane-whatsapp" hidden>
           <div class="wa-row">
@@ -912,6 +924,9 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
     // any change makes a shown embed snippet stale, so collapse it until they ask again
     var eb = document.getElementById("embed-box");
     if (eb && !eb.hidden) eb.hidden = true;
+    // the demo code gently breathes "scan me" until you make it your own
+    var frame = document.querySelector(".qr-frame");
+    if (frame) frame.classList.toggle("is-demo", !currentData());
   }
 
   /* ---------- contrast guard ---------- */
@@ -946,6 +961,7 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
   /* ---------- inputs ---------- */
   document.getElementById("url-input").addEventListener("input", function(e){
     state.url = e.target.value.trim();
+    maybeWink(state.url);
     refresh();
   });
 
@@ -1119,7 +1135,13 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
     clearTimeout(noteTimer);
     noteTimer = setTimeout(function(){ note.classList.remove("show"); }, 4500);
   }
-  function showSaved(){ flashDlNote("Saved. Scan it once more before it goes to print."); }
+  var SAVED_LINES = [
+    "Saved. Scan it once more before it goes to print.",
+    "Downloaded. It'll still scan in 2035.",
+    "Saved. No subscription attached to this one."
+  ];
+  var savedIdx = 0;
+  function showSaved(){ flashDlNote(SAVED_LINES[savedIdx++ % SAVED_LINES.length]); }
 
   document.getElementById("dl-png").addEventListener("click", function(){
     var size = parseInt(document.getElementById("png-size").value, 10);
@@ -1235,10 +1257,78 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
     if (embedCode.value) copyText(embedCode.value);
   });
 
+  /* ---------- whimsy: dynamic-link wink (fires once) ---------- */
+  var SHORTENERS = ["bit.ly","tinyurl.com","rebrand.ly","cutt.ly","rb.gy","ow.ly","bl.ink","is.gd","buff.ly","qrco.de","short.io","t.ly","shorturl.at","lnkd.in"];
+  var winkShown = false;
+  function maybeWink(v){
+    var wink = document.getElementById("link-wink");
+    if (!wink || winkShown || !v) return;
+    var host;
+    try { host = new URL(/^https?:\/\//i.test(v) ? v : "https://" + v).hostname.replace(/^www\./,"").toLowerCase(); } catch(e){ return; }
+    if (SHORTENERS.indexOf(host) === -1) return;
+    winkShown = true;
+    wink.textContent = "That link works. Just know shorteners can vanish. The code around it won't.";
+    wink.hidden = false;
+    setTimeout(function(){ wink.hidden = true; }, 9000);
+  }
+
+  /* ---------- whimsy: poke the wordmark dot ---------- */
+  (function(){
+    var dot = document.getElementById("brand-dot");
+    if (!dot) return;
+    var busy = false;
+    dot.addEventListener("click", function(){
+      if (busy) return;
+      busy = true;
+      dot.classList.add("pop");
+      dot.textContent = "▪";
+      setTimeout(function(){ dot.textContent = "."; }, 300);
+      setTimeout(function(){ dot.classList.remove("pop"); busy = false; }, 520);
+    });
+  })();
+
+  /* ---------- whimsy: Konami code rains a few QR tiles ---------- */
+  (function(){
+    var seq = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
+    var pos = 0, raining = false;
+    window.addEventListener("keydown", function(e){
+      var k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+      if (k === seq[pos]){ pos++; if (pos === seq.length){ pos = 0; rainTiles(); } }
+      else { pos = (k === seq[0]) ? 1 : 0; }
+    });
+    function rainTiles(){
+      if (raining) return;
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      raining = true;
+      var colors = ["#0aa88a","#12b3b6","#14201c","#0a8768"];
+      for (var i = 0; i < 20; i++){
+        var t = document.createElement("div");
+        t.className = "qr-tile";
+        var size = 14 + Math.floor(Math.random() * 16);
+        t.style.width = t.style.height = size + "px";
+        t.style.left = Math.floor(Math.random() * 98) + "vw";
+        t.style.background = colors[i % colors.length];
+        t.style.animation = "qrfall " + (2.4 + Math.random() * 1.6).toFixed(2) + "s linear " + (Math.random() * 0.5).toFixed(2) + "s forwards";
+        document.body.appendChild(t);
+        (function(el){ setTimeout(function(){ el.remove(); }, 4600); })(t);
+      }
+      setTimeout(function(){ raining = false; }, 1200);
+    }
+  })();
+
+  // demo code breathes "scan me" until you make it your own
+  (function(){ var f = document.querySelector(".qr-frame"); if (f) f.classList.toggle("is-demo", !currentData()); })();
+
   checkContrast();
 
-  console.log("%cQR Codes Made Easy", "font:600 16px sans-serif;color:#0c9463");
-  console.log("Yep, your codes are built right here in your browser. Your links and logo never touch a server. The only thing we count is anonymous, cookieless page views. Snoop all you like. — Bud");
+  window.bud = function(){
+    console.log("%cQR Codes Made Easy", "font:600 16px sans-serif;color:#0aa88a");
+    console.log("Static codes, baked straight into the pattern. No server, no account, nothing to expire. I built it to make a point, and to be useful while I did. If it saved you a reprint, the tip jar's in the footer. Cheers, Bud.");
+    return "✓ still scanning in 2035";
+  };
+
+  console.log("%cQR Codes Made Easy", "font:600 16px sans-serif;color:#0aa88a");
+  console.log("Yep, your codes are built right here in your browser. Your links and logo never touch a server. The only thing we count is anonymous, cookieless page views. Snoop all you like, and type bud() if you're bored. Made by Bud.");
 })();
 </script>
 <script>

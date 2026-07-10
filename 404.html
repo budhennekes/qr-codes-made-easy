@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — QR Codes Made Easy</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#f5f7f6;--ink:#14201c;--soft:#586661;--accent:#0aa88a;--accent2:#12b3b6;--card:#fff;--line:#e1e8e4;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Public Sans",-apple-system,sans-serif;background:var(--paper);color:var(--ink);
+    min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:28px;line-height:1.6;position:relative}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(1100px 520px at 84% -10%,rgba(18,179,182,.08),transparent 60%),radial-gradient(900px 460px at -5% 2%,rgba(10,168,138,.06),transparent 55%)}
+  .card{max-width:460px;width:100%;text-align:center;position:relative;z-index:1}
+  .glyph{width:66px;height:66px;margin:0 auto 22px}
+  .glyph svg{width:100%;height:100%;display:block;color:var(--accent)}
+  h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(30px,7vw,42px);line-height:1.08;letter-spacing:-.02em;margin-bottom:12px}
+  p{font-size:17px;color:var(--soft);max-width:400px;margin:0 auto 26px}
+  p b{color:var(--ink);font-weight:600}
+  .btn{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700;
+    font-size:16px;padding:14px 26px;border-radius:14px;transition:transform .1s}
+  .btn:active{transform:translateY(1px)}
+  .kicker{margin-top:22px;font-size:12.5px;color:#93a09a}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="glyph"><svg viewBox="0 0 44 44" fill="currentColor"><rect x="2" y="2" width="14" height="14" rx="2"/><rect x="6" y="6" width="6" height="6" rx="1" fill="#f5f7f6"/><rect x="28" y="2" width="14" height="14" rx="2"/><rect x="32" y="6" width="6" height="6" rx="1" fill="#f5f7f6"/><rect x="2" y="28" width="14" height="14" rx="2"/><rect x="6" y="32" width="6" height="6" rx="1" fill="#f5f7f6"/><rect x="22" y="22" width="4" height="4"/><rect x="34" y="22" width="4" height="4"/><rect x="28" y="28" width="4" height="4"/><rect x="22" y="34" width="4" height="4"/><rect x="38" y="34" width="4" height="4"/></svg></div>
+    <h1>This page took a wrong turn.</h1>
+    <p>Some links break. The ones you bake into a QR code here <b>don't</b>. This one just isn't a page I have.</p>
+    <a class="btn" href="/">Back to the tool →</a>
+    <p class="kicker">Static by design, even the 404.</p>
+  </div>
+<!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
+</body>
+</html>
