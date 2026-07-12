@@ -397,6 +397,59 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
 .qr-tile{position:fixed;top:-32px;z-index:9999;pointer-events:none;border-radius:5px}
 @keyframes qrfall{0%{transform:translateY(-40px) rotate(0);opacity:0}8%{opacity:1}100%{transform:translateY(106vh) rotate(300deg);opacity:0}}
 @media (prefers-reduced-motion:reduce){.qr-frame.is-demo{animation:none}.wordmark .dot.pop{animation:none}}
+
+/* ---------- refinement pass: easing, press feedback, focus (Emil-style) ---------- */
+:root{--ease-out:cubic-bezier(.22,1,.36,1)}
+
+button,a,label,input,select,textarea,.preset,.type-tab,.print-card{-webkit-tap-highlight-color:transparent}
+
+/* consistent, snappy press feedback on anything pressable */
+.btn{transition:transform 150ms var(--ease-out),background 150ms ease}
+.btn:active{transform:scale(.97)}
+.preset{transition:border-color 150ms ease,transform 130ms var(--ease-out)}
+.preset:active{transform:scale(.97)}
+.type-tab{transition:background 150ms ease,color 150ms ease,transform 130ms var(--ease-out)}
+.type-tab:active{transform:scale(.97)}
+.swap-btn,.file-btn,.embed-copy,.btn-donate{transition:transform 140ms var(--ease-out),border-color 150ms ease,background 150ms ease,color 150ms ease}
+.swap-btn:active,.file-btn:active,.embed-copy:active,.btn-donate:active{transform:scale(.97)}
+.reset-btn:active{transform:scale(.96)}
+
+/* inputs + selects: accent focus with a soft ring, eased */
+input[type="url"],input[type="tel"],input.wa-message,#tg-input,.cc-select,#png-size,.embed-box textarea,.color-input{
+  transition:border-color 150ms var(--ease-out),box-shadow 150ms var(--ease-out)
+}
+input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input:focus,.cc-select:focus,#png-size:focus,.embed-box textarea:focus{
+  border-color:var(--accent);box-shadow:0 0 0 3px rgba(10,168,138,.16)
+}
+.color-input:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(10,168,138,.16)}
+
+/* keyboard-only focus rings (mouse/touch stay clean) */
+.btn:focus-visible,.type-tab:focus-visible,.preset:focus-visible,.swap-btn:focus-visible,.file-btn:focus-visible,.reset-btn:focus-visible,.embed-copy:focus-visible,.logo-clear:focus-visible,.btn-donate:focus-visible,.print-card:focus-visible,.masthead nav a:focus-visible,.transparent-row input:focus-visible{
+  outline:2px solid var(--accent);outline-offset:2px;border-radius:8px
+}
+
+/* save/copy confirmation rides the same curve */
+.dl-note{transition:opacity .2s var(--ease-out),transform .2s var(--ease-out)}
+
+/* the embed snippet eases in instead of hard-popping */
+.embed-box{transition:opacity 220ms var(--ease-out),transform 220ms var(--ease-out),display 220ms allow-discrete}
+.embed-box:not([hidden]){opacity:1;transform:none}
+.embed-box[hidden]{opacity:0;transform:translateY(-4px)}
+@starting-style{.embed-box:not([hidden]){opacity:0;transform:translateY(-4px)}}
+
+/* a tap shouldn't leave a hover lift stuck on touch devices */
+@media (hover:none){
+  .print-card:hover{transform:none}
+  .preset:hover{border-color:var(--line)}
+}
+
+/* reduced motion: keep the fades, drop the movement */
+@media (prefers-reduced-motion:reduce){
+  .btn:active,.preset:active,.type-tab:active,.swap-btn:active,.file-btn:active,.embed-copy:active,.btn-donate:active,.reset-btn:active{transform:none}
+  .embed-box{transition:opacity 180ms ease}
+  .embed-box[hidden]{transform:none}
+  @starting-style{.embed-box:not([hidden]){transform:none}}
+}
 </style>
 </head>
 <body>
