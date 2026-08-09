@@ -202,6 +202,11 @@ input[type="url"]:focus, input[type="tel"]:focus, input.wa-message:focus, #tg-in
 }
 #qr-preview canvas,#qr-preview svg{max-width:230px;max-height:230px;display:block}
 .scan-tip{font-size:13px;color:var(--ink-soft);text-align:center;max-width:240px}
+.destination-status{font-size:12.5px;color:var(--ink-soft);text-align:center;max-width:280px;overflow-wrap:anywhere}
+.destination-status.ready{color:var(--ok);font-weight:600}
+.destination-status.error{color:#9a3412;font-weight:600}
+.generator-error{font-size:14px;line-height:1.45;text-align:center;color:#7a4a12;padding:18px}
+.btn:disabled,select:disabled{cursor:not-allowed;opacity:.55}
 .scan-tip b{color:var(--ink)}
 .dl-note{font-size:13px;color:var(--ok);font-weight:600;text-align:center;margin-top:4px;opacity:0;transform:translateY(-3px);transition:opacity .2s,transform .2s;min-height:1px}
 .dl-note.show{opacity:1;transform:none}
@@ -627,7 +632,7 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
           </label>
           <button class="logo-clear" id="logo-clear" type="button" style="display:none">remove logo</button>
         </div>
-        <p class="hint" id="logo-hint">PNG, JPG, or SVG. We automatically raise the code's error correction so the logo never breaks scanning. <a href="guides/qr-code-logo-size/" style="color:var(--accent-deep);font-weight:600">How big can a logo be?</a></p>
+        <p class="hint" id="logo-hint">PNG, JPG, or SVG. We automatically raise error correction to help the code remain scannable with a logo. Always test the finished code. <a href="guides/qr-code-logo-size/" style="color:var(--accent-deep);font-weight:600">How big can a logo be?</a></p>
       </div>
 
       <div class="reset-row">
@@ -639,6 +644,7 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
 
     <div class="stage">
       <div class="qr-frame"><div id="qr-preview"></div></div>
+      <p class="destination-status" id="destination-status" aria-live="polite">Demo preview — add a destination to make your code.</p>
       <p class="scan-tip"><b>Go ahead, scan your own screen right now.</b> We'll wait. If it works here, it works in print.</p>
       <div class="dl-block">
         <div class="dl-row">
@@ -995,6 +1001,13 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
 <script src="qr-code-styling.js"></script>
 <script>
 (function(){
+  if (typeof QRCodeStyling !== "function"){
+    var failedPreview = document.getElementById("qr-preview");
+    failedPreview.innerHTML = '<p class="generator-error" role="alert"><b>The QR generator did not load.</b><br>Refresh the page to try again. Your destination has not been uploaded.</p>';
+    document.getElementById("destination-status").textContent = "Generator unavailable";
+    document.querySelectorAll("#dl-png, #dl-svg, #share-btn, #embed-btn, #png-size").forEach(function(el){ el.disabled = true; });
+    return;
+  }
   // The demo code (shown before you type your own) points at a little celebration
   // page, so scanning your own screen opens a real, fun payoff instead of a fake URL.
   var DEMO_TEXT = "https://qrcodemadeeasy.com/scanned/";
@@ -1026,6 +1039,16 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
   };
 
   // What the code actually encodes, based on the selected type.
+  function normalizedWebsite(value){
+    var valueTrimmed = (value || "").trim();
+    if (!valueTrimmed) return "";
+    if (!/^[a-z][a-z0-9+.-]*:\/\//i.test(valueTrimmed)) valueTrimmed = "https://" + valueTrimmed;
+    try {
+      var parsed = new URL(valueTrimmed);
+      return (/^https?:$/.test(parsed.protocol) && parsed.hostname) ? parsed.href : "";
+    } catch(e){ return ""; }
+  }
+
   function currentData(){
     if (state.type === "whatsapp"){
       var digits = (state.waCode + state.waNumber).replace(/\D/g, "");
@@ -1082,7 +1105,7 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
       v.push("END:VCARD");
       return v.join("\n");
     }
-    return state.url;
+    return normalizedWebsite(state.url);
   }
 
   var PREVIEW_SIZE = 230;
@@ -1123,12 +1146,29 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
   function refresh(){
     qr.update(buildOptions(PREVIEW_SIZE, false));
     checkContrast();
+    updateDestinationStatus();
     // any change makes a shown embed snippet stale, so collapse it until they ask again
     var eb = document.getElementById("embed-box");
     if (eb && !eb.hidden) eb.hidden = true;
     // the demo code gently breathes "scan me" until you make it your own
     var frame = document.querySelector(".qr-frame");
     if (frame) frame.classList.toggle("is-demo", !currentData());
+  }
+
+  function updateDestinationStatus(){
+    var status = document.getElementById("destination-status");
+    var data = currentData();
+    status.className = "destination-status";
+    if (!data){
+      var invalidWebsite = state.type === "link" && state.url;
+      status.textContent = invalidWebsite ? "Enter a valid website address." : "Demo preview — add a destination to make your code.";
+      if (invalidWebsite) status.classList.add("error");
+      document.getElementById("url-input").setAttribute("aria-invalid", invalidWebsite ? "true" : "false");
+      return;
+    }
+    document.getElementById("url-input").setAttribute("aria-invalid", "false");
+    status.textContent = state.type === "link" ? "Ready — opens " + data : "Ready — this preview contains your details.";
+    status.classList.add("ready");
   }
 
   /* ---------- contrast guard ---------- */
@@ -1165,6 +1205,14 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
     state.url = e.target.value.trim();
     maybeWink(state.url);
     refresh();
+  });
+  document.getElementById("url-input").addEventListener("blur", function(e){
+    var normalized = normalizedWebsite(state.url);
+    if (normalized){
+      state.url = normalized;
+      e.target.value = normalized;
+      refresh();
+    }
   });
 
   /* ---------- content type: website link vs WhatsApp ---------- */
@@ -1358,7 +1406,7 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
     if (state.type === "wifi") return "qr-wifi";
     if (state.type === "vcard") return "qr-contact";
     var host = "qr-code";
-    try { if (state.url) host = new URL(state.url).hostname.replace(/^www\./,"").replace(/\./g,"-"); } catch(e){}
+    try { if (currentData()) host = new URL(currentData()).hostname.replace(/^www\./,"").replace(/\./g,"-"); } catch(e){}
     return "qr-" + host;
   }
 
@@ -1567,6 +1615,7 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
   (function(){ var f = document.querySelector(".qr-frame"); if (f) f.classList.toggle("is-demo", !currentData()); })();
 
   checkContrast();
+  updateDestinationStatus();
 
   window.bud = function(){
     console.log("%cQR Codes Made Easy", "font:600 16px sans-serif;color:#2563eb");
