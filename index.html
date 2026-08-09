@@ -517,42 +517,42 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
     <div class="controls">
 
       <div class="control-group">
-        <span class="field-label"><span class="step-num">1</span>What should it open?</span>
-        <div class="type-tabs" id="type-tabs">
-          <button class="type-tab active" data-type="link" type="button">Website</button>
-          <button class="type-tab" data-type="whatsapp" type="button">WhatsApp</button>
-          <button class="type-tab" data-type="telegram" type="button">Telegram</button>
-          <button class="type-tab" data-type="imessage" type="button">iMessage</button>
-          <button class="type-tab" data-type="wifi" type="button">Wi-Fi</button>
-          <button class="type-tab" data-type="vcard" type="button">Contact</button>
+        <span class="field-label" id="destination-label"><span class="step-num">1</span>What should it open?</span>
+        <div class="type-tabs" id="type-tabs" role="tablist" aria-labelledby="destination-label">
+          <button class="type-tab active" id="tab-link" data-type="link" type="button" role="tab" aria-selected="true" aria-controls="pane-link" tabindex="0">Website</button>
+          <button class="type-tab" id="tab-whatsapp" data-type="whatsapp" type="button" role="tab" aria-selected="false" aria-controls="pane-whatsapp" tabindex="-1">WhatsApp</button>
+          <button class="type-tab" id="tab-telegram" data-type="telegram" type="button" role="tab" aria-selected="false" aria-controls="pane-telegram" tabindex="-1">Telegram</button>
+          <button class="type-tab" id="tab-imessage" data-type="imessage" type="button" role="tab" aria-selected="false" aria-controls="pane-imessage" tabindex="-1">iMessage</button>
+          <button class="type-tab" id="tab-wifi" data-type="wifi" type="button" role="tab" aria-selected="false" aria-controls="pane-wifi" tabindex="-1">Wi-Fi</button>
+          <button class="type-tab" id="tab-vcard" data-type="vcard" type="button" role="tab" aria-selected="false" aria-controls="pane-vcard" tabindex="-1">Contact</button>
         </div>
-        <div id="pane-link">
-          <input type="url" id="url-input" placeholder="https://yourbrand.com" value="" autocomplete="off" spellcheck="false">
+        <div id="pane-link" role="tabpanel" aria-labelledby="tab-link">
+          <input type="url" id="url-input" placeholder="https://yourbrand.com" value="" autocomplete="off" spellcheck="false" aria-label="Website address">
           <p class="wink" id="link-wink" hidden></p>
         </div>
-        <div id="pane-whatsapp" hidden>
+        <div id="pane-whatsapp" role="tabpanel" aria-labelledby="tab-whatsapp" hidden>
           <div class="wa-row">
             <select id="wa-country" class="cc-select" aria-label="Country"></select>
-            <input type="tel" id="wa-number" placeholder="Phone number" inputmode="numeric" autocomplete="off" spellcheck="false">
+            <input type="tel" id="wa-number" placeholder="Phone number" inputmode="numeric" autocomplete="off" spellcheck="false" aria-label="WhatsApp phone number">
           </div>
           <input type="text" id="wa-message" class="wa-message" placeholder="Pre-filled message (optional)" autocomplete="off" maxlength="300">
           <p class="hint">Scanning opens a WhatsApp chat with your number. I build the <b>wa.me</b> link for you. <a href="guides/qr-code-for-whatsapp/" style="color:var(--accent-deep);font-weight:600">WhatsApp guide →</a></p>
         </div>
-        <div id="pane-telegram" hidden>
-          <input type="text" id="tg-input" placeholder="@username or phone number" autocomplete="off" spellcheck="false">
+        <div id="pane-telegram" role="tabpanel" aria-labelledby="tab-telegram" hidden>
+          <input type="text" id="tg-input" placeholder="@username or phone number" autocomplete="off" spellcheck="false" aria-label="Telegram username or phone number">
           <p class="hint">Scanning opens your Telegram chat. Use your public <b>@username</b>, or a phone number with country code. Telegram can't pre-fill a message, so this one is just the handle. <a href="guides/qr-code-for-telegram/" style="color:var(--accent-deep);font-weight:600">Telegram guide →</a></p>
         </div>
-        <div id="pane-imessage" hidden>
+        <div id="pane-imessage" role="tabpanel" aria-labelledby="tab-imessage" hidden>
           <div class="wa-row">
             <select id="im-country" class="cc-select" aria-label="Country"></select>
-            <input type="tel" id="im-number" placeholder="Phone number" inputmode="numeric" autocomplete="off" spellcheck="false">
+            <input type="tel" id="im-number" placeholder="Phone number" inputmode="numeric" autocomplete="off" spellcheck="false" aria-label="Text message phone number">
           </div>
           <input type="text" id="im-message" class="wa-message" placeholder="Pre-filled message (optional)" autocomplete="off" maxlength="300">
           <p class="hint">Opens a text to your number: blue <b>iMessage</b> between Apple devices, a normal SMS everywhere else. <a href="guides/qr-code-for-imessage/" style="color:var(--accent-deep);font-weight:600">iMessage guide →</a></p>
         </div>
-        <div id="pane-wifi" hidden>
-          <input type="text" id="wifi-ssid" class="field" placeholder="Network name (SSID)" autocomplete="off" spellcheck="false">
-          <input type="text" id="wifi-pass" class="field" style="margin-top:8px" placeholder="Wi-Fi password" autocomplete="off" spellcheck="false">
+        <div id="pane-wifi" role="tabpanel" aria-labelledby="tab-wifi" hidden>
+          <input type="text" id="wifi-ssid" class="field" placeholder="Network name (SSID)" autocomplete="off" spellcheck="false" aria-label="Wi-Fi network name">
+          <input type="password" id="wifi-pass" class="field" style="margin-top:8px" placeholder="Wi-Fi password" autocomplete="new-password" spellcheck="false" aria-label="Wi-Fi password">
           <div class="wa-row" style="margin-top:8px">
             <select id="wifi-enc" class="cc-select" aria-label="Wi-Fi security">
               <option value="WPA">WPA / WPA2 / WPA3</option>
@@ -563,12 +563,12 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
           <label class="wifi-hidden-row"><input type="checkbox" id="wifi-hidden"> Hidden network</label>
           <p class="hint">Scanning joins the network, no typing a password. The details are baked into the static code, so if you change the password you reprint it. Nothing leaves your device. <a href="guides/qr-code-for-wifi/" style="color:var(--accent-deep);font-weight:600">Wi-Fi guide →</a></p>
         </div>
-        <div id="pane-vcard" hidden>
-          <input type="text" id="vc-name" class="field" placeholder="Full name" autocomplete="off" spellcheck="false">
-          <input type="tel" id="vc-phone" class="field" style="margin-top:8px" placeholder="Phone" autocomplete="off" spellcheck="false">
-          <input type="email" id="vc-email" class="field" style="margin-top:8px" placeholder="Email" autocomplete="off" spellcheck="false">
-          <input type="text" id="vc-org" class="field" style="margin-top:8px" placeholder="Company (optional)" autocomplete="off" spellcheck="false">
-          <input type="url" id="vc-url" class="field" style="margin-top:8px" placeholder="Website (optional)" autocomplete="off" spellcheck="false">
+        <div id="pane-vcard" role="tabpanel" aria-labelledby="tab-vcard" hidden>
+          <input type="text" id="vc-name" class="field" placeholder="Full name" autocomplete="off" spellcheck="false" aria-label="Full name">
+          <input type="tel" id="vc-phone" class="field" style="margin-top:8px" placeholder="Phone" autocomplete="off" spellcheck="false" aria-label="Phone number">
+          <input type="email" id="vc-email" class="field" style="margin-top:8px" placeholder="Email" autocomplete="off" spellcheck="false" aria-label="Email address">
+          <input type="text" id="vc-org" class="field" style="margin-top:8px" placeholder="Company (optional)" autocomplete="off" spellcheck="false" aria-label="Company">
+          <input type="url" id="vc-url" class="field" style="margin-top:8px" placeholder="Website (optional)" autocomplete="off" spellcheck="false" aria-label="Website address">
           <p class="hint">Scanning saves your details straight to their phone contacts. Perfect on a business card. <a href="guides/qr-code-for-a-business-card/" style="color:var(--accent-deep);font-weight:600">Business card guide →</a></p>
         </div>
       </div>
@@ -1206,12 +1206,28 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
   var PANES = ["link","whatsapp","telegram","imessage","wifi","vcard"];
   document.querySelectorAll(".type-tab").forEach(function(tab){
     tab.addEventListener("click", function(){
-      document.querySelectorAll(".type-tab").forEach(function(t){ t.classList.remove("active"); });
+      document.querySelectorAll(".type-tab").forEach(function(t){
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+        t.tabIndex = -1;
+      });
       tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
+      tab.tabIndex = 0;
       state.type = tab.dataset.type;
       PANES.forEach(function(t){ document.getElementById("pane-" + t).hidden = (state.type !== t); });
       refresh();
     });
+  });
+  document.getElementById("type-tabs").addEventListener("keydown", function(e){
+    if (["ArrowLeft", "ArrowRight", "Home", "End"].indexOf(e.key) === -1) return;
+    var tabs = Array.prototype.slice.call(document.querySelectorAll(".type-tab"));
+    var at = tabs.indexOf(document.activeElement);
+    if (at === -1) return;
+    e.preventDefault();
+    var next = e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : (at + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
+    tabs[next].focus();
+    tabs[next].click();
   });
   document.getElementById("wa-country").addEventListener("change", function(e){
     state.waCode = e.target.selectedOptions[0].getAttribute("data-dial");
@@ -1361,6 +1377,12 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
   function showSaved(){ flashDlNote(SAVED_LINES[savedIdx++ % SAVED_LINES.length]); }
 
   document.getElementById("dl-png").addEventListener("click", function(){
+    if (!currentData()){
+      flashDlNote("Add your link, number, network, or contact details first. The preview is only a demo code.");
+      var firstField = document.querySelector("#pane-" + state.type + " input, #pane-" + state.type + " select");
+      if (firstField) firstField.focus();
+      return;
+    }
     var size = parseInt(document.getElementById("png-size").value, 10);
     var dl = new QRCodeStyling(buildOptions(size, true));
     dl.download({ name: fileName(), extension: "png" });
@@ -1368,6 +1390,12 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
   });
 
   document.getElementById("dl-svg").addEventListener("click", function(){
+    if (!currentData()){
+      flashDlNote("Add your link, number, network, or contact details first. The preview is only a demo code.");
+      var firstField = document.querySelector("#pane-" + state.type + " input, #pane-" + state.type + " select");
+      if (firstField) firstField.focus();
+      return;
+    }
     var opts = buildOptions(1000, true);
     opts.type = "svg";
     var dl = new QRCodeStyling(opts);
