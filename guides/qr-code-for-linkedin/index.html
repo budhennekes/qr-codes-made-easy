@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Make a QR Code for Your LinkedIn Profile</title>
+<meta name="description" content="Make a static QR code for your LinkedIn profile that looks good in print, scans to the right place, and does not depend on a subscription.">
+<link rel="canonical" href="https://qrcodemadeeasy.com/guides/qr-code-for-linkedin/">
+<meta name="author" content="Bud Hennekes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Make a QR Code for Your LinkedIn Profile">
+<meta property="og:description" content="Make a static QR code for your LinkedIn profile that looks good in print, scans to the right place, and does not depend on a subscription.">
+<meta property="og:url" content="https://qrcodemadeeasy.com/guides/qr-code-for-linkedin/">
+<meta property="og:image" content="https://qrcodemadeeasy.com/guides/qr-code-for-linkedin/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://qrcodemadeeasy.com/guides/qr-code-for-linkedin/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#14201c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap"></noscript>
+<style>
+:root{
+  --paper:#f5f7f6; --paper-deep:#e9eeec; --ink:#14201c; --ink-soft:#586661;
+  --line:#e1e8e4; --accent:#2563eb; --accent-deep:#1d4ed8; --ok:#1d4ed8;
+  --warn-bg:#fdf0e3; --warn-border:#e8b07a; --card:#ffffff; --radius:16px;
+  --serif:"Fraunces",Georgia,serif; --sans:"Public Sans",-apple-system,"Helvetica Neue",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background:radial-gradient(1100px 520px at 84% -10%,rgba(56,189,248,.07),transparent 60%),radial-gradient(900px 460px at -5% 2%,rgba(37,99,235,.05),transparent 55%)}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+header{padding:26px 0 0}
+.masthead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:14px}
+.wordmark{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.wordmark .dot{color:var(--accent)}
+.masthead nav{font-size:13px;font-weight:600}
+.masthead nav a{color:var(--ink-soft);text-decoration:none;margin-left:18px}
+.masthead nav a:hover{color:var(--accent)}
+article{padding:34px 0 10px}
+.crumbs{font-size:13px;color:var(--ink-soft);margin-bottom:22px}
+.crumbs a{color:var(--ink-soft);text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;font-size:clamp(30px,4.6vw,44px);line-height:1.1;margin-bottom:14px}
+.byline{font-size:14px;color:var(--ink-soft);margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.byline b{color:var(--ink);font-weight:600}
+article h2{font-family:var(--serif);font-weight:600;font-size:26px;letter-spacing:-.01em;margin:38px 0 12px;line-height:1.2}
+article h3{font-size:18px;font-weight:700;margin:24px 0 8px}
+article p{margin:0 0 16px}
+article p a,article li a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+article ul,article ol{margin:0 0 18px;padding-left:22px}
+article li{margin:0 0 8px}
+strong{font-weight:700}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:var(--paper-deep);border:1px solid var(--line);border-radius:5px;padding:1px 5px;overflow-wrap:anywhere}
+.tbl-wrap{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--paper-deep);font-weight:700;font-size:13px}
+tr:last-child td{border-bottom:none}
+.answer{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:20px 22px;margin:0 0 26px;font-size:18px}
+.answer p{margin:0 0 10px}
+.answer p:last-child{margin:0}
+.answer .big{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);line-height:1.4}
+.toc{background:var(--paper-deep);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin:0 0 30px;font-size:14px}
+.toc b{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:8px}
+.toc a{color:var(--ink);text-decoration:none;display:inline}
+.toc a:hover{color:var(--accent)}
+.toc ol{margin:0;padding-left:18px}
+.toc li{margin:0 0 4px}
+.note{background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:var(--radius);padding:16px 20px;margin:0 0 24px;font-size:15px}
+.note b{color:var(--accent-deep)}
+.faq{margin-top:10px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer;font-size:17px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";color:var(--accent);font-weight:700;margin-right:10px}
+.faq details[open] summary::before{content:"\2013"}
+.faq details p{margin:12px 0 0;color:var(--ink-soft)}
+.cta{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:26px 26px;margin:36px 0 10px;text-align:center}
+.cta h2{font-family:var(--serif);color:var(--paper);margin:0 0 8px;font-size:24px}
+.cta p{color:#cfc7b8;margin:0 0 16px;font-size:15px}
+.cta a.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:999px;font-size:15px}
+.cta a.btn:hover{background:var(--accent-deep)}
+footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
+.foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-left{max-width:420px}
+.foot-left p{font-size:13px;color:var(--ink-soft);margin-top:8px}
+.foot-links{display:flex;flex-direction:column;gap:8px;font-size:13px;text-align:right}
+.foot-links a{color:var(--accent);text-decoration:none;font-weight:600}
+.foot-note{font-size:12px;color:var(--ink-soft);margin-top:20px}
+.nextstep{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:18px 22px;margin:26px 0}
+.nextstep b{display:block;font-family:var(--serif);font-weight:600;font-size:17px;margin-bottom:6px;color:var(--ink)}
+.nextstep p{margin:0 0 10px;font-size:15px;color:var(--ink-soft)}
+.nextstep .links a{display:inline-block;font-weight:600;color:var(--accent-deep);text-decoration:none;font-size:15px}
+.nextstep .links a:hover{text-decoration:underline}
+.nextstep .aff-mini{font-size:12px;color:var(--ink-soft);margin:8px 0 0;font-style:italic}
+
+/* depth + mobile polish */
+.answer,.toc,.nextstep,.g-card,.tbl-wrap table{box-shadow:0 1px 2px rgba(20,32,28,.03),0 12px 30px -22px rgba(20,32,28,.14)}
+.featured{box-shadow:0 2px 8px rgba(20,32,28,.08),0 22px 48px -24px rgba(20,32,28,.32)}
+.cta,.cta-band{box-shadow:0 18px 44px -24px rgba(20,32,28,.4)}
+@media (max-width:600px){
+  .wrap{padding:0 18px}
+  article{padding:26px 0 10px}
+  h1{font-size:29px}
+  .byline{margin-bottom:20px;padding-bottom:16px}
+  .featured{border-radius:12px;margin:0 0 22px}
+  .answer{padding:16px 18px;font-size:16.5px}
+  .answer .big{font-size:18px}
+  .toc{padding:14px 16px}
+  article h2{font-size:23px;margin:30px 0 10px}
+  .masthead{flex-direction:column;align-items:flex-start;gap:10px}
+  .masthead nav{display:flex;gap:16px;margin-left:0;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .masthead nav::-webkit-scrollbar{display:none}
+  .masthead nav a{margin-left:0;white-space:nowrap;flex:none}
+  .foot-links{text-align:left}
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="masthead">
+    <a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+    <nav>
+      <a href="../../">The tool</a>
+      <a href="../">Guides</a>
+      <a href="../../#faq">FAQ</a>
+      <a href="../../#support" style="color:var(--accent)">&#9829; Tip</a>
+    </nav>
+  </div>
+</header>
+<article class="wrap">
+  <div class="crumbs"><a href="../../">Home</a> / <a href="../">Guides</a> / QR code for LinkedIn</div>
+  <div class="eyebrow">LinkedIn &amp; networking</div>
+  <h1>How to Make a QR Code for Your LinkedIn Profile</h1>
+  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated August 2026.</div>
+  <img class="featured" src="og.png" alt="A QR code on a business card for opening a LinkedIn profile" width="1200" height="630" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--line);margin:0 0 26px" fetchpriority="high">
+  <div class="answer"><p class="big">Copy your public LinkedIn profile URL, turn it into a static QR code, and print-test it before you hand it out. LinkedIn's own in-app code is fine for an in-person phone-to-phone exchange. A static code is the better choice when you need a branded file for a business card, résumé, conference badge, flyer, or portfolio.</p></div>
+  <div class="toc"><b>What's here</b><ol><li><a href="#which-code">LinkedIn's code or a custom code?</a></li><li><a href="#find-url">Get the right profile link</a></li><li><a href="#make-it">Make and download the code</a></li><li><a href="#print">Make it survive print</a></li><li><a href="#places">Where it belongs</a></li></ol></div>
+
+  <h2 id="which-code">LinkedIn's code or a custom QR code?</h2>
+  <p>Both can get someone to your profile. The difference is what you need the code to do after that first scan.</p>
+  <div class="tbl-wrap"><table><thead><tr><th>If you need…</th><th>Use</th><th>Why</th></tr></thead><tbody><tr><td>A quick connection at a coffee meeting</td><td>LinkedIn's in-app code</td><td>LinkedIn puts it in the mobile app's search area, ready to show or scan.</td></tr><tr><td>A card, résumé, event badge, sign, or print file</td><td>A custom static QR code</td><td>You choose the colors, export SVG, and keep a file you can place in your own design.</td></tr><tr><td>Scan tracking or a destination you might change</td><td>A page you control</td><td>Point the QR code to a short page on your own domain, then link to LinkedIn from there.</td></tr></tbody></table></div>
+  <p>That last row is the part most guides skip. A static QR code permanently contains the exact destination you give it. If your LinkedIn public URL changes, the printed code does not update itself. For something you plan to use for years, point the code at a simple profile page or redirect on a domain you control, then update that page when life changes.</p>
+  <p>LinkedIn documents its own in-app QR feature for connecting with members. It is useful, but it is not a substitute for a print-ready asset you can design around. <a href="https://www.linkedin.com/help/linkedin/answer/a525286/using-a-linkedin-qr-code-to-connect-with-members" rel="noopener">LinkedIn's help page</a> explains where to find it in the app.</p>
+
+  <h2 id="find-url">Get the right LinkedIn link</h2>
+  <ol><li>Open your profile while signed out, or in a private browser window.</li><li>Copy the public URL from the address bar. It should be your profile, not a search result, editing page, or a link that only works while you are logged in.</li><li>Paste it into a new browser tab and confirm it opens your public profile.</li></ol>
+  <div class="note"><b>Do this before you print:</b> if a stranger cannot open the page in a private browser, do not encode it yet. A QR code can be perfect and still lead nowhere useful if the destination is not public.</div>
+
+  <h2 id="make-it">Make the code</h2>
+  <p><a href="../../">Open QR Codes Made Easy</a>, leave <strong>Website</strong> selected, and paste the profile URL you tested. Then:</p>
+  <ol><li><strong>Start with dark on light.</strong> It is the easiest combination for phone cameras to read.</li><li><strong>Use Classic or Print-safe for small print.</strong> Save the decorative styles for a larger sign or handout.</li><li><strong>Skip the logo unless it earns its space.</strong> A LinkedIn profile URL is already specific. Adding a logo makes the pattern denser and gives you one more thing to proof.</li><li><strong>Download SVG for a printer, PNG for screens.</strong> SVG stays sharp as the designer scales it. The tool generates both in your browser and never routes the code through a tracking server.</li></ol>
+  <p>A QR code grows more complex as you add data. DENSO WAVE, the QR Code developer, documents that capacity and module count rise with the data and error-correction level. That is why a clean profile URL produces a friendlier print code than a long, parameter-heavy tracking link. <a href="https://www.qrcode.com/en/about/version.html" rel="noopener">See the QR capacity explanation from DENSO WAVE</a>.</p>
+
+  <h2 id="print">The 60-second print-proof protocol</h2>
+  <p>Before a big order, export the final file, place it in the actual layout, and print one proof at final size. Then scan it with two phones, once in good light and once in ordinary room light. Confirm all three things: it scans without hunting, it opens the intended public profile, and the profile looks credible on a phone.</p>
+  <p>For a business card, keep the code roughly 0.6 to 0.8 inches wide and leave the empty border around it alone. For a sign or booth, size it for the distance people will scan from. Our <a href="../how-big-should-a-qr-code-be-for-print/">QR print-size guide</a> covers the rule of thumb and material-specific sizes. If a proof refuses to scan, work through the <a href="../why-wont-my-qr-code-scan/">troubleshooting checklist</a> before ordering the run.</p>
+
+  <h2 id="places">Where a LinkedIn QR code actually earns its spot</h2>
+  <ul><li><strong>Business card:</strong> Put it on the back with a short instruction such as “Connect on LinkedIn.”</li><li><strong>Conference badge or leave-behind:</strong> Make the benefit obvious: “See my work” is stronger than a mysterious square.</li><li><strong>Résumé:</strong> Use it only if your public profile is current and reinforces the résumé. Keep the written URL too, because not every reader will scan.</li><li><strong>Portfolio or presentation:</strong> Link to a profile, company page, or a specific post only when that destination adds context the page does not already provide.</li></ul>
+  <p>The little instruction matters. People scan when they know what they will get. “Connect on LinkedIn” beats “Scan me,” especially in a room full of other things competing for attention.</p>
+
+  <h2 id="faq">FAQ</h2>
+  <div class="faq"><details><summary>Can I use LinkedIn's built-in QR code?</summary><p>Yes. It is convenient for a quick connection in the LinkedIn app. Use a custom static code when you need colors, SVG export, or a file for print.</p></details><details><summary>Will a LinkedIn QR code expire?</summary><p>The QR pattern itself does not expire when it contains a direct public URL. It only stops being useful if the destination URL changes or your public profile is no longer available.</p></details><details><summary>Should I put a LinkedIn QR code on my résumé?</summary><p>Only if the profile is complete, public, and adds useful proof. Keep the written URL too, so the résumé works in print, PDF, and applicant systems.</p></details><details><summary>What size should it be on a business card?</summary><p>Around 0.6 to 0.8 inch is usually enough for a close-up scan. Preserve the empty margin around the code and test a printed proof.</p></details></div>
+  <div class="cta"><h2>Make your LinkedIn QR code</h2><p>Generate a static, brandable code in your browser. No account, no subscription, and no tracking redirect in the middle.</p><a class="btn" href="../../">Build your QR code</a></div>
+</article>
+<footer>
+<div class="wrap foot-grid">
+<div class="foot-left">
+<a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+<p>Codes generated in your browser. They never expire. We never see your data. Built to make a point, free to keep it honest.</p>
+</div>
+<div class="foot-links">
+<a href="../">All guides</a>
+<a href="https://www.paypal.com/paypalme/aboundlessworld" target="_blank" rel="noopener">&#9829; Tip the developer</a>
+<span style="font-weight:600;color:var(--ink-soft)">Built by Bud Hennekes</span>
+</div>
+</div>
+<div class="wrap foot-note">No cookies, no ad trackers, no accounts. Just a QR code that works.</div>
+</footer>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Make a QR Code for Your LinkedIn Profile","description":"Make a static QR code for your LinkedIn profile that looks good in print, scans to the right place, and does not depend on a subscription.","datePublished":"2026-08-08","dateModified":"2026-08-08","author":{"@type":"Person","name":"Bud Hennekes","url":"https://qrcodemadeeasy.com/"},"publisher":{"@type":"Organization","name":"QR Codes Made Easy","url":"https://qrcodemadeeasy.com/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://qrcodemadeeasy.com/guides/qr-code-for-linkedin/"},"image":"https://qrcodemadeeasy.com/guides/qr-code-for-linkedin/og.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://qrcodemadeeasy.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://qrcodemadeeasy.com/guides/"},{"@type":"ListItem","position":3,"name":"QR code for LinkedIn","item":"https://qrcodemadeeasy.com/guides/qr-code-for-linkedin/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use LinkedIn's built-in QR code?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is convenient for a quick connection in the LinkedIn app. Use a custom static code when you need colors, SVG export, or a file for print."}},{"@type":"Question","name":"Will a LinkedIn QR code expire?","acceptedAnswer":{"@type":"Answer","text":"The QR pattern itself does not expire when it contains a direct public URL. It only stops being useful if the destination URL changes or your public profile is no longer available."}},{"@type":"Question","name":"Should I put a LinkedIn QR code on my résumé?","acceptedAnswer":{"@type":"Answer","text":"Only if the profile is complete, public, and adds useful proof. Keep the written URL too, so the résumé works in print, PDF, and applicant systems."}},{"@type":"Question","name":"What size should it be on a business card?","acceptedAnswer":{"@type":"Answer","text":"Around 0.6 to 0.8 inch is usually enough for a close-up scan. Preserve the empty margin around the code and test a printed proof."}}]}</script>
+<!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
+</body>
+</html>

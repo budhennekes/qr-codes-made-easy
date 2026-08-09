@@ -900,10 +900,40 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
       <span>Scan to follow. Point it at your profile, a post, or your link-in-bio, brandable and print-ready.</span>
       <span class="pc-go">Read the guide →</span>
     </a>
+    <a class="print-card" href="guides/qr-code-for-linkedin/">
+      <span class="pc-ico" aria-hidden="true">💼</span>
+      <b>LinkedIn</b>
+      <span>Make a print-ready profile code, know when LinkedIn's in-app code is enough, and test it before the cards arrive.</span>
+      <span class="pc-go">Read the guide →</span>
+    </a>
     <a class="print-card" href="guides/qr-code-for-wifi/">
       <span class="pc-ico" aria-hidden="true">📶</span>
       <b>Wi-Fi</b>
       <span>Guests join your network in one scan, no password recital. Perfect by the register or in the guest room.</span>
+      <span class="pc-go">Read the guide →</span>
+    </a>
+    <a class="print-card" href="guides/qr-code-for-a-pdf/">
+      <span class="pc-ico" aria-hidden="true">📄</span>
+      <b>A PDF</b>
+      <span>Host the file, get a link a stranger can actually open, and skip the myth about needing a denser code.</span>
+      <span class="pc-go">Read the guide →</span>
+    </a>
+    <a class="print-card" href="guides/qr-code-for-a-google-form/">
+      <span class="pc-ico" aria-hidden="true">📝</span>
+      <b>A Google Form</b>
+      <span>Forms has no built-in QR button. Get the right link and dodge the sign-in wall before you print.</span>
+      <span class="pc-go">Read the guide →</span>
+    </a>
+    <a class="print-card" href="guides/qr-code-for-a-resume/">
+      <span class="pc-ico" aria-hidden="true">📋</span>
+      <b>A resume</b>
+      <span>What to link, the ATS caveat no one mentions, and where a small code belongs on a one-page resume.</span>
+      <span class="pc-go">Read the guide →</span>
+    </a>
+    <a class="print-card" href="guides/qr-code-for-a-flyer/">
+      <span class="pc-ico" aria-hidden="true">📄</span>
+      <b>A flyer</b>
+      <span>The right size for a handout, where to place it, and the margin trimming and folds can't be allowed to eat.</span>
       <span class="pc-go">Read the guide →</span>
     </a>
   </div>
@@ -929,7 +959,7 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
       <span class="pc-go">Read the guide →</span>
     </a>
   </div>
-  <p class="guide-more"><a href="guides/qr-code-logo-size/">Adding a logo</a> &nbsp;·&nbsp; <a href="guides/qr-code-colors/">Colors that scan</a> &nbsp;·&nbsp; <a href="guides/track-qr-code-scans-without-subscription/">Track scans for free</a> &nbsp;·&nbsp; <a href="guides/">Browse all 15 guides →</a></p>
+  <p class="guide-more"><a href="guides/qr-code-logo-size/">Adding a logo</a> &nbsp;·&nbsp; <a href="guides/qr-code-colors/">Colors that scan</a> &nbsp;·&nbsp; <a href="guides/track-qr-code-scans-without-subscription/">Track scans for free</a> &nbsp;·&nbsp; <a href="guides/qr-code-for-linkedin/">LinkedIn profile QR codes</a> &nbsp;·&nbsp; <a href="guides/">Browse all 20 guides →</a></p>
 </section>
 
 <section class="wrap" style="padding-top:56px">
@@ -1034,12 +1064,19 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
     if (state.type === "vcard"){
       var nm = state.vcName.trim();
       if (!nm && !state.vcPhone.trim() && !state.vcEmail.trim()) return "";
+      // vCard text fields must escape line breaks, backslashes, commas, and semicolons.
+      // This also prevents a pasted value from becoming an unintended new vCard property.
+      var vEsc = function(value){ return String(value).replace(/\\/g, "\\\\").replace(/\n|\r\n?/g, "\\n").replace(/;/g, "\\;").replace(/,/g, "\\,"); };
       var v = ["BEGIN:VCARD", "VERSION:3.0"];
-      if (nm){ v.push("N:" + nm); v.push("FN:" + nm); }
-      if (state.vcOrg.trim()) v.push("ORG:" + state.vcOrg.trim());
-      if (state.vcPhone.trim()) v.push("TEL;TYPE=CELL:" + state.vcPhone.trim());
-      if (state.vcEmail.trim()) v.push("EMAIL:" + state.vcEmail.trim());
-      if (state.vcUrl.trim()) v.push("URL:" + state.vcUrl.trim());
+      if (nm){
+        var nameParts = nm.split(/\s+/), family = nameParts.length > 1 ? nameParts.pop() : "", given = nameParts.join(" ");
+        v.push("N:" + vEsc(family) + ";" + vEsc(given) + ";;;");
+        v.push("FN:" + vEsc(nm));
+      }
+      if (state.vcOrg.trim()) v.push("ORG:" + vEsc(state.vcOrg.trim()));
+      if (state.vcPhone.trim()) v.push("TEL;TYPE=CELL:" + vEsc(state.vcPhone.trim()));
+      if (state.vcEmail.trim()) v.push("EMAIL:" + vEsc(state.vcEmail.trim()));
+      if (state.vcUrl.trim()) v.push("URL:" + vEsc(state.vcUrl.trim()));
       v.push("END:VCARD");
       return v.join("\n");
     }

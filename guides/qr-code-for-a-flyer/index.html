@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Make a QR Code for a Flyer</title>
+<meta name="description" content="Put a QR code on a flyer that survives folding, photocopying, and a stack on a table. The right size, where to place it, the margin printers actually need, and what to link.">
+<link rel="canonical" href="https://qrcodemadeeasy.com/guides/qr-code-for-a-flyer/">
+<meta name="author" content="Bud Hennekes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Make a QR Code for a Flyer">
+<meta property="og:description" content="Put a QR code on a flyer that survives folding, photocopying, and a stack on a table. The right size, where to place it, the margin printers actually need, and what to link.">
+<meta property="og:url" content="https://qrcodemadeeasy.com/guides/qr-code-for-a-flyer/">
+<meta property="og:image" content="https://qrcodemadeeasy.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://qrcodemadeeasy.com/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#14201c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap"></noscript>
+<style>
+:root{
+  --paper:#f5f7f6; --paper-deep:#e9eeec; --ink:#14201c; --ink-soft:#586661;
+  --line:#e1e8e4; --accent:#2563eb; --accent-deep:#1d4ed8; --ok:#1d4ed8;
+  --warn-bg:#fdf0e3; --warn-border:#e8b07a; --card:#ffffff; --radius:16px;
+  --serif:"Fraunces",Georgia,serif; --sans:"Public Sans",-apple-system,"Helvetica Neue",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background:radial-gradient(1100px 520px at 84% -10%,rgba(56,189,248,.07),transparent 60%),radial-gradient(900px 460px at -5% 2%,rgba(37,99,235,.05),transparent 55%)}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+header{padding:26px 0 0}
+.masthead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:14px}
+.wordmark{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.wordmark .dot{color:var(--accent)}
+.masthead nav{font-size:13px;font-weight:600}
+.masthead nav a{color:var(--ink-soft);text-decoration:none;margin-left:18px}
+.masthead nav a:hover{color:var(--accent)}
+article{padding:34px 0 10px}
+.crumbs{font-size:13px;color:var(--ink-soft);margin-bottom:22px}
+.crumbs a{color:var(--ink-soft);text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;font-size:clamp(30px,4.6vw,44px);line-height:1.1;margin-bottom:14px}
+.byline{font-size:14px;color:var(--ink-soft);margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.byline b{color:var(--ink);font-weight:600}
+article h2{font-family:var(--serif);font-weight:600;font-size:26px;letter-spacing:-.01em;margin:38px 0 12px;line-height:1.2}
+article h3{font-size:18px;font-weight:700;margin:24px 0 8px}
+article p{margin:0 0 16px}
+article p a,article li a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+article ul,article ol{margin:0 0 18px;padding-left:22px}
+article li{margin:0 0 8px}
+strong{font-weight:700}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:var(--paper-deep);border:1px solid var(--line);border-radius:5px;padding:1px 5px;overflow-wrap:anywhere}
+.tbl-wrap{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--paper-deep);font-weight:700;font-size:13px}
+tr:last-child td{border-bottom:none}
+.answer{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:20px 22px;margin:0 0 26px;font-size:18px}
+.answer p{margin:0 0 10px}
+.answer p:last-child{margin:0}
+.answer .big{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);line-height:1.4}
+.toc{background:var(--paper-deep);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin:0 0 30px;font-size:14px}
+.toc b{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:8px}
+.toc a{color:var(--ink);text-decoration:none;display:inline}
+.toc a:hover{color:var(--accent)}
+.toc ol{margin:0;padding-left:18px}
+.toc li{margin:0 0 4px}
+.note{background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:var(--radius);padding:16px 20px;margin:0 0 24px;font-size:15px}
+.note b{color:var(--accent-deep)}
+.faq{margin-top:10px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer;font-size:17px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";color:var(--accent);font-weight:700;margin-right:10px}
+.faq details[open] summary::before{content:"\2013"}
+.faq details p{margin:12px 0 0;color:var(--ink-soft)}
+.cta{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:26px 26px;margin:36px 0 10px;text-align:center}
+.cta h2{font-family:var(--serif);color:var(--paper);margin:0 0 8px;font-size:24px}
+.cta p{color:#cfc7b8;margin:0 0 16px;font-size:15px}
+.cta a.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:999px;font-size:15px}
+.cta a.btn:hover{background:var(--accent-deep)}
+footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
+.foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-left{max-width:420px}
+.foot-left p{font-size:13px;color:var(--ink-soft);margin-top:8px}
+.foot-links{display:flex;flex-direction:column;gap:8px;font-size:13px;text-align:right}
+.foot-links a{color:var(--accent);text-decoration:none;font-weight:600}
+.foot-note{font-size:12px;color:var(--ink-soft);margin-top:20px}
+.nextstep{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:18px 22px;margin:26px 0}
+.nextstep b{display:block;font-family:var(--serif);font-weight:600;font-size:17px;margin-bottom:6px;color:var(--ink)}
+.nextstep p{margin:0 0 10px;font-size:15px;color:var(--ink-soft)}
+.nextstep .links a{display:inline-block;font-weight:600;color:var(--accent-deep);text-decoration:none;font-size:15px}
+.nextstep .links a:hover{text-decoration:underline}
+.nextstep .aff-mini{font-size:12px;color:var(--ink-soft);margin:8px 0 0;font-style:italic}
+
+/* depth + mobile polish */
+.answer,.toc,.nextstep,.g-card,.tbl-wrap table{box-shadow:0 1px 2px rgba(20,32,28,.03),0 12px 30px -22px rgba(20,32,28,.14)}
+.featured{box-shadow:0 2px 8px rgba(20,32,28,.08),0 22px 48px -24px rgba(20,32,28,.32)}
+.cta,.cta-band{box-shadow:0 18px 44px -24px rgba(20,32,28,.4)}
+@media (max-width:600px){
+  .wrap{padding:0 18px}
+  article{padding:26px 0 10px}
+  h1{font-size:29px}
+  .byline{margin-bottom:20px;padding-bottom:16px}
+  .featured{border-radius:12px;margin:0 0 22px}
+  .answer{padding:16px 18px;font-size:16.5px}
+  .answer .big{font-size:18px}
+  .toc{padding:14px 16px}
+  article h2{font-size:23px;margin:30px 0 10px}
+  .masthead{flex-direction:column;align-items:flex-start;gap:10px}
+  .masthead nav{display:flex;gap:16px;margin-left:0;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .masthead nav::-webkit-scrollbar{display:none}
+  .masthead nav a{margin-left:0;white-space:nowrap;flex:none}
+  .foot-links{text-align:left}
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="masthead">
+    <a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+    <nav>
+      <a href="../../">The tool</a>
+      <a href="../">Guides</a>
+      <a href="../../#faq">FAQ</a>
+      <a href="../../#support" style="color:var(--accent)">&#9829; Tip</a>
+    </nav>
+  </div>
+</header>
+<article class="wrap">
+  <div class="crumbs"><a href="../../">Home</a> / <a href="../">Guides</a> / QR code for a flyer</div>
+  <div class="eyebrow">Flyers &amp; handouts</div>
+  <h1>How to Make a QR Code for a Flyer</h1>
+  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated August 2026.</div>
+  <div class="answer"><p class="big">Print the code at least 1.5 x 1.5 inches for a handout read from a foot or two away, keep it inside the page's safe area so trimming or folding can't cut into its blank margin, and put it in a corner clear of photos and headline text. Link to a page you control so the flyer keeps working after the event date or the sale ends.</p></div>
+  <div class="toc"><b>What's here</b><ol><li><a href="#link">What to link (and why a live page beats a raw file)</a></li><li><a href="#size">How big the code needs to be</a></li><li><a href="#placement">Where to place it, and what kills the quiet zone</a></li><li><a href="#bleed">Bleed, trim, and folds</a></li><li><a href="#make-it">Make and download the code</a></li><li><a href="#print">The 60-second print-proof protocol</a></li><li><a href="#places">Where it belongs</a></li></ol></div>
+
+  <h2 id="link">What to link (and why a live page beats a raw file)</h2>
+  <p>A flyer usually needs one of three things behind the code: an event or RSVP page, a menu or product page, or a longer document like a full schedule or spec sheet. Whatever it is, point the code at a page rather than trying to cram everything the flyer can't fit into the pattern itself.</p>
+  <p>My honest take: link something you can update after the flyers are printed. Event details change, a sold-out class fills up, a special ends early. A code that points at a page you control lets you update the destination without reprinting a single flyer, since the code only holds the address, not the content behind it. If the endpoint is a document rather than a page, our <a href="../qr-code-for-a-pdf/">QR code for a PDF guide</a> covers hosting and sharing settings. If it's a form, see <a href="../qr-code-for-a-google-form/">QR code for a Google Form</a>.</p>
+
+  <h2 id="size">How big the code needs to be</h2>
+  <p>Flyers are read from close range, usually the one to two feet of someone holding it or standing in front of a stack on a table. Our <a href="../how-big-should-a-qr-code-be-for-print/">QR print-size guide</a> puts that scan distance at a minimum print size of about 1.5 x 1.5 inches (4 x 4 cm), using the general 10:1 rule (divide the scan distance by 10 to get the minimum width). Go bigger if the flyer will also live on a wall or a bulletin board a few feet further away than a handout.</p>
+  <p>Undersized codes are the single most common failure on flyers, because a full page of headline, photo, and body copy tempts designers to shrink the code to make room. Resist that. A code under an inch fails far more often than one at an inch and a half, and a flyer that fails to scan has wasted the print run just as surely as one nobody read.</p>
+
+  <h2 id="placement">Where to place it, and what kills the quiet zone</h2>
+  <p>Put the code in a corner or a dedicated panel, not layered over a photo, a gradient background, or busy body copy. Scanners rely on the plain, empty border around a code, called the quiet zone, to find where the pattern starts. DENSO WAVE, the company that invented the QR code, specifies that this margin needs to be <strong>four modules wide on all four sides</strong>. Crop that margin to fit a tight layout, or let a headline crowd right up against the code, and a scanner can miss the code before it even tries to read it.</p>
+  <p>Give the code its own clear box: a plain background, the required margin intact, and a short instruction next to it like "Scan for tickets" or "Scan the full menu." A code with no label makes people guess what they're about to get, and a guessed scan is a skipped scan.</p>
+  <div class="note"><b>Common flyer mistake:</b> a designer drops the code onto a busy photo or a dark background to match the layout, then flips it to light-on-dark to "fit." Both choices cut contrast and can stop a scan. Keep it dark modules on a light, plain patch, even if that means a small white box sitting on top of the photo.</div>
+
+  <h2 id="bleed">Bleed, trim, and folds</h2>
+  <p>If the flyer goes to a commercial printer, it gets trimmed to its final size after printing, and that trim line moves slightly from sheet to sheet. Print shops commonly work with a 0.125 inch bleed (artwork extends past the trim edge so there's no white sliver after cutting) and keep important content inside a 0.25 inch safe zone from the trim line. A QR code, including its quiet zone, belongs well inside that safe zone, not near the edge where a routine trim variance could shave into the very margin the code depends on.</p>
+  <p>The same logic applies to folds. On a tri-fold or bi-fold flyer, never let the code straddle a fold line. A hard crease through the middle of a QR code can distort or obscure enough modules to break the scan, and it also makes the flyer awkward to hold flat for scanning. Place the code inside a single panel, with room to spare from the fold.</p>
+
+  <h2 id="make-it">Make the code</h2>
+  <p><a href="../../">Open QR Codes Made Easy</a>, leave <strong>Website</strong> selected, and paste the link you settled on above. Then:</p>
+  <ol><li><strong>Start with dark on light.</strong> It's the combination phone cameras read fastest, and it holds up under the mixed lighting of a table, a bulletin board, or someone's hand.</li><li><strong>Keep the link short and clean.</strong> A shorter link needs fewer modules, which keeps the printed pattern simpler and more forgiving at flyer scale. Our <a href="../qr-code-colors/">QR code colors guide</a> covers which combinations scan reliably if you want to match a brand palette.</li><li><strong>Download SVG for the print file.</strong> It stays crisp at any size the layout software scales it to, so the same file works whether the flyer prints at half a page or a full sheet. PNG is fine for a digital-only version shared as an image.</li></ol>
+
+  <div class="nextstep">
+    <b>Static, not dynamic</b>
+    <p>Made here, the code is static: the destination is written straight into the pattern with no subscription or redirect service in the middle. Our <a href="../do-qr-codes-expire/">do QR codes expire guide</a> explains the difference and why a flyer, which often sits around long after an event, is exactly the kind of print that benefits most from a code that can't lapse.</p>
+  </div>
+
+  <h2 id="print">The 60-second print-proof protocol</h2>
+  <p>Before a full print run, export the final file, drop it into the actual flyer layout at real size, and print one proof, folded the way the finished piece will be folded. Scan the proof with two different phones, once in good light and once in the dimmer, mixed lighting of wherever the flyer will actually sit (a table, a bulletin board, a stack by a register). Confirm it opens the right page, not a placeholder or an old draft.</p>
+  <p>If a proof won't scan, work through the <a href="../why-wont-my-qr-code-scan/">troubleshooting checklist</a> before committing to the full run; size, contrast, and a cropped quiet zone cover most flyer failures. Also plan for the flyer's second life: flyers get photocopied, faxed, or scanned into a phone gallery more than most printed pieces, and each generation loses a little sharpness. A code that's comfortably sized and high-contrast on the original survives a copy of a copy far better than one printed at the bare minimum.</p>
+
+  <h2 id="places">Where a flyer QR code actually earns its spot</h2>
+  <ul><li><strong>Event flyer:</strong> link to an RSVP or ticket page, and consider a <a href="../qr-code-for-a-google-form/">Google Form</a> if you're collecting a headcount.</li><li><strong>Sale or promo flyer:</strong> link to the current offer page so the code stays accurate even after the promotion changes.</li><li><strong>Class, workshop, or community flyer:</strong> link to a sign-up page, replacing a phone number nobody wants to type in by hand.</li><li><strong>Real estate or yard-sign flyer:</strong> link to the full listing or a <a href="../qr-code-for-a-pdf/">spec sheet PDF</a> too long to fit on the printed page.</li></ul>
+  <p>Whatever the use, tell people what scanning gets them. "Scan for the full menu" or "Scan to RSVP" beats a bare code every time, since a labeled code tells someone the two-second commitment is worth it.</p>
+
+  <h2 id="faq">FAQ</h2>
+  <div class="faq"><details><summary>How big should a QR code be on a flyer?</summary><p>At least 1.5 x 1.5 inches (4 x 4 cm) for a handout scanned from one to two feet away. Go bigger if the flyer will also be posted somewhere people view it from further back.</p></details><details><summary>Where on the flyer should the QR code go?</summary><p>A corner or a dedicated panel with a plain background, clear of photos, headlines, and page edges. Keep its full quiet zone (a blank margin four modules wide) intact.</p></details><details><summary>Can the QR code cross a fold line?</summary><p>No. A crease through the code can distort enough modules to break the scan. Keep the code inside a single panel on a folded flyer.</p></details><details><summary>What should a flyer's QR code link to?</summary><p>A page you control, like an event, sign-up, or offer page, rather than content baked into the code. That way you can update the destination after the flyers are printed.</p></details><details><summary>Do I need extra margin for printing and trimming?</summary><p>Yes. Keep the code and its quiet zone well inside the flyer's safe area, typically at least a quarter inch from the trim edge, since commercial trimming can vary by a fraction of an inch sheet to sheet.</p></details></div>
+  <div class="cta"><h2>Make your flyer QR code</h2><p>Generate a static, brandable code in your browser. No account, no subscription, and no tracking redirect in the middle.</p><a class="btn" href="../../">Build your QR code</a></div>
+</article>
+<footer>
+<div class="wrap foot-grid">
+<div class="foot-left">
+<a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+<p>Codes generated in your browser. They never expire. We never see your data. Built to make a point, free to keep it honest.</p>
+</div>
+<div class="foot-links">
+<a href="../">All guides</a>
+<a href="https://www.paypal.com/paypalme/aboundlessworld" target="_blank" rel="noopener">&#9829; Tip the developer</a>
+<span style="font-weight:600;color:var(--ink-soft)">Built by Bud Hennekes</span>
+</div>
+</div>
+<div class="wrap foot-note">No cookies, no ad trackers, no accounts. Just a QR code that works.</div>
+</footer>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Make a QR Code for a Flyer","description":"Put a QR code on a flyer that survives folding, photocopying, and a stack on a table. The right size, where to place it, the margin printers actually need, and what to link.","datePublished":"2026-08-09","dateModified":"2026-08-09","author":{"@type":"Person","name":"Bud Hennekes","url":"https://qrcodemadeeasy.com/"},"publisher":{"@type":"Organization","name":"QR Codes Made Easy","url":"https://qrcodemadeeasy.com/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://qrcodemadeeasy.com/guides/qr-code-for-a-flyer/"},"image":"https://qrcodemadeeasy.com/og-image.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://qrcodemadeeasy.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://qrcodemadeeasy.com/guides/"},{"@type":"ListItem","position":3,"name":"QR code for a flyer","item":"https://qrcodemadeeasy.com/guides/qr-code-for-a-flyer/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How big should a QR code be on a flyer?","acceptedAnswer":{"@type":"Answer","text":"At least 1.5 x 1.5 inches (4 x 4 cm) for a handout scanned from one to two feet away. Go bigger if the flyer will also be posted somewhere people view it from further back."}},{"@type":"Question","name":"Where on the flyer should the QR code go?","acceptedAnswer":{"@type":"Answer","text":"A corner or a dedicated panel with a plain background, clear of photos, headlines, and page edges. Keep its full quiet zone (a blank margin four modules wide) intact."}},{"@type":"Question","name":"Can the QR code cross a fold line?","acceptedAnswer":{"@type":"Answer","text":"No. A crease through the code can distort enough modules to break the scan. Keep the code inside a single panel on a folded flyer."}},{"@type":"Question","name":"What should a flyer's QR code link to?","acceptedAnswer":{"@type":"Answer","text":"A page you control, like an event, sign-up, or offer page, rather than content baked into the code. That way you can update the destination after the flyers are printed."}},{"@type":"Question","name":"Do I need extra margin for printing and trimming?","acceptedAnswer":{"@type":"Answer","text":"Yes. Keep the code and its quiet zone well inside the flyer's safe area, typically at least a quarter inch from the trim edge, since commercial trimming can vary by a fraction of an inch sheet to sheet."}}]}</script>
+<!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
+</body>
+</html>

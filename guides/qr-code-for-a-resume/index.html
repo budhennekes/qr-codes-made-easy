@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Make a QR Code for Your Resume</title>
+<meta name="description" content="Add a QR code to your resume without confusing an ATS. What it should link to, where it belongs on the page, and why it should never replace your written contact info.">
+<link rel="canonical" href="https://qrcodemadeeasy.com/guides/qr-code-for-a-resume/">
+<meta name="author" content="Bud Hennekes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Make a QR Code for Your Resume">
+<meta property="og:description" content="Add a QR code to your resume without confusing an ATS. What it should link to, where it belongs on the page, and why it should never replace your written contact info.">
+<meta property="og:url" content="https://qrcodemadeeasy.com/guides/qr-code-for-a-resume/">
+<meta property="og:image" content="https://qrcodemadeeasy.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://qrcodemadeeasy.com/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#14201c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap"></noscript>
+<style>
+:root{
+  --paper:#f5f7f6; --paper-deep:#e9eeec; --ink:#14201c; --ink-soft:#586661;
+  --line:#e1e8e4; --accent:#2563eb; --accent-deep:#1d4ed8; --ok:#1d4ed8;
+  --warn-bg:#fdf0e3; --warn-border:#e8b07a; --card:#ffffff; --radius:16px;
+  --serif:"Fraunces",Georgia,serif; --sans:"Public Sans",-apple-system,"Helvetica Neue",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background:radial-gradient(1100px 520px at 84% -10%,rgba(56,189,248,.07),transparent 60%),radial-gradient(900px 460px at -5% 2%,rgba(37,99,235,.05),transparent 55%)}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+header{padding:26px 0 0}
+.masthead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:14px}
+.wordmark{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.wordmark .dot{color:var(--accent)}
+.masthead nav{font-size:13px;font-weight:600}
+.masthead nav a{color:var(--ink-soft);text-decoration:none;margin-left:18px}
+.masthead nav a:hover{color:var(--accent)}
+article{padding:34px 0 10px}
+.crumbs{font-size:13px;color:var(--ink-soft);margin-bottom:22px}
+.crumbs a{color:var(--ink-soft);text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;font-size:clamp(30px,4.6vw,44px);line-height:1.1;margin-bottom:14px}
+.byline{font-size:14px;color:var(--ink-soft);margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.byline b{color:var(--ink);font-weight:600}
+article h2{font-family:var(--serif);font-weight:600;font-size:26px;letter-spacing:-.01em;margin:38px 0 12px;line-height:1.2}
+article h3{font-size:18px;font-weight:700;margin:24px 0 8px}
+article p{margin:0 0 16px}
+article p a,article li a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+article ul,article ol{margin:0 0 18px;padding-left:22px}
+article li{margin:0 0 8px}
+strong{font-weight:700}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:var(--paper-deep);border:1px solid var(--line);border-radius:5px;padding:1px 5px;overflow-wrap:anywhere}
+.tbl-wrap{overflow-x:auto;margin:0 0 24px}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--paper-deep);font-weight:700;font-size:13px}
+tr:last-child td{border-bottom:none}
+.answer{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:20px 22px;margin:0 0 26px;font-size:18px}
+.answer p{margin:0 0 10px}
+.answer p:last-child{margin:0}
+.answer .big{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);line-height:1.4}
+.toc{background:var(--paper-deep);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin:0 0 30px;font-size:14px}
+.toc b{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:8px}
+.toc a{color:var(--ink);text-decoration:none;display:inline}
+.toc a:hover{color:var(--accent)}
+.toc ol{margin:0;padding-left:18px}
+.toc li{margin:0 0 4px}
+.note{background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:var(--radius);padding:16px 20px;margin:0 0 24px;font-size:15px}
+.note b{color:var(--accent-deep)}
+.faq{margin-top:10px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer;font-size:17px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";color:var(--accent);font-weight:700;margin-right:10px}
+.faq details[open] summary::before{content:"\2013"}
+.faq details p{margin:12px 0 0;color:var(--ink-soft)}
+.cta{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:26px 26px;margin:36px 0 10px;text-align:center}
+.cta h2{font-family:var(--serif);color:var(--paper);margin:0 0 8px;font-size:24px}
+.cta p{color:#cfc7b8;margin:0 0 16px;font-size:15px}
+.cta a.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:999px;font-size:15px}
+.cta a.btn:hover{background:var(--accent-deep)}
+footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
+.foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-left{max-width:420px}
+.foot-left p{font-size:13px;color:var(--ink-soft);margin-top:8px}
+.foot-links{display:flex;flex-direction:column;gap:8px;font-size:13px;text-align:right}
+.foot-links a{color:var(--accent);text-decoration:none;font-weight:600}
+.foot-note{font-size:12px;color:var(--ink-soft);margin-top:20px}
+.nextstep{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:18px 22px;margin:26px 0}
+.nextstep b{display:block;font-family:var(--serif);font-weight:600;font-size:17px;margin-bottom:6px;color:var(--ink)}
+.nextstep p{margin:0 0 10px;font-size:15px;color:var(--ink-soft)}
+.nextstep .links a{display:inline-block;font-weight:600;color:var(--accent-deep);text-decoration:none;font-size:15px}
+.nextstep .links a:hover{text-decoration:underline}
+.nextstep .aff-mini{font-size:12px;color:var(--ink-soft);margin:8px 0 0;font-style:italic}
+
+/* depth + mobile polish */
+.answer,.toc,.nextstep,.g-card,.tbl-wrap table{box-shadow:0 1px 2px rgba(20,32,28,.03),0 12px 30px -22px rgba(20,32,28,.14)}
+.featured{box-shadow:0 2px 8px rgba(20,32,28,.08),0 22px 48px -24px rgba(20,32,28,.32)}
+.cta,.cta-band{box-shadow:0 18px 44px -24px rgba(20,32,28,.4)}
+@media (max-width:600px){
+  .wrap{padding:0 18px}
+  article{padding:26px 0 10px}
+  h1{font-size:29px}
+  .byline{margin-bottom:20px;padding-bottom:16px}
+  .featured{border-radius:12px;margin:0 0 22px}
+  .answer{padding:16px 18px;font-size:16.5px}
+  .answer .big{font-size:18px}
+  .toc{padding:14px 16px}
+  article h2{font-size:23px;margin:30px 0 10px}
+  .masthead{flex-direction:column;align-items:flex-start;gap:10px}
+  .masthead nav{display:flex;gap:16px;margin-left:0;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .masthead nav::-webkit-scrollbar{display:none}
+  .masthead nav a{margin-left:0;white-space:nowrap;flex:none}
+  .foot-links{text-align:left}
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="masthead">
+    <a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+    <nav>
+      <a href="../../">The tool</a>
+      <a href="../">Guides</a>
+      <a href="../../#faq">FAQ</a>
+      <a href="../../#support" style="color:var(--accent)">&#9829; Tip</a>
+    </nav>
+  </div>
+</header>
+<article class="wrap">
+  <div class="crumbs"><a href="../../">Home</a> / <a href="../">Guides</a> / QR code for a resume</div>
+  <div class="eyebrow">Job search &amp; careers</div>
+  <h1>How to Make a QR Code for Your Resume</h1>
+  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated August 2026.</div>
+  <div class="answer"><p class="big">Put a small QR code in the header or footer that links to your portfolio, LinkedIn profile, or personal site, never to information that exists only in the code. Applicant tracking systems parse text, not images, so a QR code is invisible to the software that screens most resumes first. Keep every essential detail written out, and let the code be a bonus, not a requirement.</p></div>
+  <div class="toc"><b>What's here</b><ol><li><a href="#ats">The ATS problem no one mentions</a></li><li><a href="#where-point">What the code should point to</a></li><li><a href="#make-it">Make and download the code</a></li><li><a href="#placement">Where it goes on the page</a></li><li><a href="#print">Make it survive print and PDF</a></li></ol></div>
+
+  <h2 id="ats">The ATS problem no one mentions</h2>
+  <p>Most resumes for a posted job pass through an applicant tracking system before a person ever sees them. That software works by parsing, extracting the text layer of your resume and sorting it into fields like name, dates, and skills. A QR code is a graphic, not text, so a parser has no path to "read" it. Anything you put only inside the code, a phone number, a portfolio URL, a certification, is invisible to that first automated pass.</p>
+  <p>That doesn't mean skip the QR code. It means treat it the way you'd treat a nice-to-have: useful to the human who eventually opens your resume, irrelevant to the software that decides whether it gets that far. Keep your phone number, email, and city written in plain text at the top, exactly as you would if the QR code didn't exist.</p>
+
+  <h2 id="where-point">What the code should point to</h2>
+  <p>The easy mistake is linking the code back to a copy of the resume itself. That's circular: the recruiter already has your resume in hand, so a code that just re-opens it adds nothing. Point it at something the resume can't hold.</p>
+  <div class="tbl-wrap"><table><thead><tr><th>Link to…</th><th>When it's worth the space</th></tr></thead><tbody><tr><td>A portfolio or work samples page</td><td>You're in a visual, technical, or writing field where seeing the work matters more than reading about it</td></tr><tr><td>Your LinkedIn profile</td><td>You want a recruiter to see recommendations, a fuller history, or shared connections in one tap</td></tr><tr><td>A personal site or contact page</td><td>You want a single, durable link you can update anytime, unlike the printed resume itself</td></tr><tr><td>A specific project or case study</td><td>One piece of work says more about you than a general link would</td></tr></tbody></table></div>
+  <p>My honest take: a link you control, like a personal domain or a page you can edit, ages better than a link to a platform profile you don't control the layout of. If you don't have your own site, LinkedIn or a portfolio platform is a fine second choice. See our <a href="../qr-code-for-linkedin/">LinkedIn QR code guide</a> for getting that specific link right, including the sign-out test that catches a broken profile URL before it's printed.</p>
+
+  <h2 id="make-it">Make the code</h2>
+  <p><a href="../../">Open QR Codes Made Easy</a>, leave <strong>Website</strong> selected, and paste the link you chose. Then:</p>
+  <ol><li><strong>Start with dark on light.</strong> It reads fastest on a phone camera and matches a resume's black-on-white printing anyway.</li><li><strong>Skip the logo.</strong> A resume already has your name at the top; a logo on the code adds density without adding information.</li><li><strong>Download SVG.</strong> It stays crisp whether the resume is printed, viewed as a PDF, or opened on a phone. The code is built in your browser and never sent anywhere in between.</li></ol>
+
+  <h2 id="placement">Where it goes on the page</h2>
+  <p>Small and out of the way. A corner of the header next to your contact line, or a line in the footer, works better than a large code competing with your experience section for attention. Keep your written contact details as the primary path to reach you, and let the code sit quietly as an optional shortcut for someone already holding the page.</p>
+  <div class="note"><b>One-page resumes:</b> if space is tight, the QR code is the first thing to cut. It never carries information your resume needs to work; it only adds a faster path to something extra.</div>
+
+  <h2 id="print">Make it survive print and PDF</h2>
+  <p>A resume gets printed, emailed as a PDF, and screenshotted more than almost any other document, so test all three. Export the resume, print one physical copy, and scan the code with a phone in ordinary light. Then open the PDF version on a screen and scan it directly off the display. Both should open the same link cleanly. Our <a href="../how-big-should-a-qr-code-be-for-print/">QR print-size guide</a> covers a safe minimum size for something this small; if either test fails, run through the <a href="../why-wont-my-qr-code-scan/">troubleshooting checklist</a> before sending the resume out.</p>
+
+  <h2 id="faq">FAQ</h2>
+  <div class="faq"><details><summary>Will an ATS reject my resume for having a QR code?</summary><p>No. It simply won't read the code. The parser processes the text on the page and ignores the graphic, so a QR code neither helps nor hurts automated screening as long as your written details are still complete.</p></details><details><summary>Should the QR code link to a PDF of my resume?</summary><p>Usually not. Whoever scans it already has the resume. Point the code at something it can't show, like a portfolio, work samples, or a fuller profile.</p></details><details><summary>Is a QR code appropriate for every resume?</summary><p>It fits best in visual, technical, or portfolio-driven fields where seeing work matters. In more conservative or traditional industries, a small code is still fine, but it should never replace a written link or contact line.</p></details><details><summary>What size should the code be on a resume?</summary><p>Small, roughly 0.5 to 0.7 inch is enough for a close-up scan in a corner or footer. Leave the quiet margin around it alone and test a printed proof before sending the resume out widely.</p></details></div>
+  <div class="cta"><h2>Make your resume QR code</h2><p>Generate a static, brandable code in your browser. No account, no subscription, and no tracking redirect in the middle.</p><a class="btn" href="../../">Build your QR code</a></div>
+</article>
+<footer>
+<div class="wrap foot-grid">
+<div class="foot-left">
+<a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
+<p>Codes generated in your browser. They never expire. We never see your data. Built to make a point, free to keep it honest.</p>
+</div>
+<div class="foot-links">
+<a href="../">All guides</a>
+<a href="https://www.paypal.com/paypalme/aboundlessworld" target="_blank" rel="noopener">&#9829; Tip the developer</a>
+<span style="font-weight:600;color:var(--ink-soft)">Built by Bud Hennekes</span>
+</div>
+</div>
+<div class="wrap foot-note">No cookies, no ad trackers, no accounts. Just a QR code that works.</div>
+</footer>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Make a QR Code for Your Resume","description":"Add a QR code to your resume without confusing an ATS. What it should link to, where it belongs on the page, and why it should never replace your written contact info.","datePublished":"2026-08-09","dateModified":"2026-08-09","author":{"@type":"Person","name":"Bud Hennekes","url":"https://qrcodemadeeasy.com/"},"publisher":{"@type":"Organization","name":"QR Codes Made Easy","url":"https://qrcodemadeeasy.com/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://qrcodemadeeasy.com/guides/qr-code-for-a-resume/"},"image":"https://qrcodemadeeasy.com/og-image.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://qrcodemadeeasy.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://qrcodemadeeasy.com/guides/"},{"@type":"ListItem","position":3,"name":"QR code for a resume","item":"https://qrcodemadeeasy.com/guides/qr-code-for-a-resume/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will an ATS reject my resume for having a QR code?","acceptedAnswer":{"@type":"Answer","text":"No. It simply won't read the code. The parser processes the text on the page and ignores the graphic, so a QR code neither helps nor hurts automated screening as long as your written details are still complete."}},{"@type":"Question","name":"Should the QR code link to a PDF of my resume?","acceptedAnswer":{"@type":"Answer","text":"Usually not. Whoever scans it already has the resume. Point the code at something it can't show, like a portfolio, work samples, or a fuller profile."}},{"@type":"Question","name":"Is a QR code appropriate for every resume?","acceptedAnswer":{"@type":"Answer","text":"It fits best in visual, technical, or portfolio-driven fields where seeing work matters. In more conservative or traditional industries, a small code is still fine, but it should never replace a written link or contact line."}},{"@type":"Question","name":"What size should the code be on a resume?","acceptedAnswer":{"@type":"Answer","text":"Small, roughly 0.5 to 0.7 inch is enough for a close-up scan in a corner or footer. Leave the quiet margin around it alone and test a printed proof before sending the resume out widely."}}]}</script>
+<!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
+</body>
+</html>
