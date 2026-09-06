@@ -13,7 +13,7 @@ QR Codes Made Easy only makes static codes. Your link is encoded directly into t
 ## What it does
 
 - **Codes that cannot expire.** The destination is baked into the geometry itself. If your link works, your code works.
-- **Your brand, not a template.** Four styles, your colors, your logo in the center. Error correction rises automatically so a logo never breaks scanning.
+- **Your brand, not a template.** Four styles, your colors, your logo in the center. Error correction rises automatically when you add a logo. Always test the finished code; a logo can still affect scanning.
 - **Warns you before a bad print.** Low contrast or inverted colors trigger a plain-English warning before you download, not after you print 10,000 flyers.
 - **Print-ready files.** PNG up to 4000px, true vector SVG for your printer, transparent background if your layout needs it.
 - **Completely private.** Your URL, logo, and downloads never leave your device. Load the page once and it works offline.
@@ -22,9 +22,13 @@ QR Codes Made Easy only makes static codes. Your link is encoded directly into t
 
 Open [the app](https://qrcodemadeeasy.com/), paste your link, pick a style, download. Before you print, test-scan the file with two phones. The full print checklist is on the page.
 
+## Local verification
+
+See [tests/README.md](tests/README.md) for browser and QR-decoding regression tests.
+
 ## Under the hood
 
-One HTML page plus [qr-code-styling](https://github.com/kozakdenys/qr-code-styling). No build step, no backend, no analytics, no AI. Static hosting on GitHub Pages.
+Static HTML guides and tools, a deferred `generator.js`, and [qr-code-styling](https://github.com/kozakdenys/qr-code-styling). No build step, backend, or AI dependency. Cloudflare provides cookieless page-view analytics; QR contents stay in the browser. Hosted on GitHub Pages.
 
 ## License
 
