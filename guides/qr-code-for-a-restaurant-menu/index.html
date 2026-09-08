@@ -131,9 +131,9 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
   <div class="masthead">
     <a class="wordmark" href="../../">QR Codes Made Easy<span class="dot">.</span></a>
     <nav>
-      <a href="../../">The tool</a>
+      <a href="../../">Generator</a>
       <a href="../">Guides</a>
-      <a href="../../#faq">FAQ</a>
+      <a href="../../tools/qr-code-size-calculator/">Print sizing</a>
       <a href="../../#support" style="color:var(--accent)">&#9829; Tip</a>
     </nav>
   </div>
@@ -142,53 +142,81 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
   <div class="crumbs"><a href="../../">Home</a> / <a href="../">Guides</a> / QR code for a restaurant menu</div>
   <div class="eyebrow">Menus &amp; hospitality</div>
   <h1>How to Make a QR Code for a Restaurant Menu</h1>
-  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated July 2026.</div>
-  <img class="featured" src="og.png" alt="How to Make a QR Code for a Restaurant Menu: featured image from QR Codes Made Easy" width="1200" height="630" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--line);margin:0 0 26px" fetchpriority="high">
-  <div class="answer"><p class="big">Make a static QR code that points at a menu page you control, then update that page whenever prices change. The printed code never has to change, and because it is static it never expires the way a subscription-based dynamic menu code does. Free, no account, and it keeps working long after any trial would have ended.</p></div>
-  <div class="toc"><b>What's here</b><ol><li><a href="#control">Put your menu on a page you control</a></li><li><a href="#make-it">Make the static code (2 minutes)</a></li><li><a href="#update">Change your menu without reprinting the code</a></li><li><a href="#size">Size it for a table tent</a></li><li><a href="#no-dynamic">Do not use a dynamic menu code (here is why)</a></li></ol></div>
+  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated September 7, 2026.</div>
+  <img class="featured" src="og.webp" alt="How to Make a QR Code for a Restaurant Menu: featured image from QR Codes Made Easy" width="1200" height="630" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--line);margin:0 0 26px" fetchpriority="high">
+  <div class="answer"><p class="big">Put your menu at a stable web address, paste that address into the free generator, and download your QR code. Update the menu at the same address when prices change. The static code has no expiry date or subscription, but your menu page and domain must stay available.</p></div>
+  <div class="toc"><b>What's here</b><ol><li><a href="#control">Choose a menu address you control</a></li><li><a href="#menu-format">Mobile menu page or PDF?</a></li><li><a href="#make-it">Make your QR code</a></li><li><a href="#update">Update the menu without reprinting</a></li><li><a href="#size">Choose a print size</a></li><li><a href="#proof">Test a printed proof</a></li><li><a href="#no-dynamic">Do you need a dynamic code?</a></li></ol></div>
 
-  <h2 id="control">Put your menu on a page you control</h2>
-<p>Before you make the code, decide where it points. This is the decision that actually matters, and most menu QR tools rush right past it.</p>
-<p>The best target is a page on your own domain, something like <code>yoursite.com/menu</code>. You own that address, so you can change what sits on the page forever without touching the printed code. A PDF menu hosted on your own site works. A Google Doc set to "anyone with the link can view" works. A plain page on your website works. Pick whatever is easiest for you to edit. The one rule that counts: it has to be a URL you control and can update.</p>
-<p>What to avoid is a link you might lose. A third-party ordering platform you may leave, a file on someone else's account, a shortener you did not set up. If that link goes dark, so does every table tent you printed. Keep the destination somewhere you will still own next year.</p>
+  <h2 id="control">Choose a menu address you control</h2>
+  <p>Use a short address on your own domain, such as <code>yoursite.com/menu</code>. That address is the part you print permanently. The menu behind it can change.</p>
+  <p>Check the link in a private browser window before making the code. A customer should not need your account, a password, or permission to view the menu. Keep the domain renewed and the page online.</p>
+  <p>A shared document or third-party ordering page can work, but you do not control its domain. If you change providers or lose the account, the printed link may stop working. Prefer your own menu page when possible.</p>
 
+  <h2 id="menu-format">Mobile menu page or PDF?</h2>
+  <p><b>Start with a mobile-friendly web page if you can.</b> A PDF is a practical option when you already have a readable menu file. Test either format on a phone before deciding.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th scope="col">Format</th><th scope="col">Useful when</th><th scope="col">Check before printing</th></tr></thead>
+    <tbody>
+      <tr><td>Mobile web page</td><td>You want readable text that fits a phone screen and prices you can edit.</td><td>Text size, load time, current prices, and access without signing in.</td></tr>
+      <tr><td>PDF on your site</td><td>You already have a menu file and can replace it at the same URL.</td><td>File size, zooming, download behavior, and whether a replacement changes the URL.</td></tr>
+      <tr><td>Shared document</td><td>You need a simple starting point without building a page.</td><td>Public viewing permissions, phone layout, and long-term access to the owning account.</td></tr>
+    </tbody>
+  </table></div>
+  <p>The code stores the link, not the menu file. A larger PDF does not automatically make the QR pattern denser, but it can take longer for diners to open. See the <a href="../qr-code-for-a-pdf/">PDF QR code guide</a> for file-link checks.</p>
   <div class="nextstep">
     <b>Don't have a menu page yet?</b>
-    <p>Any simple one-pager works. Squarespace is the polished route. Carrd builds a clean single page for about $19 a year. Either way, point it at yoursite.com/menu and the code you print never has to change.</p>
-    <p class="links">
-      <!-- AFFILIATE: swap for your Squarespace + Carrd tracking links once approved -->
-      <a href="https://www.squarespace.com" target="_blank" rel="noopener sponsored">Start a site on Squarespace &rarr;</a>
-      &nbsp;&nbsp;&middot;&nbsp;&nbsp;
-      <a href="https://carrd.co" target="_blank" rel="noopener sponsored">Or a one-pager on Carrd &rarr;</a>
-    </p>
-    <p class="aff-mini">Affiliate links. They never change what I recommend.</p>
+    <p>First check whether your existing website can add a menu page. If you need a new site, compare builders such as <a href="https://www.squarespace.com" target="_blank" rel="noopener">Squarespace</a> and <a href="https://carrd.co" target="_blank" rel="noopener">Carrd</a>. Check the current plan's custom-domain and publishing options before paying.</p>
+    <p class="aff-mini">These are direct links, not affiliate tracking links.</p>
   </div>
 
-  <h2 id="make-it">Make the static code (2 minutes)</h2>
-<p>Open <a href="../../">the tool</a>, paste your menu URL into the Website link tab, and you have a working code. If you want it to look like yours, add your brand colors and drop your logo in the center. Then download it: PNG for screens and quick prints (up to 4000px), or true vector SVG if you are handing it to a printer who wants clean art at any size. No account, nothing uploaded, nothing to renew.</p>
-<p>Two things happen automatically that save you grief. When you add a center logo, the tool raises the error correction to its highest level so the code still scans with your logo sitting on top of it. And the quiet margin, the blank border a scanner needs to lock on, is always included. You do not have to think about either one. There is also a "Copy code for your website" button that hands you a self-contained embed snippet if you want the same code on your online menu page.</p>
+  <h2 id="make-it">Make your QR code</h2>
+  <ol>
+    <li>Open the <a href="../../">free QR code generator</a> and choose <b>Website link</b>.</li>
+    <li>Paste the full public menu URL. Check the spelling and destination.</li>
+    <li>Use a dark code on a light background. Add a small logo only if you need it.</li>
+    <li>Download SVG for a printer or designer who accepts vector files. Use PNG when your layout tool needs an image.</li>
+    <li>Keep the blank margin around the pattern when placing the code in your layout.</li>
+  </ol>
+  <p>The generator raises error correction when you add a logo. That adds redundancy; it does not guarantee a scan. A large logo, poor contrast, or a small print can still make the code fail. Read the <a href="../qr-code-logo-size/">logo-size guide</a> before approving branded artwork.</p>
 
-  <h2 id="update">Change your menu without reprinting the code</h2>
-<p>Here is the part people get backwards. A static code cannot be re-pointed after you print it. That sounds like a limitation right up until you realize you do not need it to be one.</p>
-<p>You are not changing the code. You are changing the page the code points at. Aim the code at a stable URL like <code>yoursite.com/menu</code>, print your table tents, and then when prices climb or the fish special changes, you edit that page. Same code, new menu. The squares on the table tent never have to change again.</p>
-<p>This is exactly why static beats dynamic for a menu. A menu is the thing you update most and reprint least, so you want the printed code to be permanent and the content behind it to be editable. Pointing a static code at your own page gives you both. If you want the longer version of why the paid dynamic route works against you here, I wrote a whole piece on <a href="../do-qr-codes-expire/">whether QR codes expire</a>.</p>
+  <h2 id="update">Update the menu without reprinting</h2>
+  <p>Edit the content at <code>yoursite.com/menu</code> and leave the address unchanged. The same printed code will open the updated page.</p>
+  <p>If you link directly to a PDF, replace the file at the same URL. Uploading a new file with a new name does not update the old QR code. Linking to a stable menu page instead gives you a place to swap files or add seasonal menus.</p>
+  <div class="note"><b>Keep a fallback.</b> Print the readable menu address next to the code and keep a paper menu available for customers who cannot or prefer not to scan.</div>
 
-  <h2 id="size">Size it for a table tent</h2>
-<p>Diners scan a menu from about a foot away, seated, phone already in hand. You do not need a billboard. Somewhere between 1.2 and 2 inches (3 to 5 cm) is plenty for a table tent. Keep the quiet margin the tool adds, use a dark code on a light background, and you are set.</p>
-<p>The one thing worth a second look is contrast. Restaurants are dim on purpose, and a low-contrast code that scans fine on your bright monitor can flat out fail on a candlelit table. The tool checks your color combo in plain English and warns you before you download something risky, so you are not finding out at dinner service. If you want the full numbers for other print jobs, they are in the <a href="../how-big-should-a-qr-code-be-for-print/">QR print size guide</a>, and if a printed code is not scanning at all, there is a <a href="../why-wont-my-qr-code-scan/">troubleshooting guide</a> for that.</p>
+  <h2 id="size">Choose a print size</h2>
+  <p>For a close-up table-tent scan, a code around 1.2 to 2 inches square is a starting point, not a guarantee. Use the <a href="../../tools/qr-code-size-calculator/">QR print-size calculator</a> to account for the expected distance, content density, and logo use. Larger codes may be needed.</p>
+  <p>Leave the generator's blank border intact. DENSO WAVE specifies a <a href="https://www.qrcode.com/en/howto/code.html">four-module margin around a standard QR Code</a>. A module is one small square in the pattern. Do not let text, artwork, or a trim line enter that margin.</p>
+  <p>Restaurants can be dim, and glossy holders can reflect overhead lights. Test the code inside the holder you intend to use, at an actual table. The <a href="../how-big-should-a-qr-code-be-for-print/">print-size guide</a> explains sizing in more detail.</p>
 
-  <h2 id="no-dynamic">Do not use a dynamic menu code (here is why)</h2>
-<p>Most of the free menu QR tools you will find make dynamic codes, and they do not lead with that. A dynamic code routes every scan through the vendor's server. That is fine right up until the free trial ends or the subscription lapses, and then the redirect stops. Your diners scan the table tent and land on a "code inactive" page, sometimes the vendor's own upsell, sometimes mid-service on a Friday night.</p>
-<p>A static code has none of that exposure. There is no server in the middle to switch off, no plan to keep current, nobody who has to stay in business for your menu to load. Point it at your page and it works.</p>
-<p>The usual reason people reach for a dynamic code is scan counts, and you can get those without one. Add a UTM tag to your menu URL (something like <code>yoursite.com/menu?utm_source=table-tent</code>) and read the scans in your own analytics. Free, no dynamic code, no subscription. I walk through the whole thing in the guide on <a href="../track-qr-code-scans-without-subscription/">tracking QR scans without a subscription</a>.</p>
+  <h2 id="proof">Test a printed proof before ordering</h2>
+  <ol>
+    <li>Print the final artwork at its intended size. Do not test only the QR preview on your monitor.</li>
+    <li>Place the proof in the actual holder, sleeve, or table tent.</li>
+    <li>Scan it with more than one phone, ideally including an iPhone and an Android phone.</li>
+    <li>Test from the diner's seat under normal service lighting. Check for glare.</li>
+    <li>Open the menu over mobile data as well as guest Wi-Fi. Confirm it loads without signing in.</li>
+    <li>Check the menu's prices, readable text, and fallback address before approving a print run.</li>
+  </ol>
+  <p>If a test fails, fix the cause and print another proof. Start with <a href="../why-wont-my-qr-code-scan/">QR scan troubleshooting</a>. This checklist is a test procedure, not a claim that every size, phone, or holder has been tested by us.</p>
 
-  <div class="note"><b>Seasonal menu?</b> Still point the code at one stable URL like <code>/menu</code> and swap the page contents each season. Do not make a new code every season. A fresh code means reprinting every table tent, which is the exact chore you are trying to avoid.</div>
+  <h2 id="no-dynamic">Do you need a dynamic code?</h2>
+  <p>Usually not for a menu you can update at a stable address. A static code links directly to that address without a QR provider's redirect in between.</p>
+  <p>A dynamic service can be useful if you need to change the encoded destination through its dashboard or use its reporting tools. The tradeoff is dependence on that service. Check its free-plan limits, cancellation terms, and what happens to printed codes if you stop paying.</p>
+  <p>For campaign reporting, <a href="https://support.google.com/analytics/answer/10917952?hl=en">Google's UTM parameters</a> can identify visits from a tagged menu link in analytics you already run. This is <b>not an exact scan count</b>: people can scan without opening the page, share a tagged link, or block analytics. Follow the <a href="../track-qr-code-scans-without-subscription/">QR visit-tracking guide</a> for setup and limitations. Do not put customer information in the tags.</p>
 
   <h2 id="faq">FAQ</h2>
-  <div class="faq"><details><summary>How do I make a free QR code for my menu?</summary><p>Put your menu at a URL you control, paste it into the tool, download the code. Free, no account, never expires.</p></details><details><summary>Do menu QR codes expire?</summary><p>Static ones do not. Dynamic ones from subscription tools do, the day the plan lapses. Point a static code at your own menu page and it keeps working.</p></details><details><summary>What size should a menu QR code be on a table tent?</summary><p>About 1.2 to 2 inches (3 to 5 cm) for a one-foot scan, with the quiet margin left intact.</p></details><details><summary>Can I change my menu without making a new code?</summary><p>Yes, that is the whole point. Point the code at a stable page and edit the page. The code stays the same.</p></details><details><summary>Where should the code point?</summary><p>A menu page on your own domain, so you always control it. Avoid a link you might lose.</p></details><details><summary>Can I track how many people scan it?</summary><p>Yes, add a UTM tag to the URL and read scans in your own analytics, free, no dynamic code.</p></details></div>
+  <div class="faq">
+    <details><summary>How do I make a free QR code for my menu?</summary><p>Put your menu at a public URL, paste it into the generator, and download the code. Test the final print before ordering. No account or QR subscription is required.</p></details>
+    <details><summary>Do menu QR codes expire?</summary><p>A static QR code has no expiry date, but its menu page and domain must stay available. A dynamic code depends on the redirect service and its terms.</p></details>
+    <details><summary>What size should a menu QR code be on a table tent?</summary><p>For close-up use, around 1.2 to 2 inches square is a starting point, not a guarantee. Preserve the blank border and test the final print at the actual scanning distance and lighting.</p></details>
+    <details><summary>Can I change my menu without making a new code?</summary><p>Yes. Keep the same menu URL and update its content. A static QR code cannot change its encoded address after printing.</p></details>
+    <details><summary>Where should the code point?</summary><p>Prefer a stable menu page on your own domain. Make sure it opens on a phone without a login or permission request.</p></details>
+    <details><summary>Can I track how many people scan it?</summary><p>UTM tags can identify attributed menu visits in your analytics, not an exact scan count or a count of unique diners. The static code itself does not collect data.</p></details>
+  </div>
   <div class="cta">
     <h2>Make your menu code</h2>
-    <p>A static QR code for your menu that points at a page you control and never expires. Free, right in your browser, no account.</p>
+    <p>Link directly to your menu. Download PNG or SVG for free, with no account and no subscription to keep the code active.</p>
     <a class="btn" href="../../">Build your QR code</a>
   </div>
 </article>
@@ -206,9 +234,9 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
 </div>
 <div class="wrap foot-note">No cookies, no ad trackers, no accounts. Just a QR code that works.</div>
 </footer>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Make a QR Code for a Restaurant Menu (That Won't Expire)", "description": "Make a free QR code for your restaurant menu that never expires. Point it at a menu page you control, update prices anytime, and never reprint the table tent.", "datePublished": "2026-07-09", "dateModified": "2026-07-09", "author": {"@type": "Person", "name": "Bud Hennekes", "url": "https://qrcodemadeeasy.com/"}, "publisher": {"@type": "Organization", "name": "QR Codes Made Easy", "url": "https://qrcodemadeeasy.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://qrcodemadeeasy.com/guides/qr-code-for-a-restaurant-menu/"}, "image": "https://qrcodemadeeasy.com/guides/qr-code-for-a-restaurant-menu/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Make a QR Code for a Restaurant Menu (That Won't Expire)", "description": "Make a free QR code for your restaurant menu that never expires. Point it at a menu page you control, update prices anytime, and never reprint the table tent.", "datePublished": "2026-07-09", "dateModified": "2026-09-07", "author": {"@type": "Person", "name": "Bud Hennekes", "url": "https://qrcodemadeeasy.com/"}, "publisher": {"@type": "Organization", "name": "QR Codes Made Easy", "url": "https://qrcodemadeeasy.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://qrcodemadeeasy.com/guides/qr-code-for-a-restaurant-menu/"}, "image": "https://qrcodemadeeasy.com/guides/qr-code-for-a-restaurant-menu/og.png"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrcodemadeeasy.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://qrcodemadeeasy.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "QR code for a restaurant menu", "item": "https://qrcodemadeeasy.com/guides/qr-code-for-a-restaurant-menu/"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I make a free QR code for my menu?", "acceptedAnswer": {"@type": "Answer", "text": "Put your menu at a URL you control, paste it into the tool, download the code. Free, no account, never expires."}}, {"@type": "Question", "name": "Do menu QR codes expire?", "acceptedAnswer": {"@type": "Answer", "text": "Static ones do not. Dynamic ones from subscription tools do, the day the plan lapses. Point a static code at your own menu page and it keeps working."}}, {"@type": "Question", "name": "What size should a menu QR code be on a table tent?", "acceptedAnswer": {"@type": "Answer", "text": "About 1.2 to 2 inches (3 to 5 cm) for a one-foot scan, with the quiet margin left intact."}}, {"@type": "Question", "name": "Can I change my menu without making a new code?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, that is the whole point. Point the code at a stable page and edit the page. The code stays the same."}}, {"@type": "Question", "name": "Where should the code point?", "acceptedAnswer": {"@type": "Answer", "text": "A menu page on your own domain, so you always control it. Avoid a link you might lose."}}, {"@type": "Question", "name": "Can I track how many people scan it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, add a UTM tag to the URL and read scans in your own analytics, free, no dynamic code."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I make a free QR code for my menu?", "acceptedAnswer": {"@type": "Answer", "text": "Put your menu at a public URL, paste it into the generator, and download the code. Test the final print before ordering. No account or QR subscription is required."}}, {"@type": "Question", "name": "Do menu QR codes expire?", "acceptedAnswer": {"@type": "Answer", "text": "A static QR code has no expiry date, but its menu page and domain must stay available. A dynamic code depends on the redirect service and its terms."}}, {"@type": "Question", "name": "What size should a menu QR code be on a table tent?", "acceptedAnswer": {"@type": "Answer", "text": "For close-up use, around 1.2 to 2 inches square is a starting point, not a guarantee. Preserve the blank border and test the final print at the actual scanning distance and lighting."}}, {"@type": "Question", "name": "Can I change my menu without making a new code?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Keep the same menu URL and update its content. A static QR code cannot change its encoded address after printing."}}, {"@type": "Question", "name": "Where should the code point?", "acceptedAnswer": {"@type": "Answer", "text": "Prefer a stable menu page on your own domain. Make sure it opens on a phone without a login or permission request."}}, {"@type": "Question", "name": "Can I track how many people scan it?", "acceptedAnswer": {"@type": "Answer", "text": "UTM tags can identify attributed menu visits in your analytics, not an exact scan count or a count of unique diners. The static code itself does not collect data."}}]}</script>
 <!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
 </body>
 </html>
