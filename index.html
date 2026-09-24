@@ -117,6 +117,12 @@ header{padding:26px 0 0}
 }
 .control-group{margin-bottom:26px}
 .control-group:last-child{margin-bottom:0}
+.design-options{border-top:1px solid var(--line);margin-top:2px;padding-top:4px}
+.design-options summary{cursor:pointer;list-style:none;padding:15px 0;font-weight:700;font-size:14px;color:var(--ink)}
+.design-options summary::-webkit-details-marker{display:none}
+.design-options summary::after{content:"+";float:right;color:var(--accent);font-size:19px;font-weight:500;line-height:.9}
+.design-options[open] summary::after{content:"–"}
+.design-options > .control-group:first-of-type{margin-top:4px}
 
 input[type="url"], input[type="tel"], input.wa-message, #tg-input, .cc-select{
   width:100%;font-family:var(--sans);font-size:16px;padding:13px 14px;
@@ -323,6 +329,11 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
 .guide-more{margin-top:18px;font-size:14.5px;color:var(--ink-soft)}
 .guide-more a{color:var(--accent-deep);font-weight:600;text-decoration:none}
 .guide-more a:hover{text-decoration:underline}
+.guide-library{margin-top:20px;border-top:1px solid var(--line)}
+.guide-library summary{cursor:pointer;list-style:none;padding:16px 0;font-weight:700;color:var(--ink)}
+.guide-library summary::-webkit-details-marker{display:none}
+.guide-library summary::after{content:"+";float:right;color:var(--accent);font-size:19px;font-weight:500;line-height:.9}
+.guide-library[open] summary::after{content:"–"}
 
 /* ---------- product / upsell ---------- */
 .product{
@@ -405,6 +416,9 @@ footer{margin-top:80px;border-top:2px solid var(--ink);padding:30px 0 46px}
   .color-field{flex-basis:100%}
   .swap-btn{flex-basis:100%;width:100%}
   .type-tab{flex:1 1 calc(50% - 3px)}
+  .design-options summary{padding:14px 0}
+  .qr-frame{width:206px;height:206px;padding:14px}
+  #qr-preview canvas,#qr-preview svg{max-width:176px;max-height:176px}
 }
 
 /* ---------- whimsy ---------- */
@@ -501,12 +515,10 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
   <div class="masthead">
     <div class="wordmark">QR Codes Made Easy<span class="dot" id="brand-dot" title="go on, poke it">.</span></div>
     <nav>
-      <a href="for/">Who it's for</a>
-      <a href="#why">Why this exists</a>
-      <a href="#checklist">Print checklist</a>
+      <a href="#tool">Generator</a>
+      <a href="tools/qr-code-size-calculator/">Print sizing</a>
       <a href="guides/">Guides</a>
-      <a href="#faq">FAQ</a>
-      <a href="#support" style="color:var(--accent)">♥ Tip</a>
+      <a href="#why">Why static?</a>
     </nav>
   </div>
 </header>
@@ -582,6 +594,8 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
         </div>
       </div>
 
+      <details class="design-options" id="design-options">
+        <summary>Customize design <span class="hint">(optional)</span></summary>
       <div class="control-group">
         <span class="field-label"><span class="step-num">2</span>Pick a style</span>
         <div class="presets" id="presets">
@@ -643,12 +657,13 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
       </div>
 
       <div class="warning" id="contrast-warning"></div>
+      </details>
     </div>
 
     <div class="stage">
       <div class="qr-frame"><div id="qr-preview"></div></div>
       <p class="destination-status" id="destination-status" aria-live="polite">Demo preview — add a destination to make your code.</p>
-      <p class="scan-tip"><b>Go ahead, scan your own screen right now.</b> We'll wait. If it works here, it works in print.</p>
+      <p class="scan-tip"><b>Scan the preview to check the destination.</b> Then scan a printed proof at its final size before you order.</p>
       <div class="dl-block">
         <div class="dl-row">
           <select id="png-size">
@@ -676,7 +691,7 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
             <span class="embed-hint" id="embed-hint">Paste into any website. The code is built into the snippet, nothing to host.</span>
           </div>
         </div>
-        <p class="print-cta"><a href="#print">Got your file? Here's where to print or mount it &rarr;</a></p>
+        <p class="print-cta"><a href="tools/qr-code-size-calculator/">Check print size</a> &nbsp;·&nbsp; <a href="#checklist">Use the print checklist</a></p>
       </div>
     </div>
   </div>
@@ -787,42 +802,6 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
   <p class="disclosure">These are direct retailer links, not affiliate tracking links. Compare materials and prices, and test a printed sample before you order.</p>
 </section>
 
-<!-- ===== Digital guide teaser. Currently "coming soon" with NO lead capture (no button/mailto by design).
-     When it's ready, add a real CTA (Gumroad link or an email capture) and update the badge + status line. ===== -->
-<section class="edu wrap" id="guide" style="padding-top:56px">
-  <p class="kicker">Go deeper</p>
-  <div class="product">
-    <svg class="product-cover" viewBox="0 0 170 222" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Brand Field Guide to QR Codes">
-      <rect width="170" height="222" rx="6" fill="#14201c"/>
-      <rect x="0" y="0" width="7" height="222" rx="3" fill="#2563eb"/>
-      <text x="24" y="42" fill="#2563eb" font-family="Public Sans,sans-serif" font-size="9" font-weight="700" letter-spacing="2">FIELD GUIDE</text>
-      <text x="24" y="86" fill="#f5f7f6" font-family="Georgia,serif" font-size="19" font-weight="700">QR codes</text>
-      <text x="24" y="108" fill="#f5f7f6" font-family="Georgia,serif" font-size="19" font-weight="700">that get</text>
-      <text x="24" y="130" fill="#f5f7f6" font-family="Georgia,serif" font-size="19" font-weight="700">scanned</text>
-      <g fill="#f5f7f6" opacity="0.92" transform="translate(24,158)">
-        <rect x="0" y="0" width="34" height="34" fill="none" stroke="#f5f7f6" stroke-width="3"/>
-        <rect x="7" y="7" width="8" height="8"/><rect x="19" y="7" width="8" height="8"/>
-        <rect x="7" y="19" width="8" height="8"/><rect x="19" y="19" width="8" height="8"/>
-      </g>
-      <text x="66" y="182" fill="#8a8272" font-family="Public Sans,sans-serif" font-size="8.5" font-weight="600">A brand's</text>
-      <text x="66" y="194" fill="#8a8272" font-family="Public Sans,sans-serif" font-size="8.5" font-weight="600">practical</text>
-      <text x="66" y="206" fill="#8a8272" font-family="Public Sans,sans-serif" font-size="8.5" font-weight="600">handbook</text>
-    </svg>
-    <div class="product-body">
-      <span class="product-badge">Coming soon</span>
-      <h2>Get the most out of your marketing with QR codes</h2>
-      <p class="sub">The tool makes the code. This makes sure people actually scan it. A short guide for marketers, not engineers.</p>
-      <ul>
-        <li>Where to place a code so it gets scanned, and where it gets ignored</li>
-        <li>Sizing and contrast rules that hold up in print</li>
-        <li>How to track scans without renting a dynamic code (UTMs, done right)</li>
-        <li>15 campaign ideas, from table tents to packaging to trade shows</li>
-        <li>The mistakes that quietly kill scan rates</li>
-      </ul>
-      <p style="font-size:14px;color:var(--ink-soft);font-weight:500;margin-top:2px">Nothing to sign up for yet. It's still being written.</p>
-    </div>
-  </div>
-</section>
 
 <section class="edu wrap" id="faq" style="padding-top:56px">
   <p class="kicker">Questions</p>
@@ -855,10 +834,13 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
   </div>
 </section>
 
+<span id="guide" aria-hidden="true"></span>
 <section class="edu wrap" id="learn" style="padding-top:56px">
   <p class="kicker">Learn</p>
   <h2>Guides for codes that actually scan.</h2>
-  <p style="max-width:640px">Short, plain-English how-tos: making a code for a specific job, and the fundamentals that keep it scanning once it's printed.</p>
+  <p style="max-width:640px">Start with a practical guide for a <a href="guides/qr-code-for-a-restaurant-menu/">restaurant menu</a>, <a href="guides/qr-code-for-wifi/">guest Wi-Fi</a>, or <a href="guides/qr-code-for-google-reviews/">Google reviews</a>. For sizing, use the <a href="tools/qr-code-size-calculator/">print calculator</a>.</p>
+  <details class="guide-library">
+    <summary>Browse all 20 guides</summary>
 
   <h3 class="guide-subhead">Make a code for…</h3>
   <div class="print-cards">
@@ -976,6 +958,7 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
     </a>
   </div>
   <p class="guide-more"><a href="guides/qr-code-logo-size/">Adding a logo</a> &nbsp;·&nbsp; <a href="guides/qr-code-colors/">Colors that scan</a> &nbsp;·&nbsp; <a href="guides/track-qr-code-scans-without-subscription/">Track scans for free</a> &nbsp;·&nbsp; <a href="guides/qr-code-for-linkedin/">LinkedIn profile QR codes</a> &nbsp;·&nbsp; <a href="guides/">Browse all 20 guides →</a></p>
+  </details>
 </section>
 
 <section class="wrap" style="padding-top:56px">
