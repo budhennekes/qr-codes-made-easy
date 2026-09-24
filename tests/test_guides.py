@@ -76,6 +76,27 @@ class GuideTests(unittest.TestCase):
         faq = next(x for x in schemas if x.get('@type') == 'FAQPage')
         self.assertEqual(visible, {x['name']: x['acceptedAnswer']['text'] for x in faq['mainEntity']})
 
+    def test_google_reviews_guide_keeps_native_option_policy_and_faq_in_sync(self):
+        doc = soup(ROOT / 'guides/qr-code-for-google-reviews/index.html')
+        text = doc.get_text(' ', strip=True)
+        self.assertIn('Read reviews', text)
+        self.assertIn('Get more reviews', text)
+        self.assertIn('Google\'s QR image may be all you need.', text)
+        self.assertIn('selectively soliciting positive reviews', text)
+        self.assertIn('pressure customers to review while on the premises', text)
+        self.assertNotIn('wherever a happy customer is already standing', text)
+        self.assertNotIn('day you stop paying the vendor', text)
+        self.assertIsNotNone(doc.find(id='sign-wording'))
+        visible = {x.summary.get_text(strip=True): x.p.get_text(' ', strip=True) for x in doc.select('.faq details')}
+        schemas = [json.loads(x.string) for x in doc.select('script[type="application/ld+json"]')]
+        article = next(x for x in schemas if x.get('@type') == 'Article')
+        faq = next(x for x in schemas if x.get('@type') == 'FAQPage')
+        self.assertEqual(article['dateModified'], '2026-09-23')
+        self.assertEqual(visible, {x['name']: x['acceptedAnswer']['text'] for x in faq['mainEntity']})
+        external_links = {a['href'] for a in doc.select('a[href]')}
+        self.assertIn('https://support.google.com/business/answer/16816815?hl=en', external_links)
+        self.assertIn('https://support.google.com/contributionpolicy/answer/7400114?hl=en', external_links)
+
     def test_hub_does_not_promise_exact_scan_counts(self):
         text = soup(ROOT / 'guides/index.html').get_text(' ', strip=True)
         self.assertNotIn('Count your scans for free', text)
@@ -110,7 +131,7 @@ class GuideTests(unittest.TestCase):
                             self.assertTrue(page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'))
                         self.assertTrue(page.locator('header nav').get_by_role('link', name='Print sizing', exact=True).is_visible())
                         self.assertEqual(page.locator('h1').count(), 1)
-                        if path.parent.name in ('guides', 'qr-code-for-a-restaurant-menu', 'qr-code-for-wifi'):
+                        if path.parent.name in ('guides', 'qr-code-for-a-restaurant-menu', 'qr-code-for-wifi', 'qr-code-for-google-reviews'):
                             for width in (390, 1280):
                                 page.set_viewport_size({'width': width, 'height': 844})
                                 page.screenshot(path=str(OUTPUT / f'{path.parent.name}-{width}.png'), full_page=True)
