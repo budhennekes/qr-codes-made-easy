@@ -383,20 +383,55 @@
 
   var DEFAULT_LOGO_HINT = document.getElementById("logo-hint").innerHTML;
 
+  var logoRequest = 0;
+  document.getElementById("logo-hint").setAttribute("aria-live", "polite");
   document.getElementById("logo-input").addEventListener("change", function(e){
-    var file = e.target.files[0];
+    var input = e.target, file = input.files[0];
     if (!file) return;
+    var request = ++logoRequest;
+    var hint = document.getElementById("logo-hint");
+    function rejectLogo(message){
+      if (request !== logoRequest) return;
+      input.value = "";
+      hint.textContent = message + " Your previous design is unchanged.";
+    }
+    if (file.size > 5 * 1024 * 1024){
+      rejectLogo("Logo is too large. Choose a PNG, JPG, or SVG under 5 MB.");
+      return;
+    }
     var reader = new FileReader();
+    reader.onerror = function(){ rejectLogo("Logo could not be read. Try another PNG, JPG, or SVG."); };
     reader.onload = function(ev){
-      state.logo = ev.target.result;
-      document.getElementById("logo-clear").style.display = "inline";
-      document.getElementById("logo-hint").innerHTML = "Logo added. Error correction bumped to <b>High</b> so the code can take the hit and still scan.";
-      refresh();
+      // Validate before passing an image to the QR library: corrupt images can
+      // otherwise leave its asynchronous drawing/export promise unresolved.
+      var image = new Image();
+      var timer = setTimeout(function(){
+        image.onload = image.onerror = null;
+        rejectLogo("Logo took too long to load. Try a smaller PNG or JPG.");
+      }, 10000);
+      image.onerror = function(){
+        clearTimeout(timer);
+        rejectLogo("Logo could not be read. Try another PNG, JPG, or SVG.");
+      };
+      image.onload = function(){
+        clearTimeout(timer);
+        if (request !== logoRequest) return;
+        if (!image.naturalWidth || !image.naturalHeight || image.naturalWidth * image.naturalHeight > 16000000){
+          rejectLogo("Logo dimensions are too large or missing. Use an image up to 16 megapixels.");
+          return;
+        }
+        state.logo = ev.target.result;
+        document.getElementById("logo-clear").style.display = "inline";
+        hint.innerHTML = "Logo added. Error correction set to <b>High</b>. Test the finished code before printing.";
+        refresh();
+      };
+      image.src = ev.target.result;
     };
     reader.readAsDataURL(file);
   });
 
   document.getElementById("logo-clear").addEventListener("click", function(){
+    logoRequest++; // Ignore a file read or image load that finishes after removal.
     state.logo = null;
     document.getElementById("logo-input").value = "";
     this.style.display = "none";
@@ -414,6 +449,7 @@
     state.preset = "classic";
     state.fg = "#1b1913";
     state.bg = "#ffffff";
+    logoRequest++; // Ignore a file read or image load that finishes after removal.
     state.logo = null;
     state.transparent = false;
     document.querySelectorAll(".preset").forEach(function(b){

@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Do QR Codes Expire? Static vs Dynamic, Explained</title>
-<meta name="description" content="A static QR code never expires. A dynamic one can, the day the subscription behind it lapses. Here is how to tell which kind you have in 10 seconds.">
+<meta name="description" content="Static QR codes have no expiry timer. Redirect services have their own terms. Check the encoded link, destination availability, and provider policy before printing.">
 <link rel="canonical" href="https://qrcodemadeeasy.com/guides/do-qr-codes-expire/">
 <meta name="author" content="Bud Hennekes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Do QR Codes Expire? Static vs Dynamic, Explained">
-<meta property="og:description" content="A static QR code never expires. A dynamic one can, the day the subscription behind it lapses. Here is how to tell which kind you have in 10 seconds.">
+<meta property="og:description" content="Static QR codes have no expiry timer. Redirect services have their own terms. Check the encoded link, destination availability, and provider policy before printing.">
 <meta property="og:url" content="https://qrcodemadeeasy.com/guides/do-qr-codes-expire/">
 <meta property="og:image" content="https://qrcodemadeeasy.com/guides/do-qr-codes-expire/og.png">
 <meta property="og:image:width" content="1200">
@@ -141,32 +141,29 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
 <article class="wrap">
   <div class="crumbs"><a href="../../">Home</a> / <a href="../">Guides</a> / Do QR codes expire?</div>
   <div class="eyebrow">Static vs dynamic</div>
-  <h1>Do QR Codes Expire? Yes, But Only One Kind Does</h1>
-  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated September 7, 2026.</div>
-  <img class="featured" src="og.webp" alt="Do QR Codes Expire? Yes, But Only One Kind Does: featured image from QR Codes Made Easy" width="1200" height="630" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--line);margin:0 0 26px" fetchpriority="high">
-  <div class="answer"><p class="big">A static QR code never expires, because the destination is baked straight into the pattern and works as long as that web page is live. A dynamic QR code can and does expire, because the printed pattern points at a vendor's redirect server that stops forwarding people the moment your account or subscription lapses.</p></div>
-  <div class="toc"><b>What's here</b><ol><li><a href="#short-answer">The short answer</a></li><li><a href="#static-vs-dynamic">Static vs dynamic is the only thing that matters</a></li><li><a href="#ten-second-test">The 10-second test to tell which one you have</a></li><li><a href="#what-expire-means">What "expire" actually means here</a></li><li><a href="#why-dynamic">Why dynamic codes exist (and when they are fine)</a></li><li><a href="#make-permanent">How to make one that never expires</a></li></ol></div>
+  <h1>Do QR Codes Expire? Static vs Dynamic, Explained</h1>
+  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated October 4, 2026.</div>
+  <img class="featured" src="og.webp" alt="Do QR Codes Expire? Static vs Dynamic, Explained: featured image from QR Codes Made Easy" width="1200" height="630" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--line);margin:0 0 26px" fetchpriority="high">
+  <div class="answer"><p class="big">A static QR code has no built-in expiry date. Its pattern must stay readable, and any linked page must stay available. A dynamic QR service adds a redirect that can be disabled under the provider's terms, including some trial or subscription policies.</p></div>
+  <div class="toc"><b>What's here</b><ol><li><a href="#short-answer">The short answer</a></li><li><a href="#static-vs-dynamic">Static vs dynamic: what depends on what</a></li><li><a href="#ten-second-test">Check the link inside your code</a></li><li><a href="#what-expire-means">What "expire" means: a provider example</a></li><li><a href="#why-dynamic">When a dynamic code is useful</a></li><li><a href="#make-permanent">Make a code with no expiry timer</a></li></ol></div>
   <h2 id="short-answer">The short answer</h2>
-<p>Most QR codes do not expire. Some do. The difference comes down to one thing: whether the link lives inside the code or on somebody else's server.</p>
-<p>A <strong>static QR code</strong> has the destination printed directly into the black and white pattern. Nothing sits between the scan and the page. It keeps working for years, as long as the page it points to is still online.</p>
-<p>A <strong>dynamic QR code</strong> does not contain your link. It contains a short address that points at a vendor's redirect server, and that server sends the scanner onward to your real page. Useful, until the day you stop paying. Then the redirect stops, and the printed code goes dead.</p>
-
-<h2 id="static-vs-dynamic">Static vs dynamic is the only thing that matters</h2>
-<p>Every "do QR codes expire" answer eventually lands here, so let me make it plain. The pattern of squares is just data. A scanner reads the squares and does whatever the data says.</p>
-<p>With a static code, the data is your actual destination (a URL, a phone number, a block of text). Your phone reads it and goes straight there. No account, no middleman, no company that has to stay in business for the code to work.</p>
-<p>With a dynamic code, the data is a short link like <code>vendor.com/x7k9</code>. Your phone hits the vendor's server first, the server looks up where you told it to send people, and forwards them. That extra hop is the whole product. It lets you edit the destination later and count the scans. It also means the code only works while the vendor keeps forwarding, which they do while you keep paying.</p>
+<p>The printed squares do not run a subscription clock. What can stop working is the information they contain: a URL can disappear, a domain can lapse, or a redirect service can disable forwarding.</p>
+<p>A <strong>static QR code</strong> stores the supplied data directly in the pattern. For a website code, that is a URL. If you supply your page's direct URL, there is no QR-provider redirect added by this generator. Your domain and website still need to work.</p>
+<p>A <strong>dynamic QR code</strong>, as the term is used by QR services, contains a redirect URL. The service forwards visitors to a destination you can manage. Whether that forwarding continues after a trial or plan ends depends on the provider and plan, not on the QR format.</p>
+<h2 id="static-vs-dynamic">Static vs dynamic: what depends on what</h2>
+<p>Both kinds contain fixed data. A dynamic service changes where the encoded URL forwards people, not the squares on your printed card. A static generator can also encode a short link or a redirect you supply; the generator cannot make that outside service permanent.</p>
 <div class="tbl-wrap"><table>
-<thead><tr><th>&nbsp;</th><th>Static QR code</th><th>Dynamic QR code</th></tr></thead>
+<thead><tr><th>&nbsp;</th><th>Direct-link static code</th><th>Managed dynamic code</th></tr></thead>
 <tbody>
-<tr><td>Where the link lives</td><td>Inside the printed pattern</td><td>On the vendor's server</td></tr>
-<tr><td>Needs an account</td><td>No</td><td>Yes</td></tr>
-<tr><td>Can expire</td><td>No</td><td>Yes, when the account or plan lapses</td></tr>
-<tr><td>Edit destination after printing</td><td>No</td><td>Yes</td></tr>
-<tr><td>Built-in scan tracking</td><td>No</td><td>Yes</td></tr>
-<tr><td>Depends on a company staying alive</td><td>No</td><td>Yes</td></tr>
+<tr><td>Encoded URL</td><td>Your supplied page URL</td><td>A redirect URL</td></tr>
+<tr><td>Account required</td><td>Not by this generator; other tools may require one</td><td>Depends on the service</td></tr>
+<tr><td>Availability</td><td>Readable pattern and working destination</td><td>Readable pattern, working redirect and destination; provider terms apply</td></tr>
+<tr><td>Edit after printing</td><td>Not the encoded URL; you can update your page</td><td>Change forwarding if the service permits it</td></tr>
+<tr><td>Measurement</td><td>Optional destination analytics</td><td>Optional redirect-request reporting</td></tr>
+<tr><td>Ongoing dependencies</td><td>Domain and destination hosting</td><td>Redirect hosting plus destination hosting</td></tr>
 </tbody>
 </table></div>
-<figure class="diagram-flow" style="margin:0 0 24px" role="img" aria-label="Diagram comparing a static QR code, which points directly at your website, with a dynamic QR code, which routes through a vendor server that dies when the subscription lapses">
+<figure class="diagram-flow" style="margin:0 0 24px" role="img" aria-label="Diagram comparing a static QR code, which points directly at your website, with a dynamic QR code, which adds a redirect service whose availability depends on its terms">
 <svg viewBox="0 0 720 240" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
   <style>.lbl{font:600 15px 'Public Sans',sans-serif}.sm{font:600 12px 'Public Sans',sans-serif}</style>
   <text x="16" y="30" class="lbl" fill="#14201c">Static code</text>
@@ -176,7 +173,7 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
   <polygon points="338,70 324,63 324,77" fill="#2563eb"/>
   <rect x="348" y="44" width="150" height="52" rx="10" fill="#2563eb"/>
   <text x="423" y="75" class="sm" fill="#ffffff" text-anchor="middle">Your website</text>
-  <text x="530" y="75" class="sm" fill="#1d4ed8">works forever</text>
+  <text x="530" y="75" class="sm" fill="#1d4ed8">keep page online</text>
   <text x="16" y="150" class="lbl" fill="#14201c">Dynamic code</text>
   <rect x="16" y="164" width="150" height="52" rx="10" fill="#ffffff" stroke="#e1e8e4"/>
   <text x="91" y="195" class="sm" fill="#14201c" text-anchor="middle">Printed code</text>
@@ -184,47 +181,42 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
   <polygon points="250,190 236,183 236,197" fill="#586661"/>
   <rect x="260" y="164" width="170" height="52" rx="10" fill="#e9eeec" stroke="#e1e8e4"/>
   <text x="345" y="187" class="sm" fill="#14201c" text-anchor="middle">Vendor server</text>
-  <text x="345" y="205" class="sm" fill="#586661" text-anchor="middle">(needs subscription)</text>
+  <text x="345" y="205" class="sm" fill="#586661" text-anchor="middle">(provider terms apply)</text>
   <line x1="440" y1="190" x2="506" y2="190" stroke="#586661" stroke-width="3" stroke-dasharray="6 5"/>
   <polygon points="514,190 500,183 500,197" fill="#586661"/>
   <rect x="524" y="164" width="150" height="52" rx="10" fill="#ffffff" stroke="#e1e8e4"/>
   <text x="599" y="195" class="sm" fill="#14201c" text-anchor="middle">Your website</text>
-  <text x="260" y="238" class="sm" fill="#b91c1c">dies when the plan lapses</text>
+  <text x="260" y="238" class="sm" fill="#b91c1c">forwarding can be disabled</text>
 </svg>
 <figcaption style="font-size:13px;color:#586661;margin-top:8px">The whole difference: what sits between the scan and your site.</figcaption>
 </figure>
 
-<h2 id="ten-second-test">The 10-second test to tell which one you have</h2>
-<p>You don't need to understand any of the technical parts to check your own codes. Just ask three questions.</p>
+<h2 id="ten-second-test">Check the link inside your code</h2>
+<p>Inspect the <strong>decoded URL</strong>, not just the page your browser eventually opens. Use a reader that shows the raw content before following it, or a trusted local decoder for a saved image. Do not upload private codes to an unfamiliar decoder.</p>
 <ol>
-<li><strong>Did you make it through a vendor's account or dashboard?</strong> If you signed up, logged in, and created the code inside a paid or free-trial tool, it is probably dynamic.</li>
-<li><strong>Can you change where it points without reprinting it?</strong> If the tool lets you swap the destination after the code is made, that is only possible because the link lives on their server. That is dynamic.</li>
-<li><strong>Does it track scans for you?</strong> Scan counts have to be recorded somewhere. If you get analytics, there is a server in the middle, and that server can be switched off.</li>
+<li><strong>Compare the encoded address with your intended URL.</strong> If it is a different address, identify who controls it. A shortened URL may be a QR provider's redirect, your own redirect, or another service.</li>
+<li><strong>Check any forwarding.</strong> The browser's final address can hide an earlier redirect. A matching domain alone is not proof: a branded redirect can use your domain too.</li>
+<li><strong>Read the actual service terms.</strong> Check trial expiration, cancellation, usage limits and reactivation for the product and plan you used. If you cannot identify the encoded address or its owner, ask the provider before printing.</li>
 </ol>
-<p>Answer yes to any of those and you have a dynamic code that can expire. But if your code points straight at your own URL, was made without an account, and can't be edited or tracked after the fact, it's static and permanent.</p>
-
-<h2 id="what-expire-means">What "expire" actually means here</h2>
-<p>"Expire" is a soft word for what actually happens. The pattern doesn't fade. The ink is fine. What breaks is the redirect.</p>
-<p>When a dynamic code's account or subscription lapses, the vendor's server stops forwarding scans to your page. Instead, the scanner usually lands on a page from the QR company telling them the code is inactive, sometimes with the vendor's own logo and a prompt to reactivate. One vendor states plainly that when a subscription ends, all dynamic QR codes linked to your account become inactive. Your flyer is now advertising someone else's upsell.</p>
-<p>You can often get it back, for a price. Reactivation usually means renewing the subscription, at which point the codes light up again with no change to anything you printed. People have reported being quoted around $120 to switch a lapsed code back on, because the vendor offered no cheap monthly option. So the code didn't really "expire." It got parked behind a paywall until you pay again.</p>
-
-<h2 id="why-dynamic">Why dynamic codes exist (and when they are fine)</h2>
-<p>I'm not here to tell you dynamic codes are a scam. They exist for two real reasons, and both are useful.</p>
-<p>The first is <strong>editing</strong>. If you print a code today and the destination changes next month, a dynamic code lets you repoint it without reprinting anything. For a billboard that stays up for two years, that flexibility can be worth the subscription.</p>
-<p>The second is <strong>tracking</strong>. Dynamic codes count scans, because every scan passes through the vendor's server. That data is genuinely handy. But it is not the only way to get it. You can point a static code at a link you control and read the scans in your own analytics, no subscription required. I wrote a separate walkthrough on how to <a href="../track-qr-code-scans-without-subscription/">track QR scans without a subscription</a> if that is what you are after.</p>
-<p>The honest rule: use a dynamic code when you genuinely need to change the destination after printing, and you've accepted that the code dies the day you stop paying. That's a fine trade for a short campaign. It's a bad trade for a business card, a restaurant menu, a book, a product label, or anything you print in bulk and expect to outlive this year's software budget.</p>
-
-<h2 id="make-permanent">How to make one that never expires</h2>
-<p>If you want a code that keeps working with nobody in the loop, make it static and point it somewhere you control.</p>
+<p>An account or analytics dashboard is <strong>not proof of a dynamic code</strong>. Providers can keep static codes in accounts, and destination analytics can measure visits from a direct link. Changing the contents of your page is also different from changing the URL encoded in the code.</p>
+<h2 id="what-expire-means">What "expire" means: a provider example</h2>
+<p><a href="https://support.qr-code-generator.com/hc/en-us/articles/7665046137613-What-happens-to-my-account-and-QR-Codes-when-the-trial-expires">QR Code Generator's trial-expiration help page</a> says: "Dynamic QR Codes are deactivated and point to a service page rather than the original destination." It also says: "Any Static QR Codes in your account continue to work."</p>
+<p>That is this provider's <strong>trial</strong> policy, not a rule for every subscription or QR company. The same help page says upgrading lets you reactivate its Dynamic QR Codes. Check your own provider's current plan and recovery terms rather than assuming the same price or outcome.</p>
+<p>If a code opens a service page, its pattern may still be decoding correctly. Test the intended destination separately, then contact the redirect provider. If you control the encoded URL, you may be able to repair the page or redirect yourself. If you cannot restore that URL, you may need a replacement code.</p>
+<h2 id="why-dynamic">When a dynamic code is useful</h2>
+<p>A managed redirect can let you change destinations after printing and inspect requests to that redirect. Those features can be useful for campaigns; they also add an ongoing service dependency.</p>
+<p>A dashboard may call its metric "scans," but a server sees requests when a link is opened, not a camera merely reading a pattern. A static link with <a href="https://support.google.com/analytics/answer/10917952?hl=en">UTM campaign parameters</a> can identify attributed visits in your destination analytics. That is <strong>not an exact scan count</strong>: shared links, repeat visits, consent choices and blocked analytics affect the numbers. The <a href="../track-qr-code-scans-without-subscription/">QR visit-tracking guide</a> explains the setup and limits.</p>
+<p>Choose a managed redirect when its editing or reporting is worth the dependency, and check the cancellation policy before printing. Choose a direct-link static code when a stable URL you control meets the need.</p>
+<h2 id="make-permanent">Make a code with no expiry timer</h2>
 <ol>
-<li><strong>Use a static generator.</strong> The tool I built makes <a href="../../">a static code that never expires</a>, right in your browser, with no account and nothing to renew. The link goes into the pattern, not onto my server. I could shut the whole site down tomorrow and your printed codes would keep working.</li>
-<li><strong>Point it at a URL you own.</strong> A static code is permanent, but the page it links to still has to exist. Send it to your own domain, not a link you might lose. If the destination might change, point it at a stable page on your site and update that page's contents instead of the code.</li>
-<li><strong>Print it big enough, with margin.</strong> A permanent link does not help if the code cannot be read. Give it a quiet border and enough size for the scan distance. I put the numbers in the <a href="../how-big-should-a-qr-code-be-for-print/">QR print size guide</a>.</li>
+<li><strong>Use a static generator.</strong> <a href="../../">QR Codes Made Easy</a> encodes your supplied data in your browser, with no account or subscription. Downloaded codes do not depend on this generator staying online.</li>
+<li><strong>Use a stable URL you control.</strong> Keep the domain and page available. Update the page's contents at the same address when you can. A shortener or temporary download URL retains its own limits even when encoded with a static generator.</li>
+<li><strong>Check the final print.</strong> Keep the pattern readable, allow a clear margin, and test a printed proof at its intended size and distance. The <a href="../how-big-should-a-qr-code-be-for-print/">QR print size guide</a> gives starting points, not a guarantee.</li>
 </ol>
-<p>One more myth to kill: <strong>error correction is not the same as permanence.</strong> QR codes carry spare data (levels L, M, Q and H recover from roughly 7%, 15%, 25% and 30% physical damage) so a scuffed or logo-covered code still reads. That protects the pattern from scratches. It does nothing to keep a dead redirect alive. A dynamic code at the highest error correction level still goes blank the day the subscription lapses. Only a static code is permanent by design.</p>
+<p><strong>Error correction is not permanence.</strong> It helps recover damaged encoded data; it cannot keep a domain, page or redirect online. A successful decode is only the first check. Open the destination and verify that it still does what you intended.</p>
   <div class="nextstep">
     <b>Send it to a domain you actually own</b>
-    <p>A static code is permanent, but the page it points at still has to exist. A cheap domain you control (a few dollars a year) beats a free link on someone else's platform that you might lose. I register mine at Namecheap.</p>
+    <p>A static code is permanent, but the page it points at still has to exist. A domain you control lets you manage the address, but registration and hosting still need to be maintained. I register mine at Namecheap.</p>
     <p class="links">
       <!-- AFFILIATE: swap for your Namecheap tracking link once approved -->
       <a href="https://www.namecheap.com" target="_blank" rel="noopener">Grab a domain at Namecheap &rarr;</a>
@@ -233,7 +225,7 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
   </div>
 
   <h2 id="faq">FAQ</h2>
-  <div class="faq"><details><summary>Do QR codes expire?</summary><p>Static QR codes do not expire. The link is printed into the pattern and works as long as the destination page is live. Dynamic QR codes can expire, because they route through a vendor's server that stops forwarding scans when your account or subscription lapses.</p></details><details><summary>Do QR codes expire if you don't use them?</summary><p>No. A QR code is not used up by sitting unscanned. A static code you printed years ago still works today. A dynamic code that goes unused can still stop working, but only because the account behind it lapsed, not because nobody scanned it.</p></details><details><summary>How long do QR codes last?</summary><p>A static QR code lasts indefinitely. There is no built-in timer. Its life is tied only to whether the destination URL stays online and whether the printed code stays readable. A dynamic code lasts exactly as long as you keep paying the vendor behind it.</p></details><details><summary>Do free QR codes expire?</summary><p>It depends on the type, not the price. A free static code never expires. A free dynamic code from a trial usually does, once the trial ends, at which point you are asked to subscribe to turn it back on. Free and permanent are only the same thing when the code is static.</p></details><details><summary>Why did my QR code stop working?</summary><p>The most common reason is a lapsed dynamic-code subscription, which kills the redirect. Other causes: the destination page was taken down or moved, the printed code is too small or damaged past its error correction limit, or there is not enough quiet margin around it for a scanner to lock on.</p></details><details><summary>Do printed QR codes expire?</summary><p>The printing has nothing to do with it. A printed static code works for as long as the ink is readable and the page is live. A printed dynamic code can go dead while sitting on the same poster, because the part that expired was the online redirect, not the paper.</p></details></div>
+  <div class="faq"><details><summary>Do QR codes expire?</summary><p>Static QR codes have no built-in expiry date. The pattern must remain readable and any linked destination must stay available. Dynamic services add a redirect that can be disabled under the provider&#x27;s terms.</p></details><details><summary>Do QR codes expire if you don&#x27;t use them?</summary><p>The pattern is not used up by sitting unscanned. A linked service may have inactivity or expiration rules, so check the destination and any redirect provider.</p></details><details><summary>How long do QR codes last?</summary><p>There is no timer in the printed pattern. A code remains useful while it can be read and its data is still valid. For a website code, the destination and any redirect must remain available.</p></details><details><summary>Do free QR codes expire?</summary><p>Price alone does not tell you. A free static code has no expiry timer, but a linked page can disappear. A free dynamic service may impose trial or usage limits. Check the encoded URL and the specific terms.</p></details><details><summary>Why did my QR code stop working?</summary><p>Check whether the pattern decodes, whether the encoded URL opens, and whether any redirect still forwards to the intended page. Print damage, low contrast, a missing page, domain problems or provider restrictions can cause failure.</p></details><details><summary>Do printed QR codes expire?</summary><p>Printing does not add an expiry date. A printed pattern can become unreadable, and its linked page or redirect can stop working. Test both the print and its destination.</p></details></div>
   <div class="cta">
     <h2>Make one that never expires</h2>
     <p>QR Codes Made Easy makes static codes right in your browser. Free, no account, and the code never expires.</p>
@@ -254,9 +246,9 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
 </div>
 <div class="wrap foot-note">No cookies, no ad trackers, no accounts. Just a QR code that works.</div>
 </footer>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Do QR Codes Expire? Yes, But Only One Kind Does", "description": "A static QR code never expires. A dynamic one can, the day the subscription behind it lapses. Here is how to tell which kind you have in 10 seconds.", "datePublished": "2026-07-07", "dateModified": "2026-09-07", "author": {"@type": "Person", "name": "Bud Hennekes", "url": "https://qrcodemadeeasy.com/"}, "publisher": {"@type": "Organization", "name": "QR Codes Made Easy", "url": "https://qrcodemadeeasy.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://qrcodemadeeasy.com/guides/do-qr-codes-expire/"}, "image": "https://qrcodemadeeasy.com/guides/do-qr-codes-expire/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Do QR Codes Expire? Static vs Dynamic, Explained", "description": "Static QR codes have no expiry timer. Redirect services have their own terms. Check the encoded link, destination availability, and provider policy before printing.", "datePublished": "2026-07-07", "dateModified": "2026-10-04", "author": {"@type": "Person", "name": "Bud Hennekes", "url": "https://qrcodemadeeasy.com/"}, "publisher": {"@type": "Organization", "name": "QR Codes Made Easy", "url": "https://qrcodemadeeasy.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://qrcodemadeeasy.com/guides/do-qr-codes-expire/"}, "image": "https://qrcodemadeeasy.com/guides/do-qr-codes-expire/og.png"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrcodemadeeasy.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://qrcodemadeeasy.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Do QR codes expire?", "item": "https://qrcodemadeeasy.com/guides/do-qr-codes-expire/"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do QR codes expire?", "acceptedAnswer": {"@type": "Answer", "text": "Static QR codes do not expire. The link is printed into the pattern and works as long as the destination page is live. Dynamic QR codes can expire, because they route through a vendor's server that stops forwarding scans when your account or subscription lapses."}}, {"@type": "Question", "name": "Do QR codes expire if you don't use them?", "acceptedAnswer": {"@type": "Answer", "text": "No. A QR code is not used up by sitting unscanned. A static code you printed years ago still works today. A dynamic code that goes unused can still stop working, but only because the account behind it lapsed, not because nobody scanned it."}}, {"@type": "Question", "name": "How long do QR codes last?", "acceptedAnswer": {"@type": "Answer", "text": "A static QR code lasts indefinitely. There is no built-in timer. Its life is tied only to whether the destination URL stays online and whether the printed code stays readable. A dynamic code lasts exactly as long as you keep paying the vendor behind it."}}, {"@type": "Question", "name": "Do free QR codes expire?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the type, not the price. A free static code never expires. A free dynamic code from a trial usually does, once the trial ends, at which point you are asked to subscribe to turn it back on. Free and permanent are only the same thing when the code is static."}}, {"@type": "Question", "name": "Why did my QR code stop working?", "acceptedAnswer": {"@type": "Answer", "text": "The most common reason is a lapsed dynamic-code subscription, which kills the redirect. Other causes: the destination page was taken down or moved, the printed code is too small or damaged past its error correction limit, or there is not enough quiet margin around it for a scanner to lock on."}}, {"@type": "Question", "name": "Do printed QR codes expire?", "acceptedAnswer": {"@type": "Answer", "text": "The printing has nothing to do with it. A printed static code works for as long as the ink is readable and the page is live. A printed dynamic code can go dead while sitting on the same poster, because the part that expired was the online redirect, not the paper."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do QR codes expire?", "acceptedAnswer": {"@type": "Answer", "text": "Static QR codes have no built-in expiry date. The pattern must remain readable and any linked destination must stay available. Dynamic services add a redirect that can be disabled under the provider's terms."}}, {"@type": "Question", "name": "Do QR codes expire if you don't use them?", "acceptedAnswer": {"@type": "Answer", "text": "The pattern is not used up by sitting unscanned. A linked service may have inactivity or expiration rules, so check the destination and any redirect provider."}}, {"@type": "Question", "name": "How long do QR codes last?", "acceptedAnswer": {"@type": "Answer", "text": "There is no timer in the printed pattern. A code remains useful while it can be read and its data is still valid. For a website code, the destination and any redirect must remain available."}}, {"@type": "Question", "name": "Do free QR codes expire?", "acceptedAnswer": {"@type": "Answer", "text": "Price alone does not tell you. A free static code has no expiry timer, but a linked page can disappear. A free dynamic service may impose trial or usage limits. Check the encoded URL and the specific terms."}}, {"@type": "Question", "name": "Why did my QR code stop working?", "acceptedAnswer": {"@type": "Answer", "text": "Check whether the pattern decodes, whether the encoded URL opens, and whether any redirect still forwards to the intended page. Print damage, low contrast, a missing page, domain problems or provider restrictions can cause failure."}}, {"@type": "Question", "name": "Do printed QR codes expire?", "acceptedAnswer": {"@type": "Answer", "text": "Printing does not add an expiry date. A printed pattern can become unreadable, and its linked page or redirect can stop working. Test both the print and its destination."}}]}</script>
 <!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
 </body>
 </html>

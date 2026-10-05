@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How Big Should a QR Code Be for Print? Size Guide</title>
-<meta name="description" content="The 10:1 rule, a size-by-material table, and the pixel math so your QR code scans the first time, on cards, flyers, signs, and billboards.">
+<title>How Big Should a QR Code Be for Print?</title>
+<meta name="description" content="Choose a QR print size using distance, image resolution, and the quiet zone. Work through sizing examples and test a proof before ordering.">
 <link rel="canonical" href="https://qrcodemadeeasy.com/guides/how-big-should-a-qr-code-be-for-print/">
 <meta name="author" content="Bud Hennekes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How Big Should a QR Code Be for Print? Size Guide">
-<meta property="og:description" content="The 10:1 rule, a size-by-material table, and the pixel math so your QR code scans the first time, on cards, flyers, signs, and billboards.">
+<meta property="og:title" content="How Big Should a QR Code Be for Print?">
+<meta property="og:description" content="Choose a QR print size using distance, image resolution, and the quiet zone. Work through sizing examples and test a proof before ordering.">
 <meta property="og:url" content="https://qrcodemadeeasy.com/guides/how-big-should-a-qr-code-be-for-print/">
 <meta property="og:image" content="https://qrcodemadeeasy.com/guides/how-big-should-a-qr-code-be-for-print/og.png">
 <meta property="og:image:width" content="1200">
@@ -124,7 +124,7 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
   .masthead nav a{margin-left:0;white-space:nowrap;flex:none}
   .foot-links{text-align:left}
 }
-</style>
+a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
 </head>
 <body>
 <header class="wrap">
@@ -141,94 +141,41 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
 <article class="wrap">
   <div class="crumbs"><a href="../../">Home</a> / <a href="../">Guides</a> / How big should a QR code be for print?</div>
   <div class="eyebrow">Print &amp; sizing</div>
-  <h1>How Big Should a QR Code Be for Print? A Size Guide by Material</h1>
-  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated September 7, 2026.</div>
+  <h1>How Big Should a QR Code Be for Print?</h1>
+  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated October 4, 2026.</div>
   <img class="featured" src="og.webp" alt="How Big Should a QR Code Be for Print? A Size Guide by Material: featured image from QR Codes Made Easy" width="1200" height="630" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--line);margin:0 0 26px" fetchpriority="high">
-  <div class="answer"><p class="big">Size a QR code by dividing the scan distance by 10: the code should be about one-tenth as wide as the distance people scan it from, and never smaller than 0.8 x 0.8 inches (2 x 2 cm) for anything held in the hand. A business card code can be under an inch, a wall poster wants 4 inches, and a billboard wants a full meter.</p></div>
-  <div class="toc"><b>What's here</b><ol><li><a href="#the-rule">The one rule that sizes any QR code</a></li><li><a href="#size-table">Recommended size by material (table)</a></li><li><a href="#resolution">The pixel math before you export</a></li><li><a href="#data-density">Why a longer link forces a bigger print</a></li><li><a href="#quiet-zone">The quiet zone people delete</a></li><li><a href="#test-scan">Test-scan before the full run</a></li></ol></div>
-  <h2 id="the-rule">The one rule that sizes any QR code</h2>
-<p>QR codes have been an open standard since Denso Wave's engineer Masahiro Hara published them in 1994, and the physics of scanning one has not changed since. A phone camera has to resolve the little black and white squares (called <b>modules</b>) clearly enough to tell them apart. Print the code too small and the camera gives up.</p>
-<p>One rule does most of the work here. The <b>10:1 rule</b>: a QR code scans reliably from about 10 times its own width away. Flip that around and you get the only sizing formula you need.</p>
-<p><b>Minimum size = scan distance / 10.</b></p>
-<p>If someone scans from 10 inches away, the code needs to be about 1 inch wide. If they scan from 10 feet, it needs to be about a foot. Decide how far your reader will realistically stand, divide by 10, and you have your floor. That is it. Everything else in this guide is just applying that one line to real surfaces.</p>
-<p>The small end has a floor, though. Below roughly <b>0.8 x 0.8 inches (2 x 2 cm)</b>, codes start failing even at close range, so treat that as a hard minimum for anything held in the hand. Codes printed under an inch fail more than codes at 2 inches or bigger, so if you have the room, give the code room.</p>
-
-<h2 id="size-table">Recommended QR code size by material</h2>
-<p>Here is the table I wish existed when I started printing these. Every row is the 10:1 rule applied to a realistic scan distance for that surface, then rounded up for safety. The sizes are for the printed code itself, not counting the blank margin around it (more on that below). Treat them as minimums. Bigger is always safer.</p>
-<div class="tbl-wrap"><table>
-<thead>
-<tr><th>Material</th><th>Typical scan distance</th><th>Suggested minimum print size</th></tr>
-</thead>
-<tbody>
-<tr><td><b>Business card / product label</b></td><td>4 to 8 in (10 to 20 cm)</td><td>0.8 x 0.8 in (2 x 2 cm); 1 in is safer</td></tr>
-<tr><td><b>Flyer / brochure / menu</b></td><td>1 to 2 ft (0.3 to 0.6 m)</td><td>1.5 x 1.5 in (4 x 4 cm)</td></tr>
-<tr><td><b>Table tent / counter card</b></td><td>1 to 2 ft (0.3 to 0.6 m)</td><td>1.2 x 1.2 in (3 x 3 cm)</td></tr>
-<tr><td><b>Wall poster</b></td><td>3 to 4 ft (1 to 1.2 m)</td><td>4 x 4 in (10 x 10 cm)</td></tr>
-<tr><td><b>Yard sign</b></td><td>5 to 8 ft (1.5 to 2.5 m)</td><td>6 x 6 in (15 x 15 cm)</td></tr>
-<tr><td><b>Trade show banner</b></td><td>about 10 ft (3 m)</td><td>12 x 12 in (30 x 30 cm)</td></tr>
-<tr><td><b>Vehicle wrap</b></td><td>8 to 15 ft (2.5 to 4.5 m)</td><td>8 to 12 in (20 to 30 cm)</td></tr>
-<tr><td><b>Billboard</b></td><td>30 ft or more (10 m+)</td><td>3 ft or more (1 m+)</td></tr>
-</tbody>
-</table></div>
-<figure class="size-visual" style="margin:0 0 24px" role="img" aria-label="Visual showing the 10 to 1 rule: a code scanned from 1 foot needs about 1.2 inches, from 3 feet about 3.6 inches, from 10 feet about 12 inches">
-<svg viewBox="0 0 720 210" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
-  <style>.s{font:600 13px 'Public Sans',sans-serif}.t{font:700 15px 'Public Sans',sans-serif}</style>
-  <g fill="#2563eb"><rect x="60" y="140" width="26" height="26" rx="4"/></g>
-  <text x="73" y="188" class="s" fill="#14201c" text-anchor="middle">1.2 in</text>
-  <text x="73" y="205" class="s" fill="#586661" text-anchor="middle">from 1 ft</text>
-  <g fill="#2563eb"><rect x="240" y="90" width="76" height="76" rx="8"/></g>
-  <text x="278" y="188" class="s" fill="#14201c" text-anchor="middle">3.6 in</text>
-  <text x="278" y="205" class="s" fill="#586661" text-anchor="middle">from 3 ft</text>
-  <g fill="#2563eb"><rect x="480" y="26" width="140" height="140" rx="12"/></g>
-  <text x="550" y="188" class="s" fill="#14201c" text-anchor="middle">12 in</text>
-  <text x="550" y="205" class="s" fill="#586661" text-anchor="middle">from 10 ft</text>
-  <text x="16" y="24" class="t" fill="#14201c">Scanning distance &#247; 10 = minimum code width</text>
-</svg>
-</figure>
-<p>A quick sanity check on the extremes: a 2 x 2 inch code scans from roughly 2 feet, and an 8 x 8 inch storefront code scans from 6 to 7 feet. Both land right on the 10:1 line. If your scan distance is not in this table, do not guess. Divide it by 10.</p>
-<p><a href="../../tools/qr-code-size-calculator/"><b>Use the QR code size calculator</b></a> if you want the math adjusted for your surface, scan distance, content density, and logo use.</p>
-
-<h2 id="resolution">The pixel math before you export</h2>
-<p>DPI (dots per inch) is how many ink dots fit in an inch of print. For a QR code read up close, aim for <b>300 DPI</b>. That is the standard sharpness for business cards, flyers, menus, and packaging.</p>
-<p>The math is simple, and worth doing before you export anything:</p>
-<p><b>Pixels needed = printed inches x DPI.</b></p>
-<p>A 1 inch code at 300 DPI needs a 300 x 300 pixel image. A 2 inch code needs 600 x 600. A 4 inch poster code needs 1200 x 1200. Export smaller than that and the printer stretches your pixels, the module edges blur, and scans get flaky.</p>
-<p>Two ways to skip the pixel math. First, for big-format work seen from several feet (posters, banners, billboards), 150 DPI is fine, and 72 DPI is acceptable at true billboard distance, because nobody inspects a billboard from six inches. Second, and this is what I would do, export a <b>vector SVG</b> instead of a raster PNG. A vector file has no fixed pixel count. It stays sharp at any size, so the same file works on a business card and a bus wrap. The tool I built exports PNG up to 4000px and true vector SVG for exactly this reason (<a href="../../">generate one here</a>). One more rule: never save a QR code as a JPEG. JPEG compression smears the sharp edges that scanners depend on. PNG or SVG only. If you want to weigh the formats first, the <a href="../">rest of the guides</a> go deeper on PNG versus SVG.</p>
-
-<h2 id="data-density">Why a longer link forces a bigger print</h2>
-<p>Not every QR code is equally dense, and density changes the size you need. The more data you cram in, the more modules the code needs, and the smaller each module gets at a fixed print size. A code can range from Version 1 (a 21 x 21 grid) up to Version 40 (177 x 177), gaining 4 modules per side at each step. A short link might sit at Version 3. A long URL stuffed with tracking parameters can push it much higher, which means far more tiny squares packed into the same square inch, and a code you have to print bigger to keep scannable.</p>
-<p>Two moves keep your code sparse and forgiving:</p>
-<ul>
-<li><b>Keep the destination short.</b> Point at a clean URL. Every character you drop is fewer modules and a code that scans smaller.</li>
-<li><b>Static keeps it honest.</b> Because this tool encodes the destination straight into the pattern with no redirect, nothing pads the link out behind your back. What you type is what gets encoded.</li>
-</ul>
-<p>A center logo works with this, not against it. Every QR code carries built-in error correction, with four levels that let a scanner recover from roughly 7% up to 30% of the code being obscured, so a modest logo over the middle still reads. Push the logo too big, though, and you spend the margin you needed for real-world scuffs and glare. I put the safe limits in the <a href="../qr-code-logo-size/">logo size guide</a>.</p>
-
-<h2 id="quiet-zone">The quiet zone people delete</h2>
-<p>The most common reason a technically valid code will not scan is a missing margin. The QR standard (ISO/IEC 18004) requires a <b>quiet zone</b>: a blank border at least <b>4 modules</b> wide on every side. Scanners use that clear space to find where the code starts and stops. Crowd text, a logo, or a photo right up against the edge, and a perfect pattern can still fail.</p>
-<p>Four modules is not a fixed number of millimeters. It scales with the code. If each module prints at 1 mm, your margin is at least 4 mm. Any decent generator adds this for you, but designers routinely crop it off to make a layout fit. Do not let them. That white space is doing a job.</p>
-
-<h2 id="test-scan">Test-scan before the full run</h2>
-<p>Every size in this guide is a starting point, not a promise. Paper stock, ink bleed, lamination glare, curved surfaces, and cheap phone cameras each shave a little reliability off the top. So before you commit to a full run, do the one thing that costs almost nothing.</p>
-<p>Print a single proof at the real final size, tape it where it will actually live, and scan it. Use a couple of different phones. Try it in the lighting your reader will have, from the distance they will stand. If it reads clean in under two seconds, you are done. If it hesitates, bump the size up about 20% and test again. Catching this at the proof stage costs you one sheet of paper. Catching it after 5,000 flyers are boxed costs you the whole run.</p>
-  <div class="nextstep">
-    <b>Where to print it</b>
-    <p>Vistaprint handles the everyday runs: business cards, yard signs, flyers, posters, and banners. Upload the SVG (or a 4000px PNG), and as above, scan the proof before you order the full batch.</p>
-    <p class="links">
-      <!-- AFFILIATE: swap for your Vistaprint (via CJ Affiliate) tracking link once approved -->
-      <a href="https://www.vistaprint.com" target="_blank" rel="noopener">Print it at Vistaprint &rarr;</a>
-    </p>
-    <p class="aff-mini">This is a direct link, not an affiliate tracking link.</p>
-  </div>
-
-  <h2 id="faq">FAQ</h2>
-  <div class="faq"><details><summary>How big should a QR code be on a business card?</summary><p>At least 0.8 x 0.8 inches (2 x 2 cm), though 1 x 1 inch is safer on small cards. People scan a card from a few inches away, so the 2 cm floor is what protects you, not the 10:1 rule.</p></details><details><summary>What is the smallest a QR code can be and still scan?</summary><p>About 0.8 x 0.8 inches (2 x 2 cm) for close-up scanning. Below that, reliability drops fast, and codes under 1 inch fail noticeably more than codes at 2 inches. Keep the encoded link short so the code stays sparse at small sizes.</p></details><details><summary>What size should a QR code be on a flyer or menu?</summary><p>Around 1.5 x 1.5 inches (4 x 4 cm). Flyers and menus get read from one to two feet away, and dividing that distance by 10 lands you near 4 cm.</p></details><details><summary>What DPI should a QR code be for printing?</summary><p>300 DPI for anything read up close (cards, flyers, menus, packaging). 150 DPI is fine for posters and signage seen from a few feet, and 72 DPI is acceptable on billboards. To skip the math entirely, export a vector SVG, which stays sharp at any size.</p></details><details><summary>How big does a QR code need to be for a billboard?</summary><p>Roughly one-tenth of the viewing distance. A billboard scanned from about 30 feet (10 m) needs a code of at least 3 feet (1 m) across, not counting its blank margin.</p></details><details><summary>Why won't my printed QR code scan?</summary><p>Usually one of four things: it is printed too small for the scan distance, the blank quiet-zone margin got cropped off, the link is so long the code is too dense, or it was exported at low resolution or as a JPEG. Fix the size with the 10:1 rule, keep the margin, shorten the URL, and export a clean PNG or SVG.</p></details></div>
-  <div class="cta">
-    <h2>Make a print-ready code</h2>
-    <p>QR Codes Made Easy exports PNG up to 4000px and true vector SVG, sharp at any print size. Free, no account, and the code never expires.</p>
-    <a class="btn" href="../../">Build your QR code</a>
-  </div>
-</article>
+  <div class="answer"><p class="big">There is no single QR code size that works for every print job. Start with the scan distance, allow enough space for the pattern and its blank margin, and test a printed proof. The common distance ÷ 10 rule is a planning shortcut, not a scan guarantee or a QR standard requirement.</p><p>Need a starting estimate? Use the <a href="../../tools/qr-code-size-calculator/">print-size calculator</a>, then work through the <a href="/resources/qr-print-checklist.html">before-you-print checklist</a>.</p></div>
+<div class="toc"><b>What's here</b><ol><li><a href="#the-rule">Choose a starting size</a></li><li><a href="#size-table">Worked distance examples</a></li><li><a href="#resolution">Choose image resolution</a></li><li><a href="#data-density">Account for dense patterns and logos</a></li><li><a href="#quiet-zone">Include the quiet zone</a></li><li><a href="#test-scan">Test the finished piece</a></li></ol></div>
+<h2 id="the-rule">Choose a starting size, not a promised scan distance</h2>
+<p>A scanner must distinguish the small squares, called modules, in the pattern. Camera focus, lighting, contrast, print quality, and how much data the code contains all affect that task. A tiny code may work in one setup and fail in another.</p>
+<p>For an initial layout, try <strong>pattern width ≈ intended scan distance ÷ 10</strong>, using the same units. Then allow extra room around that pattern for its quiet zone. This is a rough design heuristic. It does not replace testing, and 2 cm is not a universal technical minimum.</p>
+<p>Start with where someone will actually stand or hold the piece. A menu at arm's length and a poster across a room need different layouts. For a very small label, ask your printer about module size and print quality rather than shrinking the image until it fits.</p>
+<h2 id="size-table">Worked distance examples for your layout</h2>
+<p>These are illustrative calculations, not measured scan results or recommended minimums for every device. The width column refers to the <strong>pattern before adding its blank margin</strong>. If your exported image already includes that margin, its overall width must be larger.</p>
+<div class="tbl-wrap"><table><caption style="text-align:left;margin-bottom:8px">Starting pattern widths using distance ÷ 10</caption><thead><tr><th scope="col">Example placement</th><th scope="col">Assumed scan distance</th><th scope="col">Starting pattern width</th></tr></thead><tbody>
+<tr><td>Handheld card</td><td>20 cm</td><td>2 cm</td></tr><tr><td>Menu at the table</td><td>40 cm</td><td>4 cm</td></tr><tr><td>Counter sign</td><td>60 cm</td><td>6 cm</td></tr><tr><td>Poster with a place to stop</td><td>100 cm</td><td>10 cm</td></tr>
+</tbody></table></div>
+<p>Use the space you actually have, not the label on the material. A counter sign read from 20 cm needs a different starting layout from one behind a deep counter. For larger signs, provide a safe place to stop and scan; do not design around a driver using a phone.</p>
+<h2 id="resolution">Choose enough pixels for the final printed size</h2>
+<p>Use <strong>SVG when your printer or design software accepts it</strong>. Its vector pattern can scale without the fixed-pixel limit of a PNG. That does not make any physical size scannable: the pattern can still be too small, crowded, or poorly printed.</p>
+<p>For PNG, ask your printer for the required image resolution. If the job calls for 300 pixels per inch, the calculation is <strong>image pixels = printed image width in inches × 300</strong>. A 1-inch image needs 300 pixels across; a 2-inch image needs 600; a 4-inch image needs 1,200. These examples describe raster resolution, not a promise of decoding.</p>
+<p>Printer DPI and image pixels per inch describe different things, even though print workflows often use “DPI” for both. Follow the printer's specification, export at a suitable size, and avoid enlarging a small screenshot. PNG avoids the edge artifacts that lossy JPEG compression can introduce. <a href="../../#tool">The generator exports PNG and SVG</a>.</p>
+<h2 id="data-density">Dense patterns and logos need extra care</h2>
+<p>More encoded data or a higher error-correction setting can require more modules. At the same overall print size, those modules become smaller. A shorter URL you control can help, but removing a character does not always reduce the QR version. Do not trade away a stable destination simply to make the text shorter.</p>
+<p>A Wi-Fi code with long credentials or a detailed contact card can be denser than a short website link. Test the actual payload, not a short sample that only resembles it.</p>
+<p>A logo covers part of the pattern. DENSO WAVE describes error-correction capacity in terms of <strong>codewords</strong>, not a safe percentage of image area. High error correction is not permission to cover 30% of the square, and a centered logo can still cover important patterns. Start without a logo when space is tight; see the <a href="../qr-code-logo-size/">logo guidance</a> before adding one.</p>
+<h2 id="quiet-zone">Include the blank margin in your layout</h2>
+<p>A standard QR code needs a clear margin at least <strong>four modules wide on each side</strong>. <a href="https://www.qrcode.com/en/howto/code.html">DENSO WAVE's code-area guidance</a> explains this requirement. Keep the margin light and empty; do not crop it or place text inside it.</p>
+<h3>A worked example: 30 mm overall is not 30 mm of pattern</h3>
+<p>Suppose a code has a 29-module-wide pattern and a four-module margin on each side. Its total width is <strong>29 + 4 + 4 = 37 modules</strong>. At 30 mm overall, each module is about 0.81 mm, each side margin is about 3.24 mm, and the pattern is about 23.51 mm wide.</p>
+<p>This is a geometry example, not a phone test. It shows why measuring the full image and measuring only the dark pattern give different answers. Preserve the included margin when placing the downloaded image.</p>
+<h2 id="test-scan">Test the finished piece before ordering</h2>
+<ol><li><strong>Check the actual export.</strong> Scan the downloaded PNG or SVG rendering and confirm the intended link or action.</li><li><strong>Print one proof at the final size.</strong> Check that the print dialog has not shrunk the layout. Measure the image on the paper.</li><li><strong>Test the real placement.</strong> Use the actual lighting, scan distance, material, and frame or stand. Glare and curves can change the result.</li><li><strong>Try more than one phone.</strong> Check both recognition and the destination. For Wi-Fi, confirm joining; for a document, test guest access.</li><li><strong>Change one thing and repeat.</strong> Increase space, simplify styling, improve contrast, or change placement when the proof is unreliable. Keep a readable fallback.</li></ol>
+<p><a href="/resources/qr-print-checklist.pdf" download><strong>Download the one-page print checklist (PDF)</strong></a> to record the size, distance, phones, and fixes. Prefer an online version? <a href="/resources/qr-print-checklist.html">Read and print the checklist</a>.</p>
+<p>If the code still fails, <a href="../why-wont-my-qr-code-scan/#diagnose">start with the troubleshooting decision table</a>. For a guest-network sign, <a href="/resources/guest-wifi-sign.html">place your PNG in the free Wi-Fi template</a>.</p>
+<h2 id="sources">Sources and limits</h2>
+<p>Technical references: DENSO WAVE on <a href="https://www.qrcode.com/en/howto/code.html">symbol area and margins</a> and <a href="https://www.qrcode.com/en/about/error_correction.html">error correction</a>. The distance examples and margin calculation above are worked examples. They are not physical-device or printer test results.</p>
+<h2 id="faq">FAQ</h2><div class="faq"><details><summary>How big should a QR code be on a business card?</summary><p>Choose a size for the expected close-up scan distance and the actual pattern density. A 2 cm pattern can be a starting layout choice, not a universal minimum. Allow its blank margin and test the printed card.</p></details><details><summary>What is the smallest a QR code can be and still scan?</summary><p>There is no single minimum physical size for every QR code, camera, and printer. Module size, density, contrast, print quality, and scan distance all matter. Test the actual printed code rather than relying on a fixed minimum.</p></details><details><summary>What size should a QR code be on a flyer or menu?</summary><p>Start with the intended scan distance. For example, a 40 cm distance gives a 4 cm pattern using the rough distance-divided-by-10 heuristic. Add the quiet zone, then test the finished piece; the calculation is not a guarantee.</p></details><details><summary>What resolution should a QR code image have for printing?</summary><p>Follow the printer’s specification. At 300 pixels per inch, a 2-inch-wide image needs 600 pixels across. SVG avoids a fixed raster resolution when the printer accepts it, but neither format guarantees scanning at every physical size.</p></details><details><summary>Does the print size include the blank margin?</summary><p>Check which measurement you are using. This guide’s distance examples describe the pattern without its margin. The exported image includes the margin, so its overall printed width is larger than the pattern alone.</p></details><details><summary>Why will my printed QR code not scan?</summary><p>Check whether the phone recognizes the pattern first. If not, inspect size, contrast, margin, styling, and the finished surface. If it recognizes a link but the page fails, check the destination and access permissions.</p></details></div><div class="cta"><h2>Make your code, then test the proof.</h2><p>Free PNG and SVG downloads. No account or subscription.</p><a class="btn" href="../../#tool">Build your QR code</a></div></article>
 <footer>
 <div class="wrap foot-grid">
 <div class="foot-left">
@@ -243,9 +190,9 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
 </div>
 <div class="wrap foot-note">No cookies, no ad trackers, no accounts. Just a QR code that works.</div>
 </footer>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How Big Should a QR Code Be for Print? A Size Guide by Material", "description": "The 10:1 rule, a size-by-material table, and the pixel math so your QR code scans the first time, on cards, flyers, signs, and billboards.", "datePublished": "2026-07-07", "dateModified": "2026-09-07", "author": {"@type": "Person", "name": "Bud Hennekes", "url": "https://qrcodemadeeasy.com/"}, "publisher": {"@type": "Organization", "name": "QR Codes Made Easy", "url": "https://qrcodemadeeasy.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://qrcodemadeeasy.com/guides/how-big-should-a-qr-code-be-for-print/"}, "image": "https://qrcodemadeeasy.com/guides/how-big-should-a-qr-code-be-for-print/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How Big Should a QR Code Be for Print?", "description": "Choose a QR print size using distance, image resolution, and the quiet zone. Work through sizing examples and test a proof before ordering.", "datePublished": "2026-07-07", "dateModified": "2026-10-04", "author": {"@type": "Person", "name": "Bud Hennekes", "url": "https://qrcodemadeeasy.com/"}, "publisher": {"@type": "Organization", "name": "QR Codes Made Easy", "url": "https://qrcodemadeeasy.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://qrcodemadeeasy.com/guides/how-big-should-a-qr-code-be-for-print/"}, "image": "https://qrcodemadeeasy.com/guides/how-big-should-a-qr-code-be-for-print/og.png"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://qrcodemadeeasy.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://qrcodemadeeasy.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "How big should a QR code be for print?", "item": "https://qrcodemadeeasy.com/guides/how-big-should-a-qr-code-be-for-print/"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How big should a QR code be on a business card?", "acceptedAnswer": {"@type": "Answer", "text": "At least 0.8 x 0.8 inches (2 x 2 cm), though 1 x 1 inch is safer on small cards. People scan a card from a few inches away, so the 2 cm floor is what protects you, not the 10:1 rule."}}, {"@type": "Question", "name": "What is the smallest a QR code can be and still scan?", "acceptedAnswer": {"@type": "Answer", "text": "About 0.8 x 0.8 inches (2 x 2 cm) for close-up scanning. Below that, reliability drops fast, and codes under 1 inch fail noticeably more than codes at 2 inches. Keep the encoded link short so the code stays sparse at small sizes."}}, {"@type": "Question", "name": "What size should a QR code be on a flyer or menu?", "acceptedAnswer": {"@type": "Answer", "text": "Around 1.5 x 1.5 inches (4 x 4 cm). Flyers and menus get read from one to two feet away, and dividing that distance by 10 lands you near 4 cm."}}, {"@type": "Question", "name": "What DPI should a QR code be for printing?", "acceptedAnswer": {"@type": "Answer", "text": "300 DPI for anything read up close (cards, flyers, menus, packaging). 150 DPI is fine for posters and signage seen from a few feet, and 72 DPI is acceptable on billboards. To skip the math entirely, export a vector SVG, which stays sharp at any size."}}, {"@type": "Question", "name": "How big does a QR code need to be for a billboard?", "acceptedAnswer": {"@type": "Answer", "text": "Roughly one-tenth of the viewing distance. A billboard scanned from about 30 feet (10 m) needs a code of at least 3 feet (1 m) across, not counting its blank margin."}}, {"@type": "Question", "name": "Why won't my printed QR code scan?", "acceptedAnswer": {"@type": "Answer", "text": "Usually one of four things: it is printed too small for the scan distance, the blank quiet-zone margin got cropped off, the link is so long the code is too dense, or it was exported at low resolution or as a JPEG. Fix the size with the 10:1 rule, keep the margin, shorten the URL, and export a clean PNG or SVG."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How big should a QR code be on a business card?", "acceptedAnswer": {"@type": "Answer", "text": "Choose a size for the expected close-up scan distance and the actual pattern density. A 2 cm pattern can be a starting layout choice, not a universal minimum. Allow its blank margin and test the printed card."}}, {"@type": "Question", "name": "What is the smallest a QR code can be and still scan?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single minimum physical size for every QR code, camera, and printer. Module size, density, contrast, print quality, and scan distance all matter. Test the actual printed code rather than relying on a fixed minimum."}}, {"@type": "Question", "name": "What size should a QR code be on a flyer or menu?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the intended scan distance. For example, a 40 cm distance gives a 4 cm pattern using the rough distance-divided-by-10 heuristic. Add the quiet zone, then test the finished piece; the calculation is not a guarantee."}}, {"@type": "Question", "name": "What resolution should a QR code image have for printing?", "acceptedAnswer": {"@type": "Answer", "text": "Follow the printer’s specification. At 300 pixels per inch, a 2-inch-wide image needs 600 pixels across. SVG avoids a fixed raster resolution when the printer accepts it, but neither format guarantees scanning at every physical size."}}, {"@type": "Question", "name": "Does the print size include the blank margin?", "acceptedAnswer": {"@type": "Answer", "text": "Check which measurement you are using. This guide’s distance examples describe the pattern without its margin. The exported image includes the margin, so its overall printed width is larger than the pattern alone."}}, {"@type": "Question", "name": "Why will my printed QR code not scan?", "acceptedAnswer": {"@type": "Answer", "text": "Check whether the phone recognizes the pattern first. If not, inspect size, contrast, margin, styling, and the finished surface. If it recognizes a link but the page fails, check the destination and access permissions."}}]}</script>
 <!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
 </body>
 </html>

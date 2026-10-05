@@ -97,6 +97,66 @@ class GuideTests(unittest.TestCase):
         self.assertIn('https://support.google.com/business/answer/16816815?hl=en', external_links)
         self.assertIn('https://support.google.com/contributionpolicy/answer/7400114?hl=en', external_links)
 
+    def test_wifi_guide_proof_and_faq_parity(self):
+        doc = soup(ROOT / 'guides/qr-code-for-wifi/index.html')
+        for anchor in ('example', 'proof', 'security'):
+            self.assertIsNotNone(doc.find(id=anchor))
+        text = doc.get_text(' ', strip=True)
+        self.assertIn('leading or trailing spaces', text)
+        self.assertIn('not a physical phone joining a router', text)
+        self.assertIn(r'WIFI:T:WPA;S:Guest\;Net;P:test\:pass;;', text)
+        self.assertNotIn('anything recent works out of the box', text)
+        self.assertNotIn('The only thing that ever kills the code', text)
+        schemas = [json.loads(x.string) for x in doc.select('script[type="application/ld+json"]')]
+        faq = next(x for x in schemas if x.get('@type') == 'FAQPage')
+        visible = {x.summary.get_text(strip=True): x.p.get_text(' ', strip=True) for x in doc.select('.faq details')}
+        self.assertEqual(visible, {x['name']: x['acceptedAnswer']['text'] for x in faq['mainEntity']})
+        article = next(x for x in schemas if x.get('@type') == 'Article')
+        self.assertEqual(article['dateModified'], '2026-10-04')
+        self.assertEqual(article['description'], doc.select_one('meta[name=description]')['content'])
+
+    def test_all_guide_faq_answers_match_without_punctuation_normalization(self):
+        for path in GUIDES:
+            with self.subTest(page=path.parent.name):
+                doc = soup(path)
+                visible = {x.summary.get_text(strip=True): x.p.get_text(' ', strip=True) for x in doc.select('.faq details')}
+                schemas = [json.loads(x.string) for x in doc.select('script[type="application/ld+json"]')]
+                faq = next(x for x in schemas if x.get('@type') == 'FAQPage')
+                self.assertEqual(visible, {x['name']: x['acceptedAnswer']['text'] for x in faq['mainEntity']})
+
+    def test_expiration_and_homepage_claims_are_bounded(self):
+        doc = soup(ROOT / 'guides/do-qr-codes-expire/index.html')
+        text = doc.get_text(' ', strip=True)
+        for phrase in ('$120', 'Answer yes to any', 'the moment your account', 'most common reason is a lapsed', 'read the scans in your own analytics'):
+            self.assertNotIn(phrase, text)
+        self.assertIn('decoded URL', text)
+        self.assertIn('not an exact scan count', text)
+        self.assertIn('service page', text)
+        self.assertIn('Any Static QR Codes in your account continue to work.', text)
+        home = soup(ROOT / 'index.html').get_text(' ', strip=True)
+        self.assertNotIn('the moment your free trial ends', home)
+        self.assertNotIn('Most QR generators rent', home)
+        self.assertIn('provider', home)
+        tracking = soup(ROOT / 'guides/track-qr-code-scans-without-subscription/index.html').get_text(' ', strip=True)
+        self.assertIn('sessions attributed to the tagged source and medium, not an exact scan count', tracking)
+        self.assertNotIn('every scan groups together', tracking)
+        self.assertNotIn('I can see how many people scanned', tracking)
+        self.assertNotIn('which means a monthly fee', tracking)
+
+    def test_logo_guidance_does_not_guarantee_center_or_print_safety(self):
+        doc = soup(ROOT / 'guides/qr-code-logo-size/index.html')
+        text = doc.get_text(' ', strip=True)
+        for phrase in ('middle is the safest', 'stays away from the three corner squares and the alignment square', "If both phones read it instantly, you're good", 'assumes the damage is spread out', 'safe size'):
+            self.assertNotIn(phrase, text)
+        self.assertIn('alignment pattern in the center', text)
+        self.assertIn('printed proof', text)
+        self.assertIn('codewords', text)
+        for slug in ('do-qr-codes-expire', 'qr-code-logo-size'):
+            page = soup(ROOT / 'guides' / slug / 'index.html')
+            article = next(json.loads(s.string) for s in page.select('script[type="application/ld+json"]') if json.loads(s.string).get('@type') == 'Article')
+            self.assertEqual(article['dateModified'], '2026-10-04')
+            self.assertEqual(article['description'], page.select_one('meta[name=description]')['content'])
+
     def test_hub_does_not_promise_exact_scan_counts(self):
         text = soup(ROOT / 'guides/index.html').get_text(' ', strip=True)
         self.assertNotIn('Count your scans for free', text)

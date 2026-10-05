@@ -142,6 +142,56 @@ class GeneratorTests(unittest.TestCase):
         self.ready()
         self.assertEqual(before, self.page.locator('#qr-preview canvas').evaluate('(c)=>c.toDataURL()'))
 
+    def test_invalid_logo_preserves_work_and_download_recovers(self):
+        self.page.locator('#url-input').fill('https://example.com/logo-proof')
+        self.ready()
+        self.page.locator('#design-options summary').click()
+        before = self.page.locator('#qr-preview canvas').evaluate('(c)=>c.toDataURL()')
+        self.page.locator('#logo-input').set_input_files({'name':'broken.png','mimeType':'image/png','buffer':b'not a PNG'})
+        self.page.wait_for_timeout(500)
+        self.assertIn('could not be read', self.page.locator('#logo-hint').inner_text())
+        self.assertEqual(before, self.page.locator('#qr-preview canvas').evaluate('(c)=>c.toDataURL()'))
+        with self.page.expect_download(timeout=3000) as event:
+            self.page.locator('#dl-png').click()
+        self.assertEqual('https://example.com/logo-proof', zxingcpp.read_barcode(Image.open(event.value.path())).text)
+        logo = io.BytesIO()
+        Image.new('RGB', (80,80), '#2563eb').save(logo, 'PNG')
+        self.page.locator('#logo-input').set_input_files({'name':'valid.png','mimeType':'image/png','buffer':logo.getvalue()})
+        self.page.wait_for_function("document.querySelector('#logo-hint').textContent.includes('Logo added')")
+        self.ready()
+        self.assertEqual('https://example.com/logo-proof', self.decoded_preview())
+
+    def test_large_logo_and_pending_reset_preserve_design(self):
+        self.page.locator('#url-input').fill('https://example.com/reset-proof')
+        self.ready()
+        self.page.locator('#design-options summary').click()
+        before = self.page.locator('#qr-preview canvas').evaluate('(c)=>c.toDataURL()')
+        self.page.locator('#logo-input').set_input_files({'name':'large.png','mimeType':'image/png','buffer':b'x' * (5 * 1024 * 1024 + 1)})
+        self.assertIn('too large', self.page.locator('#logo-hint').inner_text())
+        self.assertEqual(before, self.page.locator('#qr-preview canvas').evaluate('(c)=>c.toDataURL()'))
+        # Delay the browser file-read callback to exercise a real pending upload.
+        self.page.evaluate('''() => {
+            const original = FileReader.prototype.readAsDataURL;
+            FileReader.prototype.readAsDataURL = function(file) {
+                const reader=this; setTimeout(() => original.call(reader, file), 250);
+            };
+        }''')
+        logo = io.BytesIO()
+        Image.new('RGB', (80,80), '#2563eb').save(logo, 'PNG')
+        self.page.locator('#logo-input').set_input_files({'name':'pending.png','mimeType':'image/png','buffer':logo.getvalue()})
+        self.page.locator('#reset-btn').click()
+        self.page.wait_for_timeout(600)
+        self.assertTrue(self.page.locator('#logo-clear').is_hidden())
+        self.assertEqual(before, self.page.locator('#qr-preview canvas').evaluate('(c)=>c.toDataURL()'))
+
+    def test_first_click_download_after_url_blur(self):
+        self.page.locator('#url-input').fill('example.com/first-click')
+        self.ready()
+        self.page.locator('#url-input').focus()
+        with self.page.expect_download(timeout=3000) as event:
+            self.page.locator('#dl-png').click()
+        self.assertEqual('https://example.com/first-click', zxingcpp.read_barcode(Image.open(event.value.path())).text)
+
     def test_empty_invalid_and_keyboard_tabs(self):
         self.assertTrue(self.page.locator('#dl-png').is_disabled())
         self.page.locator('#url-input').fill('https://')

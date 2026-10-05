@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QR Code Guides — QR Codes Made Easy</title>
-<meta name="description" content="Plain-English guides on making QR codes that actually scan: logo size, print sizing, error correction, and more. From QR Codes Made Easy.">
+<meta name="description" content="Make QR codes for reviews, menus, Wi-Fi, and business cards. Find a free Wi-Fi sign template, print checklist, sizing calculator, and practical fixes.">
 <link rel="canonical" href="https://qrcodemadeeasy.com/guides/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="QR Code Guides — QR Codes Made Easy">
@@ -83,9 +83,20 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
   .masthead nav a{margin-left:0;white-space:nowrap;flex:none}
   .foot-links{text-align:left}
 }
+
+/* Task-led hub: same brand, shorter paths, no new framework. */
+.wrap{max-width:1000px}.hub a{color:var(--accent-deep);text-underline-offset:3px}.hub h2{font:600 28px/1.2 var(--serif);letter-spacing:-.015em}.hub h3{font-size:17px;line-height:1.45}.hub p{color:var(--ink-soft)}
+.intro{padding:46px 0 28px}.intro h1{max-width:730px;font-size:clamp(32px,4.4vw,48px);text-wrap:balance}.intro p{max-width:620px}.intro .hub-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:24px;font-size:15px;font-weight:600}.hub-actions .primary-link{background:var(--accent);color:white;border-radius:8px;padding:12px 18px;text-decoration:none}.hub-actions .primary-link:hover{background:var(--accent-deep)}
+.topic-nav{display:flex;flex-wrap:wrap;gap:10px 24px;padding:17px 0;border-block:1px solid var(--line);font-size:14px;font-weight:600}.topic-nav a{padding:5px 0}
+.free-resources{padding:30px 0}.free-resources>p{margin:8px 0 20px}.resource-pair{display:grid;grid-template-columns:1fr 1fr;gap:32px}.resource-pair p{font-size:15px;margin-top:6px;max-width:44ch}
+.topic-group{display:grid;grid-template-columns:minmax(180px, .8fr) minmax(0,1.4fr);gap:48px;padding:34px 0;border-top:1px solid var(--line);scroll-margin-top:20px}.topic-heading p{margin-top:12px;font-size:15px;max-width:32ch}.guide-links{list-style:none}.guide-links li+li{margin-top:22px}.guide-links p{font-size:15px;margin-top:3px;max-width:60ch}.next-action{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:15px}.industry-route{padding:30px 0 0;border-top:1px solid var(--line)}.industry-route p{margin-top:10px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.skip-link{position:absolute;left:18px;top:-100px;background:white;padding:12px;z-index:10}.skip-link:focus{top:12px}::selection{background:#dbe7fd;color:var(--ink)}
+@media(max-width:650px){.topic-group{grid-template-columns:1fr;gap:20px}.topic-heading p{max-width:55ch}.resource-pair{grid-template-columns:1fr;gap:22px}.intro{padding-top:30px}.hub h2{font-size:25px}.topic-nav{gap:8px 18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to guides</a>
 
 <header class="wrap">
   <div class="masthead">
@@ -98,143 +109,53 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
   </div>
 </header>
 
-<section class="intro wrap">
-  <div class="eyebrow">Guides</div>
-  <h1>QR code guides</h1>
-  <p>Short, plain-English guides on making a QR code that actually scans. No jargon, no fluff, just what holds up when you print it.</p>
+<main id="main-content" class="wrap hub">
+<section class="intro">
+  <h1>QR code guides, from first scan to final print.</h1>
+  <p>Choose what you need to do. Make the code, check the destination, and test it where people will use it.</p>
+  <p class="hub-actions"><a class="primary-link" href="/#tool">Make a QR code</a><a href="why-wont-my-qr-code-scan/">Code not working?</a></p>
 </section>
-
-<section class="list wrap">
-  <h2 class="grp">Make a code for…</h2>
-  <a class="g-card" href="qr-code-for-a-restaurant-menu/">
-    <div class="tag">Menus &amp; hospitality</div>
-    <h2>How to make a QR code for a restaurant menu</h2>
-    <p>Choose a mobile menu or PDF, keep its address stable, and test your table tent before printing a batch.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-for-whatsapp/">
-    <div class="tag">WhatsApp &amp; chat</div>
-    <h2>How to make a QR code for WhatsApp</h2>
-    <p>Opens a chat straight to your number, with an optional message already typed. The number format that trips people up, explained.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-on-your-website/">
-    <div class="tag">Embed &amp; website</div>
-    <h2>How to put a QR code on your website</h2>
-    <p>Copy a self-contained snippet and paste it in. Nothing to host, no broken image later, and the code never expires.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-for-a-business-card/">
-    <div class="tag">Business cards</div>
-    <h2>How to make a QR code for a business card</h2>
-    <p>What to link (URL or vCard), the right size for a close-up scan, and how to keep it working when you change jobs.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-for-telegram/">
-    <div class="tag">Telegram &amp; chat</div>
-    <h2>How to make a QR code for Telegram</h2>
-    <p>Open your chat, channel, or group from a public @username or a phone number. Plus the one thing Telegram links can't do.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-for-imessage/">
-    <div class="tag">iMessage &amp; texting</div>
-    <h2>How to make a QR code for iMessage and texts</h2>
-    <p>Opens a draft text to your number. The messaging service depends on the phones, settings, and network.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-for-google-reviews/">
-    <div class="tag">Reviews &amp; local</div>
-    <h2>How to make a QR code for Google reviews</h2>
-    <p>Get Google's review link or QR image, customize a code if you need to, and check the sign before printing.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-for-instagram/">
-    <div class="tag">Instagram &amp; social</div>
-    <h2>How to make a QR code for Instagram</h2>
-    <p>Scan to follow. Point it at your profile, a post, or your link-in-bio. Brandable and print-ready, unlike Instagram's own in-app code.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-for-linkedin/">
-    <div class="tag">LinkedIn &amp; networking</div>
-    <h2>How to make a QR code for your LinkedIn profile</h2>
-    <p>Turn your public profile URL into a print-ready code, choose when to use LinkedIn's own code instead, and test it before the cards arrive.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-for-wifi/">
-    <div class="tag">Wi-Fi &amp; guests</div>
-    <h2>How to make a Wi-Fi QR code</h2>
-    <p>Guests join your network in one scan, no password recital. The honest security note included, since the password lives in the print.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-for-a-pdf/">
-    <div class="tag">Documents &amp; downloads</div>
-    <h2>How to make a QR code for a PDF</h2>
-    <p>Host the file, get a link a stranger can open, and skip the myth that a bigger PDF needs a denser code.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-for-a-google-form/">
-    <div class="tag">Forms &amp; check-ins</div>
-    <h2>How to make a QR code for a Google Form</h2>
-    <p>Forms has no built-in QR button. Get the right link, dodge the sign-in wall, and scan straight into the form.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-for-a-resume/">
-    <div class="tag">Job search &amp; careers</div>
-    <h2>How to make a QR code for your resume</h2>
-    <p>When to link to a portfolio or profile, why a QR code cannot replace resume text, and where it fits on the page.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-for-a-flyer/">
-    <div class="tag">Flyers &amp; handouts</div>
-    <h2>How to make a QR code for a flyer</h2>
-    <p>The right size for a handout, where to place it so trimming and folds can't kill the quiet zone, and what to link.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-
-  <h2 class="grp">The fundamentals</h2>
-  <a class="g-card" href="../tools/qr-code-size-calculator/">
-    <div class="tag">Free tool · Print &amp; sizing</div>
-    <h2>QR code size calculator for print</h2>
-    <p>Choose the surface, scan distance, content density, and logo use. Get a starting size, then test the final printed code.</p>
-    <span class="go">Use the calculator →</span>
-  </a>
-  <a class="g-card" href="how-big-should-a-qr-code-be-for-print/">
-    <div class="tag">Print &amp; sizing</div>
-    <h2>How big should a QR code be for print?</h2>
-    <p>A scan-distance rule of thumb, size examples, and pixel calculations. Test a printed proof before ordering.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="why-wont-my-qr-code-scan/">
-    <div class="tag">Troubleshooting</div>
-    <h2>Why won't my QR code scan?</h2>
-    <p>The real reasons a code fails, in order of likelihood, with the exact fix for each one. Check size and contrast first.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="do-qr-codes-expire/">
-    <div class="tag">Static vs dynamic</div>
-    <h2>Do QR codes expire?</h2>
-    <p>Static codes never do. Dynamic ones can, the day the subscription behind them lapses. A 10-second test to tell which you have.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="track-qr-code-scans-without-subscription/">
-    <div class="tag">Tracking</div>
-    <h2>How to track QR scans without a subscription</h2>
-    <p>Measure visits from your QR links with UTM tags and analytics you already run. Understand what those visits do, and do not, tell you.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-logo-size/">
-    <div class="tag">Logos &amp; scannability</div>
-    <h2>How big can a QR code logo be?</h2>
-    <p>Why the "20 to 30%" rule everyone repeats is wrong, and the simple rule that keeps a logo from killing the scan.</p>
-    <span class="go">Read the guide →</span>
-  </a>
-  <a class="g-card" href="qr-code-colors/">
-    <div class="tag">Colors &amp; contrast</div>
-    <h2>QR code colors that actually scan</h2>
-    <p>Which combos scan reliably and which quietly fail: the two rules, a works-and-fails table, and why inverted codes break.</p>
-    <span class="go">Read the guide →</span>
-  </a>
+<nav class="topic-nav" aria-label="Guide topics">
+  <a href="#reviews">Reviews & feedback</a><a href="#guests">Menus & Wi-Fi</a><a href="#print">Print & fix</a><a href="#promotion">Cards & promotion</a>
+</nav>
+<section class="free-resources" aria-labelledby="resources-title">
+  <h2 id="resources-title">Make something you can use.</h2>
+  <p>Free resources. No account or email address needed.</p>
+  <div class="resource-pair">
+    <div><h3><a href="/resources/guest-wifi-sign.html">Guest Wi-Fi sign template</a></h3><p>Add your own QR image and network name. Print a clean sign or save it as a PDF, entirely in your browser.</p></div>
+    <div><h3><a href="/resources/qr-print-checklist.pdf" download>Before-you-print checklist (PDF)</a></h3><p>Check the link, size, margin, and real placement before ordering a batch. <a href="/resources/qr-print-checklist.html">Read the checklist online</a>.</p></div>
+  </div>
 </section>
+<section class="topic-group" id="reviews" aria-labelledby="reviews-title"><div class="topic-heading"><h2 id="reviews-title">Reviews & customer feedback</h2><p>Help customers find the right place to leave a review or send feedback.</p></div><div><ul class="guide-links">
+<li><h3><a href="qr-code-for-google-reviews/">Make a Google review QR code</a></h3><p>Get the right link, use a neutral request, and check your sign.</p></li>
+<li><h3><a href="qr-code-for-a-google-form/">Share a Google Form</a></h3><p>Check the respondent link and sign-in requirements before printing.</p></li>
+<li><h3><a href="track-qr-code-scans-without-subscription/">Measure visits from QR links</a></h3><p>Use tagged links without mistaking website visits for exact scans.</p></li>
+</ul></div></section>
+<section class="topic-group" id="guests" aria-labelledby="guests-title"><div class="topic-heading"><h2 id="guests-title">Menus & guest Wi-Fi</h2><p>Make useful information easy to reach at a table, counter, or guest room.</p></div><div><ul class="guide-links">
+<li><h3><a href="qr-code-for-a-restaurant-menu/">Make a restaurant menu QR code</a></h3><p>Choose a mobile menu or PDF and keep its address stable.</p></li>
+<li><h3><a href="qr-code-for-wifi/">Share your guest Wi-Fi</a></h3><p>Create the code, understand password exposure, and test joining.</p></li>
+<li><h3><a href="qr-code-for-a-pdf/">Link to a PDF</a></h3><p>Host the file where guests can open it without signing in.</p></li>
+</ul><p class="next-action">Have your code? <a href="/resources/guest-wifi-sign.html">Make the Wi-Fi sign</a>.</p></div></section>
+<section class="topic-group" id="print" aria-labelledby="print-title"><div class="topic-heading"><h2 id="print-title">Print & troubleshooting</h2><p>Choose a starting size, protect the pattern, and test the finished piece.</p></div><div><ul class="guide-links">
+<li><h3><a href="how-big-should-a-qr-code-be-for-print/">Choose a QR code size for print</a></h3><p>Work through distance, image resolution, and the blank margin.</p></li>
+<li><h3><a href="why-wont-my-qr-code-scan/">Fix a QR code that will not scan</a></h3><p>Separate a scanning problem from a broken destination.</p></li>
+<li><h3><a href="qr-code-colors/">Choose colors that scan</a></h3><p>Start with a dark pattern on a light background.</p></li>
+<li><h3><a href="qr-code-logo-size/">Add a logo without guessing</a></h3><p>Understand error correction and test the actual design.</p></li>
+<li><h3><a href="do-qr-codes-expire/">Understand QR code expiration</a></h3><p>A static pattern has no expiry; a destination still needs to work.</p></li>
+</ul><p class="next-action"><a href="/tools/qr-code-size-calculator/">Use the print-size calculator</a>, then <a href="/resources/qr-print-checklist.html">work through the proof checklist</a>.</p></div></section>
+<section class="topic-group" id="promotion" aria-labelledby="promotion-title"><div class="topic-heading"><h2 id="promotion-title">Business cards & promotion</h2><p>Connect a printed piece to a profile, a conversation, or your next step.</p></div><div><ul class="guide-links">
+<li><h3><a href="qr-code-for-a-business-card/">Put a QR code on a business card</a></h3><p>Choose a website link or contact card and leave enough print space.</p></li>
+<li><h3><a href="qr-code-for-linkedin/">Link to your LinkedIn profile</a></h3><p>Compare a printable code with LinkedIn’s native option.</p></li>
+<li><h3><a href="qr-code-for-a-resume/">Add a QR code to a resume</a></h3><p>Make it a useful extra, not a replacement for readable contact details.</p></li>
+<li><h3><a href="qr-code-for-a-flyer/">Make a QR code for a flyer</a></h3><p>Choose the destination and keep it away from folds and trimming.</p></li>
+<li><h3><a href="qr-code-for-instagram/">Link to Instagram</a></h3><p>Point to a profile, post, or a page with your other links.</p></li>
+<li><h3><a href="qr-code-for-whatsapp/">Open a WhatsApp conversation</a></h3><p>Get the number format and optional starter message right.</p></li>
+<li><h3><a href="qr-code-for-telegram/">Link to a Telegram chat or channel</a></h3><p>Use a public username or an appropriate phone link.</p></li>
+<li><h3><a href="qr-code-for-imessage/">Open a text message</a></h3><p>Create a draft; the messaging service depends on the devices.</p></li>
+<li><h3><a href="qr-code-on-your-website/">Put a QR code on your website</a></h3><p>Use a self-contained image snippet without extra hosting.</p></li>
+</ul></div></section>
+<section class="industry-route"><h2>Start with your line of work.</h2><p>See how the pieces fit together for <a href="/for/restaurants/">restaurants</a>, <a href="/for/small-business/">small businesses</a>, or <a href="/for/">your industry</a>.</p></section>
+</main>
 
 <footer>
 <div class="wrap foot-grid">
@@ -251,5 +172,6 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
 <div class="wrap foot-note">No cookies, no ad trackers, no accounts. Just a QR code that works.</div>
 </footer>
 <!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "QR code guides and free resources", "url": "https://qrcodemadeeasy.com/guides/", "description": "Guides for reviews, menus, guest Wi-Fi, printing, and promotion, with a free sign template and print checklist."}</script>
 </body>
 </html>

@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free QR Code Generator, No Expiration | QR Codes Made Easy</title>
-<meta name="description" content="Make a QR code that never expires, right in your browser. Free, no account, no subscription, no dead codes. Your data never leaves your device.">
+<meta name="description" content="Make free static QR codes in your browser. No account or subscription. Download PNG or SVG. No code expiry timer; keep any linked destination available.">
 <link rel="canonical" href="https://qrcodemadeeasy.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://qrcodemadeeasy.com/">
 <meta property="og:title" content="QR Codes Made Easy — QR codes that never expire">
-<meta property="og:description" content="Free QR code generator. Static codes that work forever, generated in your browser. No account, no subscription, no dead codes.">
+<meta property="og:description" content="Free browser-generated static QR codes. No account or subscription. Codes have no expiry timer; linked destinations must stay available.">
 <meta property="og:image" content="https://qrcodemadeeasy.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="QR Codes Made Easy — QR codes that never expire">
-<meta name="twitter:description" content="Free QR code generator. Static codes that work forever, no account and no subscription.">
+<meta name="twitter:description" content="Free static QR codes with no expiry timer, account or subscription. Keep linked destinations available.">
 <meta name="twitter:image" content="https://qrcodemadeeasy.com/og-image.png">
 <link rel="preload" href="qr-code-styling.js" as="script">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -753,11 +753,11 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
 
 <section class="edu wrap" id="why">
   <p class="kicker">Why this exists</p>
-  <h2>Most QR generators rent you your own QR code.</h2>
-  <p>Here is the trick: many popular QR tools create <b>dynamic codes</b>. Instead of pointing to your website, the code points to their redirect server, which forwards people on to your website. That is how they track scans, and it is also the hook.</p>
-  <p>Because the moment your free trial ends or your subscription lapses, that redirect dies. The code itself is fine. It is printed on 10,000 brochures, a trade show booth, a restaurant menu, the side of a van. It just goes nowhere. Some services then offer to reactivate it, for a fee. Your printed materials become their leverage.</p>
-  <div class="pull">A static QR code is just geometry. Your link, encoded in a pattern. Nobody can turn it off, including us.</div>
-  <p>That is the whole idea behind this tool. It generates <b>static codes only</b>, in your browser, with the destination baked in permanently. There is no server to shut down, no account to lapse, and no company between your customer and your website. The tradeoff is honest: you do not get scan analytics, and the destination cannot be changed after printing. For most brand uses, links you control and intend to keep, that is the right trade.</p>
+  <h2>Your printed code should not need a QR subscription.</h2>
+  <p>Some QR tools offer <b>dynamic codes</b>: the pattern contains a redirect URL, and a service forwards visitors to your page. That lets the service change destinations and report requests to the redirect. It also adds a service dependency.</p>
+  <p>What happens when a trial or plan ends depends on the provider. For example, QR Code Generator says its trial Dynamic QR Codes are deactivated and point to a service page, while its Static QR Codes continue to work. The <a href="guides/do-qr-codes-expire/">expiration guide links the policy and shows how to inspect your code</a>. Check the terms before printing, rather than assuming every service works the same way.</p>
+  <div class="pull">A static QR code stores your data in a pattern. No expiry timer. Keep the pattern readable and any linked page available.</div>
+  <p>That is the idea behind this tool. It generates <b>static codes only</b>, in your browser, without adding our own redirect. Your downloaded code does not depend on this generator staying online. Its encoded data cannot be changed after printing, but you can update a page you control. The code itself records no scans; destination analytics can measure attributed visits, not every camera scan. Any short link or redirect you supply still depends on its own service.</p>
 </section>
 
 <section class="edu wrap" id="checklist" style="padding-top:56px">
@@ -765,11 +765,12 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
   <h2>The five-point print checklist.</h2>
   <ul class="checklist">
     <li><b>Test-scan the actual file</b> on at least two phones before it goes anywhere near a printer. Screen first, then a test print.</li>
-    <li><b>Keep it at least 2 x 2 cm (0.8 x 0.8 in)</b> in print. Bigger if people scan from a distance. A rough rule: scanning distance divided by 10.</li>
-    <li><b>Dark code on a light background.</b> Inverted codes and low-contrast palettes are the number one cause of failed scans. This tool warns you when a combination is risky.</li>
+    <li><b>Choose a starting size, then test it.</b> Scan distance divided by 10 is a planning shortcut, not a guarantee. Use the <a href="guides/how-big-should-a-qr-code-be-for-print/">print-size guide</a> and test the finished layout.</li>
+    <li><b>Dark code on a light background.</b> Inverted codes and low-contrast palettes can cause failed scans. This tool warns you when a combination is risky.</li>
     <li><b>Leave the quiet zone alone.</b> The empty margin around the code is part of the code. This tool includes it automatically. Do not crop it in your layout.</li>
     <li><b>Use the SVG for print.</b> Vector files stay sharp at any size. Hand your printer the SVG, keep the PNG for screens.</li>
   </ul>
+  <p><a href="resources/qr-print-checklist.pdf" download>Download the one-page print checklist</a> or <a href="resources/guest-wifi-sign.html">make a guest Wi-Fi sign</a>. Both are free, with no account required.</p>
 </section>
 
 <section class="edu wrap" id="print" style="padding-top:56px">
@@ -809,7 +810,7 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
   <div class="faq">
     <details>
       <summary>Will this code really work forever?</summary>
-      <p>It encodes the exact link you type, nothing more. So it lasts as long as your link does. Nothing sits between the two that could expire or get switched off.</p>
+      <p>It encodes the link you supply without adding our own redirect. The pattern has no expiry timer, but it must stay readable and the destination must stay available. If you supply a short link or redirect, that service still has to work.</p>
     </details>
     <details>
       <summary>Can I change the destination after printing?</summary>
@@ -825,7 +826,7 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
     </details>
     <details>
       <summary>Why does my logo make the code look busier?</summary>
-      <p>A logo covers part of the code, so the tool turns error correction up to its highest setting. That adds backup data, which is what lets a scanner still read the code with your logo sitting on top. More dots, but a much safer scan. Here is <a href="guides/qr-code-logo-size/" style="color:var(--accent-deep);font-weight:600">how big a logo can get before it stops scanning</a>.</p>
+      <p>A logo covers part of the code, so the tool turns error correction up to level H. That adds recovery data, but does not guarantee a readable result. Test the exported file and a printed proof of the final layout. Here is <a href="guides/qr-code-logo-size/" style="color:var(--accent-deep);font-weight:600">how big a logo can get before it stops scanning</a>.</p>
     </details>
     <details>
       <summary>PNG or SVG, which one do I download?</summary>
@@ -935,7 +936,7 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
     <a class="print-card" href="tools/qr-code-size-calculator/">
       <span class="pc-ico" aria-hidden="true">📏</span>
       <b>QR code size calculator</b>
-      <span>Get a safe print size for your surface, scan distance, content density, and logo use.</span>
+      <span>Estimate a starting print size for your surface, distance, content density, and logo use. Test a printed proof.</span>
       <span class="pc-go">Use the calculator →</span>
     </a>
     <a class="print-card" href="guides/how-big-should-a-qr-code-be-for-print/">
@@ -957,7 +958,7 @@ input[type="url"]:focus,input[type="tel"]:focus,input.wa-message:focus,#tg-input
       <span class="pc-go">Read the guide →</span>
     </a>
   </div>
-  <p class="guide-more"><a href="guides/qr-code-logo-size/">Adding a logo</a> &nbsp;·&nbsp; <a href="guides/qr-code-colors/">Colors that scan</a> &nbsp;·&nbsp; <a href="guides/track-qr-code-scans-without-subscription/">Track scans for free</a> &nbsp;·&nbsp; <a href="guides/qr-code-for-linkedin/">LinkedIn profile QR codes</a> &nbsp;·&nbsp; <a href="guides/">Browse all 20 guides →</a></p>
+  <p class="guide-more"><a href="guides/qr-code-logo-size/">Adding a logo</a> &nbsp;·&nbsp; <a href="guides/qr-code-colors/">Colors that scan</a> &nbsp;·&nbsp; <a href="guides/track-qr-code-scans-without-subscription/">Track attributed visits</a> &nbsp;·&nbsp; <a href="guides/qr-code-for-linkedin/">LinkedIn profile QR codes</a> &nbsp;·&nbsp; <a href="guides/">Browse all 20 guides →</a></p>
   </details>
 </section>
 

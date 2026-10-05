@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How Big Can a QR Code Logo Be Without Breaking the Scan?</title>
-<meta name="description" content="The '30%' rule everyone repeats is a misread of how QR codes work. Error correction protects the data, not the whole code. Here's how big a logo can safely go, and why.">
+<meta name="description" content="There is no universal safe QR logo size. Learn what error correction covers, why centered logos can obscure alignment patterns, and how to test a printed proof.">
 <link rel="canonical" href="https://qrcodemadeeasy.com/guides/qr-code-logo-size/">
 <meta name="author" content="Bud Hennekes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How Big Can a QR Code Logo Be Without Breaking the Scan?">
-<meta property="og:description" content="Why the '20 to 30%' logo rule is wrong, and the simple rule that keeps your code scannable.">
+<meta property="og:description" content="There is no universal safe QR logo size. Learn what error correction covers, why centered logos can obscure alignment patterns, and how to test a printed proof.">
 <meta property="og:url" content="https://qrcodemadeeasy.com/guides/qr-code-logo-size/">
 <meta property="og:image" content="https://qrcodemadeeasy.com/guides/qr-code-logo-size/logo-15pct-scans.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -145,70 +145,44 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
   <div class="crumbs"><a href="../../">Home</a> / <a href="../">Guides</a> / How big can a QR code logo be?</div>
   <div class="eyebrow">Logos &amp; scannability</div>
   <h1>How big can a QR code logo be before it stops scanning?</h1>
-  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated July 2026.</div>
+  <div class="byline">By <b>Bud Hennekes</b>, who built <a href="../../">QR Codes Made Easy</a>. Updated October 4, 2026.</div>
   <img class="featured" src="og.webp" alt="How big can a QR code logo be before it stops scanning?: featured image from QR Codes Made Easy" width="1200" height="630" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--line);margin:0 0 26px" fetchpriority="high">
 
   <div class="answer">
-    <p class="big">Smaller than you think. Keep a centered logo's <strong>width under about a third of the code</strong>, and always use error correction level H.</p>
-    <p>The "you can cover 20 to 30%" figure you see on almost every other page is a misread of how QR codes actually work. Follow it and you get a logo that looks fine on your screen and fails on the printed piece.</p>
+    <p class="big">There is no universal safe logo percentage. Keep the logo and its background pad small, use level H as a starting point, and test the final export and a printed proof.</p>
+    <p>A centered logo is not automatically safe. Some QR versions have an alignment pattern in the center. For the least interference, put your logo beside the code, outside its clear margin.</p>
   </div>
-
-  <div class="toc">
-    <b>What's here</b>
-    <ol>
-      <li><a href="#why-30-wrong">Why "30%" is the wrong number</a></li>
-      <li><a href="#width-area">Width versus area, the trap nobody mentions</a></li>
-      <li><a href="#slider">The number your generator shows you isn't the coverage</a></li>
-      <li><a href="#how-to">How to add a logo without breaking the scan</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ol>
-  </div>
-
-  <h2 id="why-30-wrong">Why "30%" is the wrong number</h2>
-  <p>Search this question and you'll find the same claim everywhere: "error correction level H lets a logo cover up to 30% of the code." That number comes from a real fact, repeated wrong.</p>
-  <p>Level H can rebuild about 30% of a QR code's <strong>data</strong> if that data gets damaged. People hear "30%" and assume a logo can cover 30% of the code. It can't, for two reasons.</p>
-  <p>First, error correction only protects the data area. It does nothing for the three big squares in the corners, the dotted timing lines that run between them, or the smaller alignment square. Those are the patterns a scanner uses to find and lock onto the code in the first place. A logo that grows into any of them kills the scan outright, no matter which level you picked. On a small code, a centered logo reaches them sooner than you would guess.</p>
-  <p>Second, that 30% assumes the damage is spread out, like scratches and coffee stains scattered across the whole code. A logo is the opposite. It wipes out one solid block in the middle. Error correction handles scattered damage far better than one concentrated hole, so a centered logo eats into your margin much faster than a flat percentage suggests. The safe coverage lands well below the 30% people quote.</p>
-
-  <h2 id="width-area">Width versus area, the trap nobody mentions</h2>
-  <p>There is a second reason logos end up too big, and it is pure geometry. People size a logo by its width. Scanning depends on its area. And area grows with the square of width.</p>
-  <p>A logo whose width spans 40% of the code covers only about 16% of its area. So "my logo takes up 40%" and "keep it small" can both be true at once. They are measuring different things. When a logo looks modest to your eye, it is usually covering more of the code than you think.</p>
-
-  <h2 id="slider">The number your generator shows you isn't the coverage</h2>
-  <p>One more thing to distrust: the "logo size" value a generator shows you, like 0.4 or 40%, usually isn't the share of the code your logo covers. Depending on the tool, that slider is scaled to other settings, so a "40%" can put much less (or more) than 40% of the code under your logo.</p>
-  <p>Don't read the slider as coverage. Judge the logo by eye against the code, keep it clearly small, and test the finished file.</p>
-  <div class="note"><b>The practical rule:</b> keep the logo's width under about a third of the code, use error correction level H, and center it on a small white pad. Then test the finished file before it goes near a printer.</div>
-  <p>This is why <a href="../../">QR Codes Made Easy</a> keeps the logo small and forces level H for you, on the safe side of the line, because a code you print is a code you can't take back.</p>
-
-  <h2 id="how-to">How to add a logo without breaking the scan</h2>
+  <div class="toc"><b>What's here</b><ol>
+    <li><a href="#why-30-wrong">Why 30% is not a logo allowance</a></li>
+    <li><a href="#width-area">Width and area are different</a></li>
+    <li><a href="#slider">What the logo setting means</a></li>
+    <li><a href="#how-to">Placement and print-proof checklist</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol></div>
+  <h2 id="why-30-wrong">Why 30% is not a logo allowance</h2>
+  <p><a href="https://www.qrcode.com/en/about/error_correction.html">DENSO WAVE describes error correction</a> in terms of restoration of total <strong>codewords</strong>, not a percentage of the image that can safely be covered. A codeword is a unit of encoded data. You cannot turn the level H recovery figure into a promise that a logo may hide 30% of the squares.</p>
+  <p>The finder squares, timing lines and alignment patterns help a reader locate and interpret the symbol. Keep them unobstructed rather than relying on error correction to compensate. The placement of covered modules and the distribution of affected codewords matter; there is no fixed area threshold that works for every payload, QR version and reader.</p>
+  <p>The <a href="https://www.qrcode.com/en/faq.html">DENSO WAVE FAQ</a> warns that overlaying an illustration can make reading impossible or slow. Higher error correction does not certify a branded design. It can also increase the symbol's data density or required size.</p>
+  <h2 id="width-area">Width and area are different</h2>
+  <p>For a square logo on a square symbol, a width of 40% means an area of 16%. That is geometry, not a scanning limit. Count the entire obscured region, including any background pad, and measure against the symbol itself rather than its surrounding margin.</p>
+  <p>A width under a third is sometimes used as a starting rule, but it is not a verified safe maximum. A smaller mark can still cover a structural pattern. If reliability matters more than an embedded logo, place the brand beside the code.</p>
+  <h2 id="slider">What the logo setting means</h2>
+  <p>A library's image-size setting is not necessarily a percentage of visible code area. QR Codes Made Easy uses a fixed logo setting and selects error correction level H when you add an image. Those implementation choices limit the design; they do not prove that every resulting code will scan.</p>
+  <div class="note"><b>The practical rule:</b> judge and test the exported code, not just a slider value or the on-screen preview. Removing the embedded logo is a useful first step if a code is unreliable.</div>
+  <h2 id="how-to">Placement and print-proof checklist</h2>
   <ol>
-    <li><strong>Use error correction level H.</strong> It is the highest of the four levels and the only one with real margin to spare for a logo. If your generator lets you choose, choose H. Some switch to it the moment you add an image.</li>
-    <li><strong>Keep the logo small.</strong> Width under about a third of the code. When in doubt, smaller. A logo that stops the code from scanning is not doing your brand any favors.</li>
-    <li><strong>Center it and give it a white pad.</strong> A logo sitting on a small white background keeps its edges from blurring into the code's dots, and centering keeps it clear of the corner patterns.</li>
-    <li><strong>Keep strong contrast and the quiet zone.</strong> Dark code on a light background, and leave the empty margin around the code (about four dots wide) alone. Contrast and that border matter as much as logo size.</li>
-    <li><strong>Test before you print.</strong> Scan the finished file with two different phones, one iPhone and one Android, from the distance people will actually use. It is the last step on the <a href="../../#checklist">pre-print checklist</a>, and the one that saves the reprint.</li>
+    <li><strong>Choose placement deliberately.</strong> A centered logo avoids the corner finder squares only while it stays small enough, and can still cover alignment patterns. <a href="https://github.com/nayuki/QR-Code-generator/blob/master/python/qrcodegen.py">Project Nayuki's QR implementation</a> places alignment patterns according to version; version 7 includes an alignment pattern in the center. There is no universally empty center reserved for artwork.</li>
+    <li><strong>Keep the obscured area small.</strong> A light pad may separate the logo visually, but it also hides modules. Include it when judging coverage. This tool uses level H with a logo; that adds error-correction capacity, not a guarantee.</li>
+    <li><strong>Preserve contrast and the quiet zone.</strong> Use a dark code on a uniform light background. <a href="https://www.qrcode.com/en/howto/code.html">DENSO WAVE specifies a four-module clear margin</a> on every side of a standard QR symbol. Keep adjacent logos, text and borders outside that margin.</li>
+    <li><strong>Check the exported file.</strong> Decode the actual PNG or SVG you will supply to the printer, and confirm its destination or data. A clean on-screen decode is a useful check, not proof of print reliability.</li>
+    <li><strong>Test a printed proof.</strong> Print the final layout at its intended physical size, on the intended stock and finish when possible. Try more than one phone, including iPhone and Android, at the expected distance, angles and lighting. Check that each opens the intended destination. Retest after changing the logo, size, payload, colors or layout.</li>
   </ol>
-  <p>That covers the scan. Where to place a code, how big to make it on each surface, and the contrast rules that survive real ink are what goes in <a href="../../#guide">the Brand Field Guide to QR Codes</a>.</p>
-
+  <p><a href="https://www.qrcode.com/en/howto/cell.html">DENSO WAVE's module-size guidance</a> explains why printer resolution and reader limits both matter. A screen cannot reproduce ink spread, glare or a curved label. Use the <a href="../how-big-should-a-qr-code-be-for-print/">print-size guide</a> to plan the proof, and keep the <a href="../../#checklist">pre-print checklist</a> handy before a full run.</p>
   <h2 id="faq">FAQ</h2>
-  <div class="faq">
-    <details><summary>How much of a QR code can a logo cover?</summary>
-      <p>Less than the "30%" you will read elsewhere. Because error correction protects only the data area, and handles one concentrated block poorly, the safe covered share is well under that. A good working rule is a logo width under about a third of the code, at error correction level H. When it matters, keep it smaller and test.</p></details>
-    <details><summary>What error correction level should I use for a QR code with a logo?</summary>
-      <p>Level H, every time. It is the highest of the four levels (L, M, Q, H) and the only one with enough spare capacity to survive a logo covering part of the code. The lower levels leave almost no room once an image sits on top.</p></details>
-    <details><summary>What happens if the logo is too big?</summary>
-      <p>The code stops scanning. It usually doesn't get "slower," it just fails, because the logo either erases more data than error correction can rebuild or grows into the corner and timing patterns a scanner needs to lock onto the code. The jump from "works" to "dead" is small, which is why testing matters.</p></details>
-    <details><summary>Does putting a logo in the middle affect scanning?</summary>
-      <p>Yes, but the middle is the safest place for it. A centered logo stays away from the three corner squares and the alignment square, the patterns error correction can't protect. Keep it centered and keep it small.</p></details>
-    <details><summary>Can I put any logo on a QR code?</summary>
-      <p>Mostly, if you keep it small and high contrast. A simple, solid logo on a white pad works best. Thin lines, low contrast, or a logo that fades into the code's dots will hurt scanning more than a bold, compact mark of the same size.</p></details>
-    <details><summary>How do I test that my QR code still scans?</summary>
-      <p>Open the exported file at full size and scan it with two phones, one iPhone and one Android, from the distance your audience will use. Test the actual file you're sending to print, not the preview. If both phones read it instantly, you're good.</p></details>
-  </div>
-
+<div class="faq"><details><summary>How much of a QR code can a logo cover?</summary><p>There is no universal safe percentage. Error-correction rates describe codewords, not a logo-area allowance. Keep the logo and its pad small, preserve structural patterns, and test the exact export and printed proof.</p></details><details><summary>What error correction level should I use for a QR code with a logo?</summary><p>Level H is a practical starting point and is what this generator uses with a logo. It provides the highest of the four standard correction levels, but does not guarantee that an overlaid image will scan.</p></details><details><summary>What happens if the logo is too big?</summary><p>It can make reading slow, unreliable or impossible by hiding too much encoded data or structural patterns. Reduce or remove the logo, then test the export and printed proof again.</p></details><details><summary>Does putting a logo in the middle affect scanning?</summary><p>Yes. The middle is not a reserved safe area: some QR versions have an alignment pattern in the center. Keep structural patterns clear. Putting the logo beside the code, outside the quiet zone, avoids covering its modules.</p></details><details><summary>Can I put any logo on a QR code?</summary><p>Not reliably. Both the logo and its background pad can obscure modules. Use a small, simple mark, or put the logo outside the quiet zone. Test the resulting code rather than assuming that a particular logo style is safe.</p></details><details><summary>How do I test that my QR code still scans?</summary><p>Check the exported file first, then test a printed proof of the final layout at its intended size and on the intended material. Use more than one phone under realistic distance, angle and lighting conditions, and confirm the destination. A successful screen scan alone is not enough.</p></details></div>
   <div class="cta">
     <h2>Make one that scans</h2>
-    <p>QR Codes Made Easy keeps the logo at a safe size and uses level H for you. Free, no account, and the code never expires.</p>
+    <p>QR Codes Made Easy uses level H when you add a logo. Test your final design before a print run. Free static codes, no account, and no expiry timer.</p>
     <a class="btn" href="../../">Build your brand QR code</a>
   </div>
 </article>
@@ -233,10 +207,10 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "How big can a QR code logo be before it stops scanning?",
-  "description": "The '20 to 30%' logo rule is a misread of how QR codes work. Error correction protects the data area, not the finder patterns, and handles concentrated damage poorly. Keep a centered logo's width under about a third of the code and use level H.",
+  "description": "There is no universal safe QR logo size. Learn what error correction covers, why centered logos can obscure alignment patterns, and how to test a printed proof.",
   "image": "https://qrcodemadeeasy.com/guides/qr-code-logo-size/logo-15pct-scans.png",
   "datePublished": "2026-07-05",
-  "dateModified": "2026-07-07",
+  "dateModified": "2026-10-04",
   "author": {"@type": "Person", "name": "Bud Hennekes", "url": "https://qrcodemadeeasy.com/"},
   "publisher": {"@type": "Organization", "name": "QR Codes Made Easy", "url": "https://qrcodemadeeasy.com/"},
   "mainEntityOfPage": {"@type": "WebPage", "@id": "https://qrcodemadeeasy.com/guides/qr-code-logo-size/"}
@@ -253,20 +227,7 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
   ]
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "How much of a QR code can a logo cover?", "acceptedAnswer": {"@type": "Answer", "text": "Less than the 30% you will read elsewhere. Because error correction protects only the data area, and handles one concentrated block poorly, the safe covered share is well under that. A good working rule is a logo width under about a third of the code, at error correction level H."}},
-    {"@type": "Question", "name": "What error correction level should I use for a QR code with a logo?", "acceptedAnswer": {"@type": "Answer", "text": "Level H, every time. It is the highest of the four levels (L, M, Q, H) and the only one with enough spare capacity to survive a logo covering part of the code. The lower levels leave almost no room once an image sits on top."}},
-    {"@type": "Question", "name": "What happens if the logo is too big?", "acceptedAnswer": {"@type": "Answer", "text": "The code stops scanning. It usually does not get slower, it just fails, because the logo either erases more data than error correction can rebuild or grows into the corner and timing patterns a scanner needs to lock onto the code."}},
-    {"@type": "Question", "name": "Does putting a logo in the middle affect scanning?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but the middle is the safest place for it. A centered logo stays away from the three corner squares and the alignment square, which are the patterns error correction cannot protect. Keep it centered and keep it small."}},
-    {"@type": "Question", "name": "Can I put any logo on a QR code?", "acceptedAnswer": {"@type": "Answer", "text": "Mostly, if you keep it small and high contrast. A simple, solid logo on a white pad works best. Thin lines, low contrast, or a logo that fades into the code's dots will hurt scanning more than a bold, compact mark of the same size."}},
-    {"@type": "Question", "name": "How do I test that my QR code still scans?", "acceptedAnswer": {"@type": "Answer", "text": "Open the exported file at full size and scan it with two phones, one iPhone and one Android, from the distance your audience will use. Test the actual file you are sending to print, not the preview."}}
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much of a QR code can a logo cover?", "acceptedAnswer": {"@type": "Answer", "text": "There is no universal safe percentage. Error-correction rates describe codewords, not a logo-area allowance. Keep the logo and its pad small, preserve structural patterns, and test the exact export and printed proof."}}, {"@type": "Question", "name": "What error correction level should I use for a QR code with a logo?", "acceptedAnswer": {"@type": "Answer", "text": "Level H is a practical starting point and is what this generator uses with a logo. It provides the highest of the four standard correction levels, but does not guarantee that an overlaid image will scan."}}, {"@type": "Question", "name": "What happens if the logo is too big?", "acceptedAnswer": {"@type": "Answer", "text": "It can make reading slow, unreliable or impossible by hiding too much encoded data or structural patterns. Reduce or remove the logo, then test the export and printed proof again."}}, {"@type": "Question", "name": "Does putting a logo in the middle affect scanning?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The middle is not a reserved safe area: some QR versions have an alignment pattern in the center. Keep structural patterns clear. Putting the logo beside the code, outside the quiet zone, avoids covering its modules."}}, {"@type": "Question", "name": "Can I put any logo on a QR code?", "acceptedAnswer": {"@type": "Answer", "text": "Not reliably. Both the logo and its background pad can obscure modules. Use a small, simple mark, or put the logo outside the quiet zone. Test the resulting code rather than assuming that a particular logo style is safe."}}, {"@type": "Question", "name": "How do I test that my QR code still scans?", "acceptedAnswer": {"@type": "Answer", "text": "Check the exported file first, then test a printed proof of the final layout at its intended size and on the intended material. Use more than one phone under realistic distance, angle and lighting conditions, and confirm the destination. A successful screen scan alone is not enough."}}]}</script>
 <!-- Cloudflare Web Analytics (cookieless, no personal data) --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e699a778c1664635913d24d7c1367fc9"}'></script>
 </body>
 </html>
