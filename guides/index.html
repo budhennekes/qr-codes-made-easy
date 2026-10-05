@@ -93,6 +93,34 @@ footer{border-top:2px solid var(--ink);margin-top:44px;padding:28px 0 40px}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.skip-link{position:absolute;left:18px;top:-100px;background:white;padding:12px;z-index:10}.skip-link:focus{top:12px}::selection{background:#dbe7fd;color:var(--ink)}
 @media(max-width:650px){.topic-group{grid-template-columns:1fr;gap:20px}.topic-heading p{max-width:55ch}.resource-pair{grid-template-columns:1fr;gap:22px}.intro{padding-top:30px}.hub h2{font-size:25px}.topic-nav{gap:8px 18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Show the product: a working code and the actual printable resources. */
+.wrap{max-width:1120px}
+.intro{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.85fr);gap:56px;align-items:center;padding:44px 0 38px}
+.intro h1{font-size:clamp(36px,4.4vw,54px);max-width:660px}
+.intro-copy>p{max-width:48ch;margin-top:18px}
+.intro .hub-actions{gap:16px 24px}
+.hub .qr-demo{display:flex;flex-direction:column;align-items:center;gap:12px;padding:24px 28px;background:var(--accent);border-radius:var(--radius);color:white;text-decoration:none;text-align:center}
+.demo-title{font:600 29px/1.15 var(--serif);letter-spacing:-.02em}
+.qr-demo img{display:block;width:min(100%,248px);height:auto;aspect-ratio:1;background:white;border-radius:4px}
+.demo-action{font-weight:600;font-size:14px;line-height:1.5}
+.demo-action svg{vertical-align:middle;margin-left:5px;transition:transform .18s ease-out}
+.qr-demo:hover .demo-action svg{transform:translateX(3px)}
+.qr-demo:focus-visible{outline-color:var(--ink);outline-offset:5px}
+.demo-hint{font-size:12px;line-height:1.5;color:white}
+.free-resources{padding:34px 0 40px}
+.resource-pair{gap:36px}
+.resource-item{display:grid;grid-template-columns:142px minmax(0,1fr);align-items:center;gap:22px}
+.resource-preview{height:190px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--paper-deep);border-radius:8px;padding:14px}
+.resource-preview img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;box-shadow:0 6px 16px -6px rgba(20,32,28,.25)}
+.resource-pair h3{font-size:18px;line-height:1.35}
+.resource-pair h3 a{text-decoration:none}
+.resource-pair h3 a:hover{text-decoration:underline}
+.resource-pair p{font-size:14px;line-height:1.65}
+.resource-format{display:block;margin-top:10px;color:var(--ink-soft);font-size:12px}
+@media(max-width:850px){.intro{gap:28px;grid-template-columns:minmax(0,1fr) minmax(240px,.8fr)}.intro h1{font-size:40px}.resource-item{grid-template-columns:106px minmax(0,1fr);gap:16px}.resource-preview{height:154px;padding:10px}.resource-pair{gap:24px}}
+@media(max-width:650px){.intro{grid-template-columns:1fr;gap:26px;padding-top:30px}.intro h1{font-size:36px}.intro-copy>p{font-size:17px}.hub .qr-demo{display:grid;grid-template-columns:minmax(0,1fr) 136px;gap:6px 18px;padding:20px;text-align:left}.demo-title{font-size:27px;align-self:end}.qr-demo img{grid-column:2;grid-row:1/4;width:136px}.demo-action{align-self:center;font-size:13px}.demo-action svg{display:none}.demo-hint{align-self:start;font-size:11px}.resource-pair{grid-template-columns:1fr;gap:26px}.resource-item{grid-template-columns:122px minmax(0,1fr);gap:20px}.resource-preview{height:172px}.free-resources{padding-top:28px}}
+@media(max-width:360px){.hub .qr-demo{grid-template-columns:minmax(0,1fr) 112px;padding:16px;gap:6px 12px}.qr-demo img{width:112px}.demo-title{font-size:24px}.resource-item{grid-template-columns:96px minmax(0,1fr);gap:14px}.resource-preview{height:142px}}
+@media(prefers-reduced-motion:reduce){.demo-action svg{transition:none}.qr-demo:hover .demo-action svg{transform:none}}
 </style>
 </head>
 <body>
@@ -111,9 +139,17 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 
 <main id="main-content" class="wrap hub">
 <section class="intro">
+  <div class="intro-copy">
   <h1>QR code guides, from first scan to final print.</h1>
   <p>Choose what you need to do. Make the code, check the destination, and test it where people will use it.</p>
   <p class="hub-actions"><a class="primary-link" href="/#tool">Make a QR code</a><a href="why-wont-my-qr-code-scan/">Code not working?</a></p>
+  </div>
+  <a class="qr-demo" href="/#tool" aria-label="Try the free QR generator. Scan this code or tap to open it.">
+    <span class="demo-title">Give it a scan.</span>
+    <img src="assets/try-generator.svg" width="512" height="512" alt="QR code that opens the free generator" fetchpriority="high">
+    <span class="demo-action">Make a code of your own<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
+    <span class="demo-hint">On your phone? Tap here instead.</span>
+  </a>
 </section>
 <nav class="topic-nav" aria-label="Guide topics">
   <a href="#reviews">Reviews & feedback</a><a href="#guests">Menus & Wi-Fi</a><a href="#print">Print & fix</a><a href="#promotion">Cards & promotion</a>
@@ -122,8 +158,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
   <h2 id="resources-title">Make something you can use.</h2>
   <p>Free resources. No account or email address needed.</p>
   <div class="resource-pair">
-    <div><h3><a href="/resources/guest-wifi-sign.html">Guest Wi-Fi sign template</a></h3><p>Add your own QR image and network name. Print a clean sign or save it as a PDF, entirely in your browser.</p></div>
-    <div><h3><a href="/resources/qr-print-checklist.pdf" download>Before-you-print checklist (PDF)</a></h3><p>Check the link, size, margin, and real placement before ordering a batch. <a href="/resources/qr-print-checklist.html">Read the checklist online</a>.</p></div>
+    <div class="resource-item"><div class="resource-preview"><img src="assets/wifi-sign-preview.webp" width="420" height="515" alt="Preview of the blank Guest Wi-Fi sign" loading="lazy"></div><div><h3><a href="/resources/guest-wifi-sign.html">Guest Wi-Fi sign template</a></h3><p>Add your own QR image and network name. Print a clean sign or save it as a PDF, entirely in your browser.</p><span class="resource-format">Printable 5 × 7-inch sign</span></div></div>
+    <div class="resource-item"><div class="resource-preview"><img src="assets/print-checklist-preview.webp" width="464" height="600" alt="Preview of the one-page print checklist" loading="lazy"></div><div><h3><a href="/resources/qr-print-checklist.pdf" download>Before-you-print checklist (PDF)</a></h3><p>Check the link, size, margin, and real placement before ordering a batch. <a href="/resources/qr-print-checklist.html">Read the checklist online</a>.</p><span class="resource-format">One-page PDF · free download</span></div></div>
   </div>
 </section>
 <section class="topic-group" id="reviews" aria-labelledby="reviews-title"><div class="topic-heading"><h2 id="reviews-title">Reviews & customer feedback</h2><p>Help customers find the right place to leave a review or send feedback.</p></div><div><ul class="guide-links">
