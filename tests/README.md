@@ -25,4 +25,16 @@ Coverage:
 - Four-module minimum quiet zone in a short-link PNG.
 - No horizontal overflow at 320, 390, 768, and 1280 CSS pixels; reduced-motion heading.
 
+## Theme and print-resource checks
+
+Use the same isolated environment, with `pymupdf` installed for PDF checks:
+
+```sh
+/path/to/isolated-env/bin/python tests/test_theme.py
+/path/to/isolated-env/bin/python tests/test_hub.py
+/path/to/isolated-env/bin/python tests/test_hub_visual.py
+```
+
+`test_theme.py` checks every public page at phone and desktop widths, actual Inter loading with third-party requests blocked, computed button/text contrast, keyboard focus, calculator interaction, selected 320px layouts and enlarged text. Use `QR_THEME_QA_OUTPUT` for evidence and `QR_THEME_BASE_URL` for production rendering. Resource HTML embeds the shared theme/font so it remains portable; other pages use `assets/modern-minimal.css` and the licensed self-hosted Inter font. `test_hub.py` checks actual synthetic Wi-Fi image-to-print-PDF decoding and local-only resource behavior. `test_hub_visual.py` checks the displayed QR at four widths, real links/downloads and resource previews.
+
 These are automated Chromium tests, not physical-phone or printer tests. Scan a printed proof with both iOS and Android before a major release. Native sharing, physical print results, logo image-dimension/time-out branches, and all international phone formats require additional coverage.
