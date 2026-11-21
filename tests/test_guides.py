@@ -81,9 +81,10 @@ class GuideTests(unittest.TestCase):
         text = doc.get_text(' ', strip=True)
         self.assertIn('Read reviews', text)
         self.assertIn('Get more reviews', text)
-        self.assertIn('Google\'s QR image may be all you need.', text)
-        self.assertIn('selectively soliciting positive reviews', text)
-        self.assertIn('pressure customers to review while on the premises', text)
+        # Page must still acknowledge Google's own QR option
+        self.assertIn("Google also gives you a QR image", text)
+        self.assertIn('contribution policy', text)
+        self.assertIn('Pressuring customers to review while they are still on the premises', text)
         self.assertNotIn('wherever a happy customer is already standing', text)
         self.assertNotIn('day you stop paying the vendor', text)
         self.assertIsNotNone(doc.find(id='sign-wording'))
@@ -91,7 +92,7 @@ class GuideTests(unittest.TestCase):
         schemas = [json.loads(x.string) for x in doc.select('script[type="application/ld+json"]')]
         article = next(x for x in schemas if x.get('@type') == 'Article')
         faq = next(x for x in schemas if x.get('@type') == 'FAQPage')
-        self.assertEqual(article['dateModified'], '2026-09-23')
+        self.assertEqual(article['dateModified'], '2026-11-21')
         self.assertEqual(visible, {x['name']: x['acceptedAnswer']['text'] for x in faq['mainEntity']})
         external_links = {a['href'] for a in doc.select('a[href]')}
         self.assertIn('https://support.google.com/business/answer/16816815?hl=en', external_links)

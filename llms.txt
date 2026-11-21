@@ -1,0 +1,21 @@
+# QR Codes Made Easy
+
+> A free browser-based generator for static QR codes. Create codes without an account or subscription, and download PNG or SVG files.
+
+Static codes store the supplied content in the pattern. They have no expiry timer, but they must remain readable and any linked destination must remain available. The destination encoded in a printed code cannot be changed; a supplied short link or redirect depends on its own service. The generator builds codes on the user's device and does not add its own redirect.
+
+## Generator and guides
+
+- [Free static QR code generator](https://qrcodemadeeasy.com/): Create a code with custom colors or a logo.
+- [QR code guides](https://qrcodemadeeasy.com/guides/): Practical guidance for creating and printing QR codes.
+- [Do QR codes expire?](https://qrcodemadeeasy.com/guides/do-qr-codes-expire/): How static and dynamic codes differ.
+- [Why won't my QR code scan?](https://qrcodemadeeasy.com/guides/why-wont-my-qr-code-scan/): Troubleshoot common scanning problems.
+- [QR code size for print](https://qrcodemadeeasy.com/guides/how-big-should-a-qr-code-be-for-print/): Choose a starting size and test the finished print.
+- [QR code size calculator](https://qrcodemadeeasy.com/tools/qr-code-size-calculator/): Estimate a starting print size based on scan distance.
+- [QR code for Wi-Fi](https://qrcodemadeeasy.com/guides/qr-code-for-wifi/): Help guests connect to a network.
+- [Track QR code visits without a subscription](https://qrcodemadeeasy.com/guides/track-qr-code-scans-without-subscription/): Understand the limits of destination analytics.
+
+## Site information
+
+- [Privacy policy](https://qrcodemadeeasy.com/privacy/)
+- [Sitemap](https://qrcodemadeeasy.com/sitemap.xml)

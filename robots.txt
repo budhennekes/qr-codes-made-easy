@@ -1,5 +1,10 @@
+# Allow search crawlers through the existing default rules. Opt out of
+# OpenAI's GPTBot training crawler; this does not cover every AI crawler.
+User-agent: GPTBot
+Disallow: /
+
 User-agent: *
-Allow: /
 Disallow: /scanned/
+Allow: /
 
 Sitemap: https://qrcodemadeeasy.com/sitemap.xml
